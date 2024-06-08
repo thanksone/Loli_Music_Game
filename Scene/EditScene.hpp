@@ -19,7 +19,7 @@ private:
     std::vector<std::vector<int>> inf;
     std::vector<std::vector<Engine::Label*>> show;
 protected:
-    int SpeedMult;
+    int SpeedMult, halfH, halfW;
 public:
     static const int MapWidth, MapHeight;
     int MapId;
@@ -32,5 +32,6 @@ public:
     void OnMouseMove(int mx, int my) override;
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
+    void BackOnClick();
 };
 #endif //EDITSCENE_HPP

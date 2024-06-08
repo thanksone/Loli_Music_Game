@@ -17,12 +17,17 @@
 #include "UI/Component/Label.hpp"
 #include "UI/Animation/Plane.hpp"
 #include "EditScene.hpp"
+#include "StartScene.h"
 
 void EditScene::Initialize(){
-    doko = 0;
+    doko = gon = 0;
+    Engine::ImageButton* btn;
+        btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
+        btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
+        AddNewControlObject(btn);
 }
 void EditScene::Terminate(){
-
+    IScene::Terminate();
 }
 void EditScene::Update(float deltatime){
 
@@ -56,4 +61,7 @@ void EditScene::OnKeyDown(int keyCode){
     RemoveObject(show[gon][doko]->GetObjectIterator());
     show[gon][doko] = new Engine::Label(std::to_string(inf[gon][doko]),"pirulen.ttf", 48, Engine::GameEngine::GetInstance().GetScreenSize().x/2-200, Engine::GameEngine::GetInstance().GetScreenSize().y/8+50, 255, 255, 255, 255, 0, 0.5);
     addObject(1,show[gon][doko]);
+}
+void EditScene::BackOnClick(){
+    Engine::GameEngine::GetInstance().ChangeScene("start");
 }
