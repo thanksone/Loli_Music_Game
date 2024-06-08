@@ -380,18 +380,12 @@ void PlayScene::ConstructUI() {
 	UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88));
 	TurretButton* btn;
 	// Button 1
-	btn = new TurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/tower-base.png", 1294, 136, 0, 0, 0, 0),
-		Engine::Sprite("play/turret-1.png", 1294, 136 - 8, 0, 0, 0, 0)
-		, 1294, 136, MachineGunTurret::Price);
+
 	// Reference: Class Member Function Pointer and std::bind.
 	btn->SetOnClickCallback(std::bind(&PlayScene::UIBtnClicked, this, 0));
 	UIGroup->AddNewControlObject(btn);
 	// Button 2
-	btn = new TurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/tower-base.png", 1370, 136, 0, 0, 0, 0),
-		Engine::Sprite("play/turret-2.png", 1370, 136 - 8, 0, 0, 0, 0)
-		, 1370, 136, LaserTurret::Price);
+
 	btn->SetOnClickCallback(std::bind(&PlayScene::UIBtnClicked, this, 1));
 	UIGroup->AddNewControlObject(btn);
 	// Button 3
@@ -402,10 +396,7 @@ void PlayScene::ConstructUI() {
 	btn->SetOnClickCallback(std::bind(&PlayScene::UIBtnClicked, this, 2));
 	UIGroup->AddNewControlObject(btn);
 	// TODO: [CUSTOM-TURRET]: Create a button to support constructing the turret.
-	btn = new TurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/tower-base.png", 1446+76, 136, 0, 0, 0, 0),
-		Engine::Sprite("play/turret-4.png", 1446+76, 136, 0, 0, 0, 0)
-		, 1446+76, 136, MikotoTurret::Price);
+
 	btn->SetOnClickCallback(std::bind(&PlayScene::UIBtnClicked, this, 3));
 	UIGroup->AddNewControlObject(btn);
 
@@ -422,20 +413,9 @@ void PlayScene::UIBtnClicked(int id) {
 	if (preview)
 		UIGroup->RemoveObject(preview->GetObjectIterator());
     // TODO: [CUSTOM-TURRET]: On callback, create the turret.
-	if (id == 0 && money >= MachineGunTurret::Price)
-		preview = new MachineGunTurret(0, 0);
-	else if (id == 1 && money >= LaserTurret::Price)
-		preview = new LaserTurret(0, 0);
-	else if (id == 2 && money >= MissileTurret::Price)
+
+	if (id == 2 && money >= MissileTurret::Price)
 		preview = new MissileTurret(0, 0);
-	else if (id == 3 && money >= MikotoTurret::Price) {
-		preview = new MikotoTurret(0, 0);
-		if(flag==0){
-			AudioHelper::StopBGM(bgmId);
-			bgmId = AudioHelper::PlayBGM("Only my railgun.ogg");
-		}
-		flag=1;
-	}
 	if (!preview)
 		return;
 	preview->Position = Engine::GameEngine::GetInstance().GetMousePosition();
