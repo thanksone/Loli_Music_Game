@@ -9,59 +9,33 @@
 #include <memory>
 #include<iostream>
 
-#include "Engine/Point.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "EditScene.hpp"
-#include "StartScene.h"
+void EditScene::Initialize() {
 
-void EditScene::Initialize(){
-    doko = gon = 0;
-    Engine::ImageButton* btn;
-        btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
-        btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
-        AddNewControlObject(btn);
 }
-void EditScene::Terminate(){
+void EditScene::Terminate() {
     IScene::Terminate();
 }
-void EditScene::Update(float deltatime){
+void EditScene::Update(float deltaTime) {
 
 }
-void EditScene::Draw() const{
-
+void EditScene::Draw() const {
+    IScene::Draw();
 }
 void EditScene::OnMouseDown(int button, int mx, int my) {
-
+    IScene::OnMouseDown(button, mx, my);
 }
-void EditScene::OnMouseMove(int mx, int my){
-
+void EditScene::OnMouseMove(int mx, int my) {
+    IScene::OnMouseMove(mx, my);
 }
-void EditScene::OnMouseUp(int button, int mx, int my){
-
+void EditScene::OnMouseUp(int button, int mx, int my) {
+    IScene::OnMouseUp(button, mx, my);
 }
-void EditScene::OnKeyDown(int keyCode){
-    if(!doko) return;
+void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
-    if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
-        inf[gon][doko] *= 10;
-        inf[gon][doko] +=('0'+keyCode-ALLEGRO_KEY_0);
-    }
-    else if(keyCode >= ALLEGRO_KEY_PAD_0 && keyCode <= ALLEGRO_KEY_PAD_9) {
-        inf[gon][doko] *= 10;
-        inf[gon][doko] +=('A'+keyCode-ALLEGRO_KEY_PAD_0);
-    }
-    else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
-        inf[gon][doko] /= 10;
-    }
-    RemoveObject(show[gon][doko]->GetObjectIterator());
-    show[gon][doko] = new Engine::Label(std::to_string(inf[gon][doko]),"pirulen.ttf", 48, Engine::GameEngine::GetInstance().GetScreenSize().x/2-200, Engine::GameEngine::GetInstance().GetScreenSize().y/8+50, 255, 255, 255, 255, 0, 0.5);
-    addObject(1,show[gon][doko]);
-}
-void EditScene::BackOnClick(){
-    Engine::GameEngine::GetInstance().ChangeScene("start");
 }
