@@ -14,7 +14,8 @@ private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
 	int SpeedMult;
-    int gon, pi, on;
+    int gon, pi, on, total, lpm;
+    std::vector<std::vector<std::vector<int>>> note;
     std::vector<std::vector<int>> state;
     std::vector<std::vector<Engine::Label*>> word;
 public:
@@ -29,5 +30,10 @@ public:
 	void OnMouseUp(int button, int mx, int my) override;
 	void OnKeyDown(int keyCode) override;
     void BackOnClick();
+    void SaveOnClick();
+    void InsertOnClick(int type);
+    void AddOnClick();
+    void LPMOnClick(int val);
+    void POSSliderOnValueChanged(float value);
 };
 #endif // EDITSCENE_HPP
