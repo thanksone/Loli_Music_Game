@@ -25,7 +25,7 @@ void StartScene::Initialize() {
     int halfH = h / 2;
     Engine::ImageButton* btn;
 
-    AddNewObject(new Engine::Label("Tower Defense", "pirulen.ttf", 120, halfW, halfH / 3 + 50, 10, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Abyssal Tunes", "pirulen.ttf", 120, halfW, halfH / 3 + 50, 10, 255, 255, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 200 , 400, 100);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
@@ -36,6 +36,12 @@ void StartScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Settings", "pirulen.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png",  w- 450, halfH * 3 / 2 +50, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 3));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Edit mode", "pirulen.ttf", 48, w-250, halfH * 3 / 2+100, 0, 0, 0, 255, 0.5, 0.5));
+
 }
 void StartScene::Terminate() {
     IScene::Terminate();
@@ -45,4 +51,8 @@ void StartScene::PlayOnClick(int stage) {
 }
 void StartScene::SettingsOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("settings");
+}
+
+void StartScene::EditOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("edit");
 }
