@@ -14,7 +14,11 @@ private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
 	int SpeedMult;
+    int gon, pi, on;
+    std::vector<std::vector<int>> state;
+    std::vector<std::vector<Engine::Label*>> word;
 public:
+    int halfW, halfH;
 	explicit EditScene() = default;
 	void Initialize() override;
 	void Terminate() override;
@@ -24,5 +28,6 @@ public:
 	void OnMouseMove(int mx, int my) override;
 	void OnMouseUp(int button, int mx, int my) override;
 	void OnKeyDown(int keyCode) override;
+    void BackOnClick();
 };
 #endif // EDITSCENE_HPP
