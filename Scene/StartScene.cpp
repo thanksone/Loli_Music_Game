@@ -38,7 +38,7 @@ void StartScene::Initialize() {
     AddNewObject(new Engine::Label("Settings", "pirulen.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png",  w- 450, halfH * 3 / 2 +50, 400, 100);
-    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 3));
+    btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this, 3));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Edit mode", "pirulen.ttf", 48, w-250, halfH * 3 / 2+100, 0, 0, 0, 255, 0.5, 0.5));
 
