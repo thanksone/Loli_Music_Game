@@ -1,0 +1,4 @@
+#ifndef EDITSCENE_HPP
+#define EDITSCENE_HPP
+
+#endif //EDITSCENE_HPP
