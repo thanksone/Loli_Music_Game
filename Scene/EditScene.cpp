@@ -9,6 +9,7 @@
 #include <memory>
 #include<iostream>
 
+#include "Engine/Point.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "Engine/GameEngine.hpp"
@@ -52,7 +53,7 @@ void EditScene::OnKeyDown(int keyCode){
     else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
         inf[gon][doko] /= 10;
     }
-    RemoveObject(namae->GetObjectIterator());
-    namae=new Engine::Label(name,"pirulen.ttf", 48, Engine::GameEngine::GetInstance().GetScreenSize().x/2-200, Engine::GameEngine::GetInstance().GetScreenSize().y/8+50, 255, 255, 255, 255, 0, 0.5);
-    addObject(1,namae);
+    RemoveObject(show[gon][doko]->GetObjectIterator());
+    show[gon][doko] = new Engine::Label(std::to_string(inf[gon][doko]),"pirulen.ttf", 48, Engine::GameEngine::GetInstance().GetScreenSize().x/2-200, Engine::GameEngine::GetInstance().GetScreenSize().y/8+50, 255, 255, 255, 255, 0, 0.5);
+    addObject(1,show[gon][doko]);
 }

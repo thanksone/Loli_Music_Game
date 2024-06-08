@@ -8,12 +8,16 @@
 #include <string>
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
+#include "UI/Component/Image.hpp"
+#include "UI/Component/ImageButton.hpp"
+#include "UI/Component/Label.hpp"
 class EditScene final : public Engine::IScene {
 private:
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
     int gon, doko, pi;
     std::vector<std::vector<int>> inf;
+    std::vector<std::vector<Engine::Label*>> show;
 protected:
     int SpeedMult;
 public:
