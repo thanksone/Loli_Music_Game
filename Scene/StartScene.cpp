@@ -43,7 +43,12 @@ void StartScene::Initialize() {
     fin.close();
     std::string dirtimg="stage-select/san" +sancheck+"dirt.png";
     std::string floorimg="stage-select/san" +sancheck+"floor.png";
-    AddNewObject(new Engine::Label("Abyssal Tunes", "WOODCUTTER-BCN-Style-1.ttf", 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
+    if(sancheck=="bad")
+        AddNewObject(new Engine::Label("Abyssal Tunes", "WOODCUTTER-BCN-Style-1.ttf", 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
+    else
+        AddNewObject(new Engine::Label("Abyssal Tunes", "WOODCUTTER-BCN-Style-1.ttf", 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
+
+
 
     btn = new Engine::ImageButton(dirtimg, floorimg, halfW - 200, halfH / 2 + 200 , 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
