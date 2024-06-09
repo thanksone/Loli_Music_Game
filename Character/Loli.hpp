@@ -1,8 +1,11 @@
-//
-// Created by thanksone on 6/9/24.
-//
-
-#ifndef INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_LOLI_HPP
-#define INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_LOLI_HPP
-
-#endif //INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_LOLI_HPP
+#ifndef LOLI_HPP
+#define LOLI_HPP
+#include <string>
+#include "UI/Component/Image.hpp"
+class Loli : public Engine::Image {
+private:
+    std::string name;
+    int san;
+public:
+};
+#endif //LOLI_HPP
