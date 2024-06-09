@@ -1,8 +1,10 @@
-//
-// Created by thanksone on 6/9/24.
-//
-
-#ifndef INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_USER_HPP
-#define INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_USER_HPP
-
-#endif //INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_USER_HPP
+#ifndef USER_HPP
+#define USER_HPP
+#include<bits/stdc++.h>
+class user{
+private:
+    std::string name, password;
+    std::vector<loli> Character;
+public:
+};
+#endif //_USER_HPP
