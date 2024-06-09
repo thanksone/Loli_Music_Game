@@ -59,15 +59,15 @@ void StartScene::Initialize() {
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Play", fontname, 48, halfW, halfH / 2 + 275, 125, 30, 32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton(dirtimg, floorimg, halfW - 150, halfH * 3 / 2 - 50, 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg, w-300, 0, 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Settings", fontname, 48, halfW, halfH * 3 / 2+25, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Settings", fontname, 48, w-150, 75, 125, 30, 32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton(dirtimg, floorimg,  w- 400, halfH * 3 / 2 +50, 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, halfH * 3 / 2 +50, 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-250, halfH * 3 / 2+100+25, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, halfH * 3 / 2+125, 125, 30, 32, 255, 0.5, 0.5));
 
 }
 void StartScene::Terminate() {
