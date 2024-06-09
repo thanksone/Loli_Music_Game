@@ -21,7 +21,7 @@ protected:
     int gon, pi, on, total, lpm;
     std::vector<std::vector<note>> Note;
     std::vector<std::vector<int>> State;
-    std::vector<std::pair<Engine::Label*, Engine::Label*>> Word;
+    std::vector<std::vector<Engine::Label*>> Word;
 public:
     std::string filename;
     int halfW, halfH;

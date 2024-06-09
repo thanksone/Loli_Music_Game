@@ -34,7 +34,7 @@ void EditScene::Initialize() {
     for(int i = 1; i <= gon; i++){
         fin >> bpm >> time >> notes;
         State.push_back({bpm, time, notes});
-        Word.push_back({new Engine::Label, new Engine::Label});
+        Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
         for(int j = 0; j < notes; j++){
             fin >> type >> ghost >> len >> at >> speed;
             Note[i].push_back({type, ghost, len, at, speed});
@@ -137,7 +137,7 @@ void EditScene::InsertOnClick(int type){
 }
 void EditScene::AddOnClick(){
     State.push_back(State[State.size() - 1]);
-    Word.push_back({new Engine::Label, new Engine::Label});
+    Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
     Note.push_back({});
 }
 void EditScene::LPMOnClick(int val){
