@@ -24,23 +24,7 @@ void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
     gon = pi = on = total = 0;
-    State.clear(), Word.clear(), Note.clear();
-    std::string file = "Resource/EditScore/" + filename;
-    std::ifstream fin(file);
-    int bpm, time, notes, type, ghost;
-    float len, at, speed;
-    fin >> gon;
-    State.push_back({0, 0, 0}), Word.push_back({nullptr, nullptr}), Note.push_back({});
-    for(int i = 1; i <= gon; i++){
-        fin >> bpm >> time >> notes;
-        State.push_back({bpm, time, notes});
-        Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
-        for(int j = 0; j < notes; j++){
-            fin >> type >> ghost >> len >> at >> speed;
-            Note[i].push_back({type, ghost, len, at, speed});
-        }
-    }
-    fin.close();
+    ReadScore();
     Engine::ImageButton* btn;
     btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
@@ -155,4 +139,23 @@ void EditScene::POSSliderOnValueChanged(float value){
         if((float)(sum + j) / (float)total > value) break;
     }
     pi = j;
+}
+void EditScene::ReadScore(){
+    State.clear(), Word.clear(), Note.clear();
+    std::string file = "Resource/EditScore/" + filename;
+    std::ifstream fin(file);
+    int bpm, time, notes, type, ghost;
+    float len, at, speed;
+    fin >> gon;
+    State.push_back({0, 0, 0}), Word.push_back({nullptr, nullptr}), Note.push_back({});
+    for(int i = 1; i <= gon; i++){
+        fin >> bpm >> time >> notes;
+        State.push_back({bpm, time, notes});
+        Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
+        for(int j = 0; j < notes; j++){
+            fin >> type >> ghost >> len >> at >> speed;
+            Note[i].push_back({type, ghost, len, at, speed});
+        }
+    }
+    fin.close();
 }
