@@ -1,6 +1,7 @@
 #ifndef USER_HPP
 #define USER_HPP
-#include<bits/stdc++.h>
+#include <string>
+#include <vector>
 class user{
 private:
     std::string name, password;
