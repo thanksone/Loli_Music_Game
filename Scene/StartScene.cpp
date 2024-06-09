@@ -30,17 +30,17 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH / 2 + 200 , 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", "pirulen.ttf", 48, halfW, halfH / 2 + 250, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Play", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2 + 250, 100, 30, 32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Settings", "pirulen.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Settings", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 3 / 2, 100, 30, 32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png",  w- 450, halfH * 3 / 2 +50, 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Edit mode", "pirulen.ttf", 48, w-250, halfH * 3 / 2+100, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Edit mode", "WOODCUTTER-BCN-Style-1.ttf", 48, w-250, halfH * 3 / 2+100, 100, 30, 32, 255, 0.5, 0.5));
 
 }
 void StartScene::Terminate() {
