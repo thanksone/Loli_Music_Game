@@ -11,12 +11,38 @@
 [INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 48
 [INFO] Game initialized
 [INFO] Game start event loop
-[INFO] Game Terminating...
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Destroyed Resource<image>: stage-select/sanbadfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?400x150
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?48
-[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?120
+[INFO] Loaded Resource<image>: Resource/images/win/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/win/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/win/floor.png
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 28
+[INFO] Changed to edit scene
+[INFO] Changed to start scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<audio>: Resource/audios/select.ogg
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene

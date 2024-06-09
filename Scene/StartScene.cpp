@@ -30,7 +30,7 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH / 2 + 200 , 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2 + 275, 100, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Play", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2 + 275, 125, 30, 32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
