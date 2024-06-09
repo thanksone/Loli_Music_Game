@@ -20,7 +20,7 @@ void SettingsScene::Initialize() {
                                   400, 150);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Back", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 3 / 2, 125, 30, 32, 255, 0.5, 0.5));
     Slider *sliderBGM, *sliderSFX;
     sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
     sliderBGM->SetOnValueChangedCallback(
