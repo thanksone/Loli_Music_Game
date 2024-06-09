@@ -24,6 +24,13 @@ void StartScene::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
     Engine::ImageButton* btn;
+    int 
+    std::ifstream fin("Resource/scoreboard.txt");
+    while(fin>>){
+        record.push_back({name,score,time});
+    }
+    maxpage= record.size()/10 + (record.size()%10?1:0);
+    fin.close();
 
     AddNewObject(new Engine::Label("Abyssal Tunes", "WOODCUTTER-BCN-Style-1.ttf", 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
 
