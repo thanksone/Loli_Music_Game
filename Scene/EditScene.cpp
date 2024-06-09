@@ -25,6 +25,22 @@ void EditScene::Initialize() {
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
     gon = pi = on = total = 0;
     State.clear(), Word.clear(), Note.clear();
+    std::string file = "Resource/EditScore/" + filename;
+    std::ifstream fin(file);
+    int bpm, time, notes, type, ghost;
+    float len, at, speed;
+    fin >> gon;
+    State.push_back({0, 0, 0}), Word.push_back({nullptr, nullptr}), Note.push_back({});
+    for(int i = 1; i <= gon; i++){
+        fin >> bpm >> time >> notes;
+        State.push_back({bpm, time, notes});
+        Word.push_back({new Engine::Label, new Engine::Label});
+        for(int j = 0; j < notes; j++){
+            fin >> type >> ghost >> len >> at >> speed;
+            Note[i].push_back({type, ghost, len, at, speed});
+        }
+    }
+    fin.close();
     Engine::ImageButton* btn;
     btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
@@ -109,7 +125,7 @@ void EditScene::SaveOnClick(){
     fout << State.size() << "\n";
     for(int i = 0; i < State.size(); i++){
         for(int x : State[i]) fout << x << " ";
-        for(auto [type, ghost, len, time, speed] : Note[i]){
+        for(auto [type, ghost, len, at, speed] : Note[i]){
             fout << type << " " << len << " " << ghost << " " << time << " " << speed << "\n";
         }
         fout << "\n";
@@ -121,7 +137,7 @@ void EditScene::InsertOnClick(int type){
 }
 void EditScene::AddOnClick(){
     State.push_back(State[State.size() - 1]);
-    Word.push_back(std::vector<Engine::Label*>(2, nullptr));
+    Word.push_back({new Engine::Label, new Engine::Label});
     Note.push_back({});
 }
 void EditScene::LPMOnClick(int val){

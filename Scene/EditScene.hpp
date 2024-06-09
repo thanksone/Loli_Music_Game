@@ -11,7 +11,7 @@
 
 struct note{
     int type, ghost;
-    float len, time, speed;
+    float len, at, speed;
 };
 class EditScene final : public Engine::IScene {
 private:
@@ -23,6 +23,7 @@ protected:
     std::vector<std::vector<int>> State;
     std::vector<std::pair<Engine::Label*, Engine::Label*>> Word;
 public:
+    std::string filename;
     int halfW, halfH;
 	explicit EditScene() = default;
 	void Initialize() override;
