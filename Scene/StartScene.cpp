@@ -49,8 +49,8 @@ void StartScene::Initialize() {
         AddNewObject(new Engine::Label("Abyssal Tunes", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
     }
     else{
-        fontname="Raslani-Kavaliar-Kaiser-1.ttf";
-        AddNewObject(new Engine::Label("Abyssal Tunes", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
+        fontname="Black-Magic-2.ttf";
+        AddNewObject(new Engine::Label("Heartbeat Rhythm", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
     }
 
 
