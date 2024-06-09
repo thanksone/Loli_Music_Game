@@ -20,3 +20,14 @@
 [INFO] Changed to stage-select scene
 [INFO] stopped audio (sample)
 [INFO] Changed to start scene
+[INFO] Game Terminating...
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: stage-select/sanbadfloor.png
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?400x150
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?48
+[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?120
+[INFO] Destroyed<sample_instance>: select.ogg
+[INFO] Destroyed Resource<audio>: select.ogg
