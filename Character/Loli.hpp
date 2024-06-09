@@ -7,5 +7,7 @@ private:
     std::string name;
     int san;
 public:
+    int GetSan();
+    void ChangeSan(int val);
 };
 #endif //LOLI_HPP
