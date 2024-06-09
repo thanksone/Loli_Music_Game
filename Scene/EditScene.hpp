@@ -9,15 +9,19 @@
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 
+struct note{
+    int type, ghost;
+    float len, time, speed;
+};
 class EditScene final : public Engine::IScene {
 private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
 	int SpeedMult;
     int gon, pi, on, total, lpm;
-    std::vector<std::vector<std::vector<int>>> note;
-    std::vector<std::vector<int>> state;
-    std::vector<std::vector<Engine::Label*>> word;
+    std::vector<std::vector<note>> Note;
+    std::vector<std::vector<int>> State;
+    std::vector<std::pair<Engine::Label*, Engine::Label*>> Word;
 public:
     int halfW, halfH;
 	explicit EditScene() = default;

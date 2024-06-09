@@ -89,6 +89,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/ScoreboardScene.cpp
         Scene/EditScene.hpp
         Scene/EditScene.cpp
+        Scene/SelectFile.hpp
+        Scene/SelectFile.cpp
         #        UI/Component/TextInput.cpp
 #        UI/Component/TextInput.hpp
 )
