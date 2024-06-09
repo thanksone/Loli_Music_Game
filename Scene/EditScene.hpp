@@ -41,5 +41,6 @@ public:
     void LPMOnClick(int val);
     void POSSliderOnValueChanged(float value);
     void ReadScore();
+    void ConstructUI();
 };
 #endif // EDITSCENE_HPP
