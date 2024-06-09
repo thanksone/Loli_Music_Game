@@ -35,22 +35,22 @@ void EditScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 7 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Save", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Save", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 7 / 4, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 5 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("bpm", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 5 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("bpm", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 5 / 4, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 5 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("meter", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 5 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("meter", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 5 / 4, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::LPMOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("+", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("+", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::LPMOnClick, this, -1));
@@ -61,7 +61,7 @@ void EditScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("ADD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("ADD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 125,30,32, 255, 0.5, 0.5));
     Slider *sliderPOS;
     sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
     sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
