@@ -54,27 +54,27 @@ void StartScene::Initialize() {
     }
 
 
-    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, halfH / 2 + 200 , 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-160 , 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, halfH / 2 + 275, 125, 30, 32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/san" +sancheck+"settingdirt.png", "stage-select/san" +sancheck+"settingfloor.png", w-60, 10, 50, 50);
-    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
-    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-85, 125, 30, 32, 255, 0.5, 0.5));
 
 
-    btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, halfH * 3 / 2 +50, 300, 150);
+
+    btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, h-160, 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, halfH * 3 / 2+125, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));
+    bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
 
 }
 void StartScene::Terminate() {
+    AudioHelper::StopSample(bgmInstance);
+    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
 void StartScene::PlayOnClick(int stage) {
-    Engine::GameEngine::GetInstance().ChangeScene("stage-select");
+    Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 void StartScene::SettingsOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("settings");
