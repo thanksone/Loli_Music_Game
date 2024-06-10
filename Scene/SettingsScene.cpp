@@ -19,11 +19,10 @@ void SettingsScene::Initialize() {
     int halfH = h / 2;
     Engine::ImageButton *btn;
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH * 3 / 2 - 50,
-                                  300, 150);
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,100, 100);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "Raslani-Kavaliar-Kaiser-1.ttf", 48, halfW, halfH * 3 / 2+25, 125, 30, 32, 255, 0.5, 0.5));
+
 
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH * 3 / 2 +70,
                               300, 150);
