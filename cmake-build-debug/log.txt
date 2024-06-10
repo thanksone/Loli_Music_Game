@@ -32,3 +32,29 @@
 [INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to song-select scene
+[INFO] Game Terminating...
+[INFO] stopped audio (sample)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: stage-select/pinkright.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/pinkleft.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
+[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x150
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed<sample_instance>: mainscene.ogg
+[INFO] Destroyed<sample_instance>: startscene.ogg
+[INFO] Destroyed Resource<audio>: mainscene.ogg
+[INFO] Destroyed Resource<audio>: startscene.ogg
