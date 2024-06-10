@@ -23,11 +23,15 @@
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
-    gon = pi = on = total = 0;
+    gon = 1, pi = on = total = 0, lpm = 1;
+    ghostW = 250, lineH = 250;
+    imgTarget = nullptr;
     ReadScore();
     ConstructUI();
-    ClearScene();
-    Display();
+    ClearNote();
+    ClearLine();
+    DisplayNote();
+    DisplayLine();
 }
 void EditScene::Terminate() {
     IScene::Terminate();
@@ -44,6 +48,15 @@ void EditScene::OnMouseDown(int button, int mx, int my) {
 }
 void EditScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
+    if(!imgTarget) return;
+    int x = mx / ghostW, y = my = lineH;
+    if (mx < 0 || mx >= (halfW << 1) || my < 0 || my >= (halfH << 1)) {
+        imgTarget->Visible = false;
+        return;
+    }
+    imgTarget->Visible = true;
+    imgTarget->Position.x = x * ghostW;
+    imgTarget->Position.y = y * lineH;
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
@@ -91,25 +104,31 @@ void EditScene::AddOnClick(){
     Note.push_back({});
 }
 void EditScene::LPMOnClick(int val){
-    if(!(lpm + val)) return;
+    if(!(lpm + val) && lpm + val > 10) return;
     lpm += val;
+    lineH = (float)halfH / 2.0 / (float)lpm;
+    ClearLine();
+    DisplayLine();
 }
 void EditScene::POSSliderOnValueChanged(float value){
-    ClearScene();
-    FindPos(std::min((int)((float)total * value), total - 4));
-    Display();
+    ClearNote();
+    FindPos(std::max(0, std::min((int)((float)total * value), total - 4)));
+    DisplayNote();
 }
 void EditScene::FindPos(int pos){
+    std::cout << "FindPos\n";
     int sum = 0, i, j;
     for(i = 1; i < State.size(); i++){
         if(sum + State[i][1] > pos) break;
         sum += State[i][1];
     }
     gon = i;
+    if(State.size() <= i) return;
     for(j = 0; j < State[i][1]; j++){
         if(sum + j > pos) break;
     }
     pi = j;
+    std::cout << i << " " << j << "\n";
 }
 void EditScene::ReadScore(){
     State.clear(), Word.clear(), Note.clear();
@@ -120,7 +139,7 @@ void EditScene::ReadScore(){
     fin >> gon;
     State.push_back({0, 0, 0}), Word.push_back({nullptr, nullptr}), Note.push_back({});
     for(int i = 1; i <= gon; i++){
-        fin >> bpm >> time >> notes;
+        if(!(fin >> bpm >> time >> notes)) break;
         State.push_back({bpm, time, notes});
         //TODO : label position
         Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
@@ -181,14 +200,27 @@ void EditScene::ConstructNote(int g, note N){
     onField.push_back({g, N});
     AddNoteButton(g, N);
 }
-void EditScene::Display(){
+void EditScene::DisplayNote(){
     int g = gon, p = pi;
     for(int i = 0; i < 4; i++, p++){
-        while(p >= State[g][1]) g++, p = 0;
+        while(g < State.size() && p >= State[g][1]) g++, p = 0;
+        if(g >= State.size()) break;
         for(auto [type, ghost, len, at, speed] : Note[g]) {
             if (at >= p && at < p + 1) ConstructNote(g, note(type, ghost, len, at, speed));
         }
     }
+}
+void EditScene::DisplayLine(){
+    Engine::Label* line;
+    std::string foo, bar;
+    for(int i = 0; i < 60; i++) foo += '_';
+    for(int i = 0; i < 90; i++) bar += '_';
+    for(float i = 1000; i > 0; i -= lineH){
+        line = new Engine::Label((int)round(i) % 250? bar : foo, "pirulen.ttf", (int)round(i) % 250? 20 : 30, 40, (int)i, 255, 255, 255, 255, 0, 1);
+        Line.push_back(line);
+        addObject(1, line);
+    }
+    std::cout << "\n";
 }
 void EditScene::DeleteNoteClick(int n){
     auto [g, tmp] = onField[n];
@@ -212,10 +244,16 @@ void EditScene::AddNoteButton(int g, note N){
     addObject(true, NoteButtonObj.back());
     addControl(true, btn);
 }
-void EditScene::ClearScene(){
+void EditScene::ClearNote(){
     onField.clear();
     for(int i = 0; i < NoteButtonCtrl.size(); i++){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }
     NoteButtonCtrl.clear(), NoteButtonObj.clear();
+}
+void EditScene::ClearLine(){
+    for(Engine::Label* &line : Line){
+        RemoveObject(line->GetObjectIterator());
+    }
+    Line.clear();
 }

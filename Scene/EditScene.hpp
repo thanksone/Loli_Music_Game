@@ -25,12 +25,15 @@ private:
 protected:
 	int SpeedMult;
     int gon, pi, on, total, lpm;
+    float ghostW, lineH;
     std::vector<std::vector<note>> Note;
     std::vector<std::vector<int>> State; // bpm, meters
     std::vector<std::vector<Engine::Label*>> Word;
     std::vector<std::pair<int, note>> onField;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<Engine::IObject*> NoteButtonObj;
+    std::vector<Engine::Label*> Line;
+    Engine::Image* imgTarget;
 public:
     std::string filename;
     int halfW, halfH;
@@ -53,10 +56,13 @@ public:
     void ReadScore();
     void ConstructUI();
     void ConstructNote(int g, note N);
-    void Display();
+    void DisplayNote();
+    void DisplayLine();
     void DeleteNoteClick(int n);
     void DeleteNoteButton(int n);
     void AddNoteButton(int g, note N);
-    void ClearScene();
+    void ClearNote();
+    void ClearLine();
+
 };
 #endif // EDITSCENE_HPP
