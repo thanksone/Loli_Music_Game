@@ -1,10 +1,11 @@
 # ninja log v6
 9	183	1718012916773897220	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Collider.cpp.o	85db21af8b109dd
+685	1020	1718036389220866790	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IControl.cpp.o	3403354fbda0ce15
 9	556	1718012916773541891	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/AudioHelper.cpp.o	52808e176dc43629
 944	1364	1718012917708349772	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Label.cpp.o	43517b76bf20af2c
-685	1020	1718036389220866790	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IControl.cpp.o	3403354fbda0ce15
+12	72	1718042507023196157	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MainScene.cpp.o	431b0e38f77d9a00
 17	690	1718036388552231106	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/DirtyEffect.cpp.o	3c7e41e46c5fff96
-9	597	1718041908861934387	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.o	e63ef42d2f376f50
+12	521	1718042507023077447	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.o	e63ef42d2f376f50
 2639	2664	1718012919403759670	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SelectFileScene.cpp.o	e92d3f3dcd8259fb
 695	1017	1718036389230161980	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IScene.cpp.o	ce5ae915766b3b9
 18	786	1718036388553409672	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/GameEngine.cpp.o	517784377daf9dca
@@ -31,7 +32,7 @@
 3209	3228	1718012919973012957	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Character/Loli.cpp.o	5d960155de505cf7
 1472	1538	1718012918236259638	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Point.cpp.o	721fbcbb51e36b30
 1753	2133	1718012918517165288	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.o	e6f2a27dfd63b476
-2	54	1718041953130721283	build.ninja	131c73408cb3c349
+2	67	1718042687017658415	build.ninja	131c73408cb3c349
 9	608	1718041908862396267	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.o	7263865f8f02122d
 1251	1655	1718036389786025816	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.o	18005534c38baa87
 1207	1616	1718036389742615775	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.o	e490a17c28766254
@@ -42,3 +43,8 @@
 1109	1924	1718036389644874421	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.o	49387df4a97398bc
 608	770	1718041909460995228	2024_I2P2_TowerDefense_with_answer	b72989df988144ea
 2664	3354	1718012919428745555	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Account/User.cpp.o	d73f2cee14887058
+2	69	1718042687017658415	build.ninja	131c73408cb3c349
+6	575	1718042687033222649	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MainScene.cpp.o	431b0e38f77d9a00
+12	583	1718042817450692837	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MainScene.cpp.o	431b0e38f77d9a00
+11	594	1718042817450185707	CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.o	7da01ce4cfb59a27
+594	742	1718042818032777555	2024_I2P2_TowerDefense_with_answer	33b2ae4b0cf43018

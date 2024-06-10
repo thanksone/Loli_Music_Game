@@ -54,14 +54,14 @@ void StartScene::Initialize() {
     }
 
 
-    /*btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, halfH / 2 + 200 , 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-160 , 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, halfH / 2 + 275, 125, 30, 32, 255, 0.5, 0.5));*/
+    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-85, 125, 30, 32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/san" +sancheck+"settingdirt.png", "stage-select/san" +sancheck+"settingfloor.png", w-80, 10, 70, 70);
+    /*btn = new Engine::ImageButton("stage-select/san" +sancheck+"settingdirt.png", "stage-select/san" +sancheck+"settingfloor.png", w-80, 10, 70, 70);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
-    AddNewControlObject(btn);
+    AddNewControlObject(btn);*/
 
     btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, h-160, 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
@@ -76,7 +76,7 @@ void StartScene::Terminate() {
     IScene::Terminate();
 }
 void StartScene::PlayOnClick(int stage) {
-    Engine::GameEngine::GetInstance().ChangeScene("stage-select");
+    Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 void StartScene::SettingsOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("settings");
