@@ -18,6 +18,7 @@ public:
     void EditOnClick();
     void SongSelectOnClick();
     void CharacterSelectOnClick();
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Getbgm();
 
 };
 
