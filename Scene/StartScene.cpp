@@ -60,7 +60,7 @@ void StartScene::Initialize() {
     }
 
 
-    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-180 , 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-195 , 300, 180);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));

@@ -28,17 +28,17 @@ void MainScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&MainScene::SettingsOnClick, this));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  w- 320, h-160, 300, 150);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  w- 320, h-175, 300, 180);
     btn->SetOnClickCallback(std::bind(&MainScene::EditOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Edit mode", "Black-Magic-2.ttf", 48, w-170, h-85, 125, 30, 32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  halfW-150, h-160, 300, 150);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  halfW-150, h-175, 300, 180);
     btn->SetOnClickCallback(std::bind(&MainScene::SongSelectOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Song", "Black-Magic-2.ttf", 48, halfW, h-85, 125, 30, 32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  300, h-160, 300, 150);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  300, h-175, 300, 180);
     btn->SetOnClickCallback(std::bind(&MainScene::CharacterSelectOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("character", "Black-Magic-2.ttf", 48, 450, h-85, 125, 30, 32, 255, 0.5, 0.5));
