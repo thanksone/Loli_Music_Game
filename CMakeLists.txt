@@ -98,6 +98,10 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Account/User.cpp
         Character/Loli.hpp
         Character/Loli.cpp
+        Scene/SongSelectScene.cpp
+        Scene/SongSelectScene.hpp
+        Scene/CharacterSelectScene.cpp
+        Scene/CharacterSelectScene.hpp
         #        UI/Component/TextInput.cpp
 #        UI/Component/TextInput.hpp
 )
