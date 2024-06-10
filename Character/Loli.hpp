@@ -5,9 +5,10 @@
 class Loli : public Engine::Image {
 private:
     std::string name;
-    int san;
+    int fullsan, san;
 public:
     int GetSan();
+    int GetFullSan();
     void ChangeSan(int val);
 };
 #endif //LOLI_HPP

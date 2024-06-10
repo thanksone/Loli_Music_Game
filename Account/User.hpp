@@ -18,5 +18,6 @@ public:
     void AddCharacter(Loli ll);
     void ChangeOnField(int p);
     void ChangeSan(int val);
+    bool SanCheck();
 };
 #endif //_USER_HPP
