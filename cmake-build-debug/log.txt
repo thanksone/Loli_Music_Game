@@ -4,19 +4,17 @@
 [INFO] There are total 1 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
-[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 120
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 300x150
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodfloor.png
-[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 48
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png scaled to 50x50
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingfloor.png
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 120
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png scaled to 300x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingdirt.png scaled to 50x50
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingdirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingfloor.png
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png scaled to 400x150
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
 [INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 48
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
@@ -28,26 +26,28 @@
 [INFO] Changed to settings scene
 [INFO] stopped audio (sample)
 [INFO] Changed to start scene
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
 [INFO] Game Terminating...
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Destroyed Resource<image>: stage-select/end.png
-[INFO] Destroyed Resource<image>: stage-select/bar.png?190x4
 [INFO] Destroyed Resource<image>: stage-select/slider-blue.png
 [INFO] Destroyed Resource<image>: stage-select/slider.png
+[INFO] Destroyed Resource<image>: stage-select/bar.png?190x4
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?400x150
+[INFO] Destroyed Resource<image>: stage-select/sanbadsettingdirt.png?50x50
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<image>: stage-select/sanbadfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?50x50
-[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?400x150
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x150
+[INFO] Destroyed Resource<image>: stage-select/sanbadsettingfloor.png
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?300x150
+[INFO] Destroyed Resource<image>: stage-select/sanbadsettingdirt.png
 [INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?28
 [INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?48
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?48
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?120
 [INFO] Destroyed<sample_instance>: select.ogg
 [INFO] Destroyed Resource<audio>: select.ogg
