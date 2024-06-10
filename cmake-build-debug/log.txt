@@ -24,21 +24,12 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png scaled to 300x150
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
-[INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 48
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 48
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
 [INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
-[INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 28
-[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
-[INFO] Changed to settings scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/startscene.ogg
-[INFO] Changed to start scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
-[INFO] Changed to main scene
-[INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 28
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to settings scene
 [INFO] stopped audio (sample)
@@ -80,9 +71,9 @@
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
 [INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x150
-[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?28
-[INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?48
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?28
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
 [INFO] Destroyed<sample_instance>: mainscene.ogg
 [INFO] Destroyed<sample_instance>: startscene.ogg
