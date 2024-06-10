@@ -9,8 +9,10 @@
 #include "PlayScene.hpp"
 #include "UI/Component/Slider.hpp"
 #include "SettingsScene.hpp"
+#include "MainScene.hpp"
 
 void SettingsScene::Initialize() {
+
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -45,6 +47,7 @@ void SettingsScene::Initialize() {
             new Engine::Label("SFX: ", "Raslani-Kavaliar-Kaiser-1.ttf", 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
                               0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+
     bgmInstance = AudioHelper::PlaySample("mainscene.ogg", true, AudioHelper::BGMVolume);
     sliderBGM->SetValue(AudioHelper::BGMVolume);
     sliderSFX->SetValue(AudioHelper::SFXVolume);

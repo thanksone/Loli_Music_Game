@@ -68,17 +68,26 @@ void MainScene::ScoreboardOnClick() {
     Engine::GameEngine::GetInstance().ChangeScene("scoreboard");
 }
 void MainScene::SettingsOnClick() {
+
     Engine::GameEngine::GetInstance().ChangeScene("settings");
 }
 
 void MainScene::EditOnClick() {
+
     Engine::GameEngine::GetInstance().ChangeScene("edit");
 }
 
 void MainScene::SongSelectOnClick() {
+
     Engine::GameEngine::GetInstance().ChangeScene("song-select");
 }
 
 void MainScene::CharacterSelectOnClick() {
+
     Engine::GameEngine::GetInstance().ChangeScene("character-select");
 }
+
+std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> MainScene::Getbgm() {
+    return bgmInstance;
+}
+

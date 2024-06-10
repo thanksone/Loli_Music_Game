@@ -20,6 +20,7 @@ public:
     void BGMSlideOnValueChanged(float value);
 
     void SFXSlideOnValueChanged(float value);
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> nowbgm;
 };
 
 #endif // SettingsScene_HPP
