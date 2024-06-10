@@ -67,9 +67,12 @@ void StartScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));
+    bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
 
 }
 void StartScene::Terminate() {
+    AudioHelper::StopSample(bgmInstance);
+    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
 void StartScene::PlayOnClick(int stage) {
