@@ -54,17 +54,17 @@ void StartScene::Initialize() {
     }
 
 
-    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-160 , 300, 150);
+    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-180 , 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-85, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));
 
 
 
-    btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, h-160, 300, 150);
+    /*btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, h-160, 300, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));*/
     bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
 
 }

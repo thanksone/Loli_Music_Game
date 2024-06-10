@@ -28,6 +28,11 @@ void MainScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&MainScene::SettingsOnClick, this));
     AddNewControlObject(btn);
 
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png",  w- 300, h-160, 300, 150);
+    btn->SetOnClickCallback(std::bind(&MainScene::EditOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Edit mode", "Black-Magic-2.ttf", 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));
+
     /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
     btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
@@ -64,4 +69,8 @@ void MainScene::ScoreboardOnClick() {
 }
 void MainScene::SettingsOnClick() {
     Engine::GameEngine::GetInstance().ChangeScene("settings");
+}
+
+void MainScene::EditOnClick() {
+    Engine::GameEngine::GetInstance().ChangeScene("edit");
 }
