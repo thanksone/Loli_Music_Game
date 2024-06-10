@@ -23,7 +23,7 @@
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
-    gon = pi = on = total = noted = 0;
+    gon = pi = on = total = 0;
     ReadScore();
     ConstructUI();
 }
@@ -178,7 +178,7 @@ void EditScene::ConstructNote(note N){
     onField.push_back(N);
     Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
     btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
-    AddNewControlObject(btn);
+    addNewControlObject(btn);
 }
 void EditScene::Display(){
     int g = gon, p = pi;
