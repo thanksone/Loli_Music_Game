@@ -27,6 +27,7 @@ void StartScene::Initialize() {
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
+    std::cout << w << " " << h << "\n";
     Engine::ImageButton* btn;
     std::string account,sanity,maxsan;
     std::string filename="Resource/account-status/guest.txt";

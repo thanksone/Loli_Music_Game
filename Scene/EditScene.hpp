@@ -8,11 +8,16 @@
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
-
+#include "Engine/Group.hpp"
+#include "Engine/IControl.hpp"
+#include "Engine/IObject.hpp"
 struct note{
     int type, ghost;
     float len, at, speed;
     note(int t, int g, float l, float a, float s): type(t), ghost(g), len(l), at(a), speed(s){}
+    bool operator==(note N){
+        return type == N.type && ghost == N.ghost && len == N.len && at == N.at && speed == N.speed;
+    }
 };
 class EditScene final : public Engine::IScene {
 private:
@@ -23,7 +28,9 @@ protected:
     std::vector<std::vector<note>> Note;
     std::vector<std::vector<int>> State; // bpm, meters
     std::vector<std::vector<Engine::Label*>> Word;
-    std::vector<note> onField;
+    std::vector<std::pair<int, note>> onField;
+    std::vector<Engine::IControl*> NoteButtonCtrl;
+    std::vector<Engine::IObject*> NoteButtonObj;
 public:
     std::string filename;
     int halfW, halfH;
@@ -45,7 +52,11 @@ public:
     void FindPos(int pos);
     void ReadScore();
     void ConstructUI();
-    void ConstructNote(note N);
+    void ConstructNote(int g, note N);
     void Display();
+    void DeleteNoteClick(int n);
+    void DeleteNoteButton(int n);
+    void AddNoteButton(int g, note N);
+    void ClearScene();
 };
 #endif // EDITSCENE_HPP

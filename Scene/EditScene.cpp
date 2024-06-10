@@ -26,6 +26,8 @@ void EditScene::Initialize() {
     gon = pi = on = total = 0;
     ReadScore();
     ConstructUI();
+    ClearScene();
+    Display();
 }
 void EditScene::Terminate() {
     IScene::Terminate();
@@ -60,9 +62,7 @@ void EditScene::OnKeyDown(int keyCode) {
     else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
         State[gon][on] /= 10;
     }
-    RemoveObject(Word[gon][on]->GetObjectIterator());
-    Word[gon][on]=new Engine::Label(std::to_string(State[gon][on]),"pirulen.ttf", 48, halfW-200, halfH/4+50, 255, 255, 255, 255, 0, 0.5);
-    addObject(1,Word[gon][on]);
+    Word[gon][on]->Text = std::to_string(State[gon][on]);
 }
 void EditScene::BackOnClick(){
     SaveOnClick();
@@ -86,6 +86,7 @@ void EditScene::InsertOnClick(int type){
 }
 void EditScene::AddOnClick(){
     State.push_back(State[State.size() - 1]);
+    //TODO : label position
     Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
     Note.push_back({});
 }
@@ -94,6 +95,7 @@ void EditScene::LPMOnClick(int val){
     lpm += val;
 }
 void EditScene::POSSliderOnValueChanged(float value){
+    ClearScene();
     FindPos(std::min((int)((float)total * value), total - 4));
     Display();
 }
@@ -120,6 +122,7 @@ void EditScene::ReadScore(){
     for(int i = 1; i <= gon; i++){
         fin >> bpm >> time >> notes;
         State.push_back({bpm, time, notes});
+        //TODO : label position
         Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
         for(int j = 0; j < notes; j++){
             fin >> type >> ghost >> len >> at >> speed;
@@ -130,7 +133,7 @@ void EditScene::ReadScore(){
 }
 void EditScene::ConstructUI(){
     Engine::ImageButton* btn;
-
+    //TODO : button position
     btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 7 / 4 - 50, 300, 150);
     btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
     AddNewControlObject(btn);
@@ -173,19 +176,46 @@ void EditScene::ConstructUI(){
     AddNewControlObject(sliderPOS);
     sliderPOS->SetValue(0);
 }
-void EditScene::ConstructNote(note N){
+void EditScene::ConstructNote(int g, note N){
     int p = onField.size();
-    onField.push_back(N);
-    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
-    addNewControlObject(btn);
+    onField.push_back({g, N});
+    AddNoteButton(g, N);
 }
 void EditScene::Display(){
     int g = gon, p = pi;
     for(int i = 0; i < 4; i++, p++){
         while(p >= State[g][1]) g++, p = 0;
         for(auto [type, ghost, len, at, speed] : Note[g]) {
-            if (at >= p && at < p + 1) ConstructNote(note(type, ghost, len, at, speed));
+            if (at >= p && at < p + 1) ConstructNote(g, note(type, ghost, len, at, speed));
         }
     }
+}
+void EditScene::DeleteNoteClick(int n){
+    auto [g, tmp] = onField[n];
+    for(int i = 0; i < Note[g].size(); i++){
+        if(Note[g][i] == tmp){
+            Note[g].erase(Note[g].begin() + i);
+            break;
+        }
+    }
+    DeleteNoteButton(n);
+}
+void EditScene::DeleteNoteButton(int n){
+    RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonObj[n]->GetObjectIterator());
+    NoteButtonCtrl[n] = nullptr, NoteButtonObj[n] = nullptr;
+}
+void EditScene::AddNoteButton(int g, note N){
+    //TODO : button position
+    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
+    NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back(dynamic_cast<IObject*>(btn));
+    addObject(true, NoteButtonObj.back());
+    addControl(true, btn);
+}
+void EditScene::ClearScene(){
+    onField.clear();
+    for(int i = 0; i < NoteButtonCtrl.size(); i++){
+        if(NoteButtonCtrl[i]) DeleteNoteButton(i);
+    }
+    NoteButtonCtrl.clear(), NoteButtonObj.clear();
 }
