@@ -29,9 +29,6 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to song-select scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
-[INFO] Changed to song-select scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated
