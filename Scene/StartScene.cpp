@@ -18,7 +18,6 @@
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
-#include "Scene/StartScene.h"
 
 std::string sancheck;
 
@@ -32,6 +31,12 @@ void StartScene::Initialize() {
     std::string filename="Resource/account-status/guest.txt";
     std::ifstream fin(filename);
 
+    std::string namae="guest";
+    //playing();
+    /*if(playing.SanCheck()) {
+        std::cout<<"ouob\n";
+    }*/
+
     fin>>account>>sanity>>maxsan;
     if(std::stoi(sanity)<std::stoi(maxsan)/5) {
         sancheck="bad";
@@ -41,6 +46,7 @@ void StartScene::Initialize() {
     //std::cout<<account<<" "<<stoi(sanity)<<" "<<maxsan<<"\n";
 
     fin.close();
+
     std::string dirtimg="stage-select/san" +sancheck+"dirt.png";
     std::string floorimg="stage-select/san" +sancheck+"floor.png";
     std::string fontname;

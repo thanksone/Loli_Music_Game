@@ -8,9 +8,12 @@
 #include <allegro5/allegro_audio.h>
 #include <memory>
 #include "Engine/IScene.hpp"
+#include "Account/User.hpp"
+
 class StartScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
+    //User playing();
 public:
     explicit StartScene() = default;
     void Initialize() override;
@@ -18,5 +21,6 @@ public:
     void PlayOnClick(int stage);
     void SettingsOnClick(int stage);
     void EditOnClick();
+
 };
 #endif //INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_STARTSCENE_H
