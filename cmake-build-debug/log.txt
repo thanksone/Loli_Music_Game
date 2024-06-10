@@ -20,10 +20,6 @@
 [INFO] Changed to stage-select scene
 [INFO] stopped audio (sample)
 [INFO] Changed to start scene
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
-[INFO] Changed to stage-select scene
-[INFO] stopped audio (sample)
-[INFO] Changed to start scene
 [INFO] Game Terminating...
 [INFO] Game terminated
 [INFO] Game end
