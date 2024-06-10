@@ -2,6 +2,8 @@
 #define SettingsScene_HPP
 
 #include <allegro5/allegro_audio.h>
+#include <vector>
+
 #include <memory>
 #include "Engine/IScene.hpp"
 
@@ -20,7 +22,7 @@ public:
     void BGMSlideOnValueChanged(float value);
 
     void SFXSlideOnValueChanged(float value);
-    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> nowbgm;
+
 };
 
 #endif // SettingsScene_HPP
