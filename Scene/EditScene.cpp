@@ -23,14 +23,14 @@
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
-    gon = pi = on = total = 0;
+    gon = pi = on = total = noted = 0;
     ReadScore();
     ConstructUI();
 }
 void EditScene::Terminate() {
     IScene::Terminate();
 }
-void EditScene::Update(float deltaTime) {
+void EditScene::Update(float deltatime) {
 
 }
 void EditScene::Draw() const {
@@ -94,14 +94,18 @@ void EditScene::LPMOnClick(int val){
     lpm += val;
 }
 void EditScene::POSSliderOnValueChanged(float value){
+    FindPos(std::min((int)((float)total * value), total - 4));
+    Display();
+}
+void EditScene::FindPos(int pos){
     int sum = 0, i, j;
     for(i = 1; i < State.size(); i++){
-        if((float)(sum + State[i][2]) / (float)total > value) break;
-        sum += State[i][2];
+        if(sum + State[i][1] > pos) break;
+        sum += State[i][1];
     }
     gon = i;
-    for(j = 0; j < State[i][2]; j++){
-        if((float)(sum + j) / (float)total > value) break;
+    for(j = 0; j < State[i][1]; j++){
+        if(sum + j > pos) break;
     }
     pi = j;
 }
@@ -167,6 +171,21 @@ void EditScene::ConstructUI(){
     sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
     sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderPOS);
-    AddNewObject(new Engine::Label("POS: ", "WOODCUTTER-BCN-Style-1.ttf", 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,0.5));
     sliderPOS->SetValue(0);
+}
+void EditScene::ConstructNote(note N){
+    int p = onField.size();
+    onField.push_back(N);
+    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
+    AddNewControlObject(btn);
+}
+void EditScene::Display(){
+    int g = gon, p = pi;
+    for(int i = 0; i < 4; i++, p++){
+        while(p >= State[g][1]) g++, p = 0;
+        for(auto [type, ghost, len, at, speed] : Note[g]) {
+            if (at >= p && at < p + 1) ConstructNote(note(type, ghost, len, at, speed));
+        }
+    }
 }
