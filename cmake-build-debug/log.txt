@@ -18,26 +18,20 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
 [INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 48
-[INFO] Loaded Resource<audio>: Resource/audios/select.ogg
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Loaded Resource<audio>: Resource/audios/mainscene.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/startscene.ogg
 [INFO] Changed to start scene
 [INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/startscene.ogg
 [INFO] Changed to start scene
 [INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
-[INFO] Changed to main scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/startscene.ogg
-[INFO] Changed to start scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/startscene.ogg
@@ -56,7 +50,7 @@
 [INFO] Destroyed Resource<font>: WOODCUTTER-BCN-Style-1.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
-[INFO] Destroyed<sample_instance>: select.ogg
+[INFO] Destroyed<sample_instance>: mainscene.ogg
 [INFO] Destroyed<sample_instance>: startscene.ogg
-[INFO] Destroyed Resource<audio>: select.ogg
+[INFO] Destroyed Resource<audio>: mainscene.ogg
 [INFO] Destroyed Resource<audio>: startscene.ogg

@@ -40,7 +40,7 @@ void MainScene::Initialize() {
     AddNewObject(new Engine::Label("Scoreboard", "WOODCUTTER-BCN-Style-1.ttf", 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
-	bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
+	bgmInstance = AudioHelper::PlaySample("mainscene.ogg", true, AudioHelper::BGMVolume);
 }
 void MainScene::Terminate() {
 	AudioHelper::StopSample(bgmInstance);
