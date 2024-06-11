@@ -31,9 +31,9 @@ void StartScene::Initialize() {
     std::string filename="Resource/account-status/guest.txt";
     std::ifstream fin(filename);
 
-    std::string namae="guest";
-    //playing();
-    /*if(playing.SanCheck()) {
+
+
+    /*if(user.SanCheck()) {
         std::cout<<"ouob\n";
     }*/
 
@@ -53,10 +53,12 @@ void StartScene::Initialize() {
     if(sancheck=="bad"){
         fontname="Raslani-Kavaliar-Kaiser-1.ttf";
         AddNewObject(new Engine::Label("Abyssal Tunes", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
+        bgmInstance = AudioHelper::PlaySample("sanbadstartscene.ogg", true, AudioHelper::BGMVolume);
     }
     else{
         fontname="Black-Magic-2.ttf";
         AddNewObject(new Engine::Label("Heartbeat Rhythmo", fontname, 120, halfW, halfH / 3 + 50, 225,180,182, 255, 0.5, 0.5));
+        bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
     }
 
 
@@ -71,7 +73,6 @@ void StartScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));*/
-    bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
 
 }
 void StartScene::Terminate() {

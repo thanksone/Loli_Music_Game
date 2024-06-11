@@ -14,6 +14,8 @@
 #include "MainScene.hpp"
 
 void MainScene::Initialize() {
+
+
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -83,7 +85,6 @@ void MainScene::SongSelectOnClick() {
 }
 
 void MainScene::CharacterSelectOnClick() {
-
     Engine::GameEngine::GetInstance().ChangeScene("character-select");
 }
 

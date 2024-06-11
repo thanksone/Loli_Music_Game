@@ -4,10 +4,15 @@
 #include <memory>
 #include "Engine/IScene.hpp"
 
+struct song {
+    std::string songname,songlan;
+    int ez,hd,in;
+};
+
 class SongSelectScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
-    std::vector<std::string> songlist;
+    std::vector<song> songlist;
     int page=0;
     int maxpage;
 public:
