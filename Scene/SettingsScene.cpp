@@ -24,11 +24,11 @@ void SettingsScene::Initialize() {
     AddNewControlObject(btn);
 
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH * 3 / 2 +70,
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 150, halfH * 3 / 2 +70,
                               300, 150);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("back to start", "Raslani-Kavaliar-Kaiser-1.ttf", 48, halfW, halfH * 3 / 2+145, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("back to start", "Black-Magic-2.ttf", 48, halfW, halfH * 3 / 2+145, 125, 30, 32, 255, 0.5, 0.5));
 
     Slider *sliderBGM, *sliderSFX;
     sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
@@ -36,14 +36,14 @@ void SettingsScene::Initialize() {
             std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderBGM);
     AddNewObject(
-            new Engine::Label("BGM: ", "Raslani-Kavaliar-Kaiser-1.ttf", 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,
+            new Engine::Label("BGM: ", "Black-Magic-2.ttf", 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,
                               0.5));
     sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 2, 190, 4);
     sliderSFX->SetOnValueChangedCallback(
             std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderSFX);
     AddNewObject(
-            new Engine::Label("SFX: ", "Raslani-Kavaliar-Kaiser-1.ttf", 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
+            new Engine::Label("SFX: ", "Black-Magic-2.ttf", 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
                               0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 
