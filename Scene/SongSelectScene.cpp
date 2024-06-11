@@ -17,8 +17,8 @@
 #include "UI/Component/Slider.hpp"
 #include "SongSelectScene.hpp"
 
-bool cmp1(std::string &a,std::string &b){
-    return a<b;
+bool cmp1(song &a,song &b){
+    return a.songname<b.songname;
 }
 int cmptype=1;
 void SongSelectScene::Initialize() {
@@ -30,12 +30,13 @@ void SongSelectScene::Initialize() {
     Engine::ImageButton* btn;
 
     songlist.clear();
-    std::string songname;
-    std::ifstream fin("Resource/songs/songlist.txt");
+    std::string songname, songlan;
+    std::ifstream fin("Resource/audios/songs/songlist.txt");
     //std::cout<<"ouob\n";
-    while(fin>>songname){
+    while(fin>>songname && fin>>songlan){
         //std::cout<<"douo\n";
-        songlist.push_back(songname);
+        songlist.push_back(
+            {songname,songlan});
         std::cout<<songname<<"\n";
     }
     maxpage= songlist.size();
@@ -73,11 +74,14 @@ void SongSelectScene::Initialize() {
     AddNewObject(new Engine::Label("Scoreboard", "WOODCUTTER-BCN-Style-1.ttf", 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
-	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page]+".ogg", true, AudioHelper::BGMVolume);
+	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].songname+".ogg", true, AudioHelper::BGMVolume);
     Engine::Image* img;
-    img=new Engine::Image("songs/"+songlist[page]+".png", halfW, halfH-100,720,720,0.5,0.5);
+    img=new Engine::Image("songs/"+songlist[page].songname+".png", halfW, halfH-100,720,720,0.5,0.5);
     addObject(1,img);
-    AddNewObject(new Engine::Label(songlist[page], "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    if(songlist[page].songlan=="english") {
+        AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    }
+    else AddNewObject(new Engine::Label(songlist[page].songname, "はなぞめフォント.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
 }
 void SongSelectScene::Terminate() {
 	AudioHelper::StopSample(bgmInstance);
