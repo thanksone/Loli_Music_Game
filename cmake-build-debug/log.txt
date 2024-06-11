@@ -24,45 +24,9 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 75x75
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
-[INFO] Loaded Resource<audio>: Resource/audios/characterselect.ogg
-[INFO] Created<sample_instance>: Resource/audios/characterselect.ogg
-[INFO] Changed to character-select scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
-[INFO] Changed to main scene
-[INFO] stopped audio (sample)
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 100x100
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
 [INFO] Loaded Resource<audio>: Resource/audios/songs/astronomia.ogg
 [INFO] Created<sample_instance>: Resource/audios/songs/astronomia.ogg
-[INFO] Changed to song-select scene
-[INFO] Game Terminating...
-[INFO] stopped audio (sample)
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Destroyed Resource<image>: stage-select/pinkright.png
-[INFO] Destroyed Resource<image>: stage-select/blueright.png
-[INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
-[INFO] Destroyed Resource<image>: stage-select/pinkleft.png
-[INFO] Destroyed Resource<image>: stage-select/blueleft.png
-[INFO] Destroyed Resource<image>: stage-select/blueleft.png?75x75
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
-[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x180
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
-[INFO] Destroyed<sample_instance>: characterselect.ogg
-[INFO] Destroyed<sample_instance>: mainscene.ogg
-[INFO] Destroyed<sample_instance>: songs/astronomia.ogg
-[INFO] Destroyed<sample_instance>: startscene.ogg
-[INFO] Destroyed Resource<audio>: characterselect.ogg
-[INFO] Destroyed Resource<audio>: mainscene.ogg
-[INFO] Destroyed Resource<audio>: songs/astronomia.ogg
-[INFO] Destroyed Resource<audio>: startscene.ogg
