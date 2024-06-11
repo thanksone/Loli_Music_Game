@@ -23,16 +23,15 @@ class EditScene final : public Engine::IScene {
 private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
-	int SpeedMult;
-    int gon, pi, on, total, lpm;
-    float ghostW, lineH;
+    int pi, on, total, lpm, x0, holdtype;
+    float ghostW, lineH, len;
     std::vector<std::vector<note>> Note;
-    std::vector<std::vector<int>> State; // bpm, meters
-    std::vector<std::vector<Engine::Label*>> Word;
-    std::vector<std::pair<int, note>> onField;
+    std::vector<int> BPM;
+    std::vector<Engine::Label*> Word;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<Engine::IObject*> NoteButtonObj;
     std::vector<Engine::Label*> Line;
+    std::vector<note> onField;
     Engine::Image* imgTarget;
 public:
     std::string filename;
@@ -60,9 +59,8 @@ public:
     void DisplayLine();
     void DeleteNoteClick(int n);
     void DeleteNoteButton(int n);
-    void AddNoteButton(int g, note N);
+    void AddNoteButton(int type, float len, int x, int y);
     void ClearNote();
     void ClearLine();
-
 };
 #endif // EDITSCENE_HPP

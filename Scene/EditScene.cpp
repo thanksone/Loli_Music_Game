@@ -23,7 +23,7 @@
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
-    gon = 1, pi = on = total = 0, lpm = 1;
+    pi = on = total = 0, lpm = 1;
     ghostW = 250, lineH = 250;
     imgTarget = nullptr;
     ReadScore();
@@ -49,7 +49,7 @@ void EditScene::OnMouseDown(int button, int mx, int my) {
 void EditScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
     if(!imgTarget) return;
-    int x = mx / ghostW, y = my = lineH;
+    int x = (mx - x0) / ghostW, y = my / lineH;
     if (mx < 0 || mx >= (halfW << 1) || my < 0 || my >= (halfH << 1)) {
         imgTarget->Visible = false;
         return;
@@ -60,33 +60,39 @@ void EditScene::OnMouseMove(int mx, int my) {
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
+    int x = (mx - x0) / ghostW, y = my / round(lineH * lpm);
+    if(!imgTarget || mx < x0 || mx >= x0 + 6 * ghostW || my < 0 || my >= 4 * lineH){
+        imgTarget = nullptr;
+        return;
+    }
+    AddNoteButton(holdtype, len, x0 + x * ghostW + ghostW / 2, y * lineH);
 }
 void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
-    if(on == 0) return;
+    if(!on) return;
     if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
-        State[gon][on] *= 10;
-        State[gon][on] += ('0'+keyCode-ALLEGRO_KEY_0);
+        BPM[pi + on - 1] *= 10;
+        BPM[pi + on - 1] += ('0'+keyCode-ALLEGRO_KEY_0);
     }
     else if(keyCode >= ALLEGRO_KEY_PAD_0 && keyCode <= ALLEGRO_KEY_PAD_9) {
-        State[gon][on] *= 10;
-        State[gon][on] +=('A'+keyCode-ALLEGRO_KEY_A);
+        BPM[pi + on - 1] *= 10;
+        BPM[pi + on - 1] +=('A'+keyCode-ALLEGRO_KEY_A);
     }
     else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
-        State[gon][on] /= 10;
+        BPM[pi + on - 1] /= 10;
     }
-    Word[gon][on]->Text = std::to_string(State[gon][on]);
+    Word[pi + on - 1]->Text = std::to_string(BPM[pi + on - 1]);
 }
 void EditScene::BackOnClick(){
     SaveOnClick();
-    Engine::GameEngine::GetInstance().ChangeScene("start");
+    Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 void EditScene::SaveOnClick(){
     std::ofstream fout;
     fout.open("Resource/scoreboard.txt");
-    fout << State.size() << "\n";
-    for(int i = 0; i < State.size(); i++){
-        for(int x : State[i]) fout << x << " ";
+    fout << total << "\n";
+    for(int i = 0; i < total; i++){
+        fout << BPM[i] << " " << Note[i].size() << "\n";
         for(auto [type, ghost, len, at, speed] : Note[i]){
             fout << type << " " << len << " " << ghost << " " << time << " " << speed << "\n";
         }
@@ -98,9 +104,9 @@ void EditScene::InsertOnClick(int type){
     on = type;
 }
 void EditScene::AddOnClick(){
-    State.push_back(State[State.size() - 1]);
+    BPM.push_back(BPM.back());
     //TODO : label position
-    Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
+    Word.push_back(new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5));
     Note.push_back({});
 }
 void EditScene::LPMOnClick(int val){
@@ -112,37 +118,22 @@ void EditScene::LPMOnClick(int val){
 }
 void EditScene::POSSliderOnValueChanged(float value){
     ClearNote();
-    FindPos(std::max(0, std::min((int)((float)total * value), total - 4)));
+    pi = std::max(0, std::min((int)((float)total * value), total - 4));
     DisplayNote();
 }
-void EditScene::FindPos(int pos){
-    std::cout << "FindPos\n";
-    int sum = 0, i, j;
-    for(i = 1; i < State.size(); i++){
-        if(sum + State[i][1] > pos) break;
-        sum += State[i][1];
-    }
-    gon = i;
-    if(State.size() <= i) return;
-    for(j = 0; j < State[i][1]; j++){
-        if(sum + j > pos) break;
-    }
-    pi = j;
-    std::cout << i << " " << j << "\n";
-}
 void EditScene::ReadScore(){
-    State.clear(), Word.clear(), Note.clear();
+    BPM.clear(), Word.clear(), Note.clear();
     std::string file = "Resource/EditScore/" + filename;
     std::ifstream fin(file);
     int bpm, time, notes, type, ghost;
     float len, at, speed;
-    fin >> gon;
-    State.push_back({0, 0, 0}), Word.push_back({nullptr, nullptr}), Note.push_back({});
-    for(int i = 1; i <= gon; i++){
-        if(!(fin >> bpm >> time >> notes)) break;
-        State.push_back({bpm, time, notes});
+    fin >> total;
+    BPM.push_back(0), Word.push_back(nullptr), Note.push_back({});
+    for(int i = 1; i <= total; i++){
+        if(!(fin >> bpm >> notes)) break;
+        BPM.push_back(bpm);
         //TODO : label position
-        Word.push_back({new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5), new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5)});
+        Word.push_back(new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5));
         for(int j = 0; j < notes; j++){
             fin >> type >> ghost >> len >> at >> speed;
             Note[i].push_back({type, ghost, len, at, speed});
@@ -195,18 +186,10 @@ void EditScene::ConstructUI(){
     AddNewControlObject(sliderPOS);
     sliderPOS->SetValue(0);
 }
-void EditScene::ConstructNote(int g, note N){
-    int p = onField.size();
-    onField.push_back({g, N});
-    AddNoteButton(g, N);
-}
 void EditScene::DisplayNote(){
-    int g = gon, p = pi;
-    for(int i = 0; i < 4; i++, p++){
-        while(g < State.size() && p >= State[g][1]) g++, p = 0;
-        if(g >= State.size()) break;
-        for(auto [type, ghost, len, at, speed] : Note[g]) {
-            if (at >= p && at < p + 1) ConstructNote(g, note(type, ghost, len, at, speed));
+    for(int i = pi; i < pi + 4; i++){
+        for(note N : Note[i]){
+            AddNoteButton(N.type, N.len , x0 + N.ghost * ghostW + ghostW / 2, halfH * 2 - (i - pi + N.at) * lineH * (float)lpm);
         }
     }
 }
@@ -216,16 +199,15 @@ void EditScene::DisplayLine(){
     for(int i = 0; i < 60; i++) foo += '_';
     for(int i = 0; i < 90; i++) bar += '_';
     for(float i = 1000; i > 0; i -= lineH){
-        line = new Engine::Label((int)round(i) % 250? bar : foo, "pirulen.ttf", (int)round(i) % 250? 20 : 30, 40, (int)i, 255, 255, 255, 255, 0, 1);
+        line = new Engine::Label((int)round(i) % (int)round((float)lpm * lineH)? bar : foo, "pirulen.ttf", (int)round(i) % (int)round((float)lpm * lineH)? 20 : 30, x0, (int)i, 255, 255, 255, 255, 0, 1);
         Line.push_back(line);
         addObject(1, line);
     }
     std::cout << "\n";
 }
-void EditScene::DeleteNoteClick(int n){
-    auto [g, tmp] = onField[n];
-    for(int i = 0; i < Note[g].size(); i++){
-        if(Note[g][i] == tmp){
+void EditScene::DeleteNoteClick(int p){
+    for(int i = 0; i < Note[p].size(); i++){
+        if(Note[p][i] == ){
             Note[g].erase(Note[g].begin() + i);
             break;
         }
@@ -236,9 +218,10 @@ void EditScene::DeleteNoteButton(int n){
     RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonObj[n]->GetObjectIterator());
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n] = nullptr;
 }
-void EditScene::AddNoteButton(int g, note N){
+void EditScene::AddNoteButton(int type, float len, int x, int y){
     //TODO : button position
-    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
+    onField.push_back(Note())
+    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150, 0.5, 0.5);
     btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
     NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back(dynamic_cast<IObject*>(btn));
     addObject(true, NoteButtonObj.back());
@@ -246,6 +229,7 @@ void EditScene::AddNoteButton(int g, note N){
 }
 void EditScene::ClearNote(){
     onField.clear();
+    for(int i = 0; i < 4; i++) L[G[i]] = -1, G[i] = 0;
     for(int i = 0; i < NoteButtonCtrl.size(); i++){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }
