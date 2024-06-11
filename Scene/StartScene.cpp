@@ -31,9 +31,9 @@ void StartScene::Initialize() {
     std::string filename="Resource/account-status/guest.txt";
     std::ifstream fin(filename);
 
-    std::string namae="guest";
-    //playing();
-    /*if(playing.SanCheck()) {
+
+
+    /*if(user.SanCheck()) {
         std::cout<<"ouob\n";
     }*/
 

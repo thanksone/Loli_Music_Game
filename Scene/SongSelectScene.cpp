@@ -65,7 +65,9 @@ void SongSelectScene::Initialize() {
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page]+".ogg", true, AudioHelper::BGMVolume);
-    //Engine::Sprite("songs/"+songlist[page]+".png", halfW, halfH);
+    Engine::Image* img;
+    img=new Engine::Image("songs/"+songlist[page]+".png", halfW, halfH,720,720,0.5,0.5);
+    addObject(1,img);
 }
 void SongSelectScene::Terminate() {
 	AudioHelper::StopSample(bgmInstance);

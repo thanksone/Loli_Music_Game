@@ -11,6 +11,7 @@ private:
     std::vector<std::pair<int, float>> BestRecord;
     int onField;
 public:
+    User(){};
     User(std::string namae, std::string pa55word);
     std::string GetName();
     bool cmp(std::string pa55word);

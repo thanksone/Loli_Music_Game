@@ -14,7 +14,6 @@
 #include "Scene/MainScene.hpp"
 #include "Scene/SongSelectScene.hpp"
 
-extern User user;
 #include "Scene/EditScene.hpp"
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);
