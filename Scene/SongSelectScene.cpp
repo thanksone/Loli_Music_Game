@@ -21,6 +21,7 @@ bool cmp1(song &a,song &b){
     return a.songname<b.songname;
 }
 int cmptype=1;
+
 void SongSelectScene::Initialize() {
 
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
