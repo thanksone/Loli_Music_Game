@@ -21,12 +21,28 @@
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 75x75
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png scaled to 300x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 28
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 100x100
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
 [INFO] Loaded Resource<audio>: Resource/audios/songs/astronomia.ogg
 [INFO] Created<sample_instance>: Resource/audios/songs/astronomia.ogg
 [INFO] Changed to song-select scene
@@ -35,8 +51,21 @@
 [INFO] Created<sample_instance>: Resource/audios/songs/OnlyMyRailgun.ogg
 [INFO] Changed to song-select scene
 [INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/songs/astronomia.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/OnlyMyRailgun.ogg
 [INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<audio>: Resource/audios/characterselect.ogg
+[INFO] Created<sample_instance>: Resource/audios/characterselect.ogg
+[INFO] Changed to character-select scene
 [INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
@@ -46,23 +75,35 @@
 [INFO] Game end
 [INFO] Destroyed Resource<image>: stage-select/pinkright.png
 [INFO] Destroyed Resource<image>: stage-select/blueright.png
-[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
+[INFO] Destroyed Resource<image>: stage-select/end.png
+[INFO] Destroyed Resource<image>: stage-select/bar.png?190x4
+[INFO] Destroyed Resource<image>: stage-select/slider-blue.png
+[INFO] Destroyed Resource<image>: stage-select/slider.png
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
 [INFO] Destroyed Resource<image>: stage-select/pinkleft.png
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?300x150
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?75x75
 [INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/sanbadfloor.png
+[INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
 [INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x180
+[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
+[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?28
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed<sample_instance>: characterselect.ogg
 [INFO] Destroyed<sample_instance>: songs/OnlyMyRailgun.ogg
 [INFO] Destroyed<sample_instance>: mainscene.ogg
 [INFO] Destroyed<sample_instance>: songs/astronomia.ogg
 [INFO] Destroyed<sample_instance>: startscene.ogg
+[INFO] Destroyed Resource<audio>: characterselect.ogg
 [INFO] Destroyed Resource<audio>: songs/OnlyMyRailgun.ogg
 [INFO] Destroyed Resource<audio>: mainscene.ogg
 [INFO] Destroyed Resource<audio>: songs/astronomia.ogg

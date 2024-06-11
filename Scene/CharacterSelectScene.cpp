@@ -19,7 +19,7 @@ void CharacterSelectScene::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
     Engine::ImageButton* btn;
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,100, 100);
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 

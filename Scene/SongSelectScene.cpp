@@ -35,7 +35,7 @@ void SongSelectScene::Initialize() {
     maxpage= songlist.size();
     fin.close();
 
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,100, 100);
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
