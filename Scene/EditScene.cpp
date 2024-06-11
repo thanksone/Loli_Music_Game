@@ -23,9 +23,11 @@
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
-    pi = on = total = 0, lpm = 1;
+    pi = 0, on = total = 0, lpm = 1;
     ghostW = 250, lineH = 250;
-    imgTarget = nullptr;
+    x0 = 50;
+    speed = 1;
+    imgTarget.clear();
     ReadScore();
     ConstructUI();
     ClearNote();
@@ -48,24 +50,35 @@ void EditScene::OnMouseDown(int button, int mx, int my) {
 }
 void EditScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
-    if(!imgTarget) return;
+    if (imgTarget.empty()) return;
     int x = (mx - x0) / ghostW, y = my / lineH;
     if (mx < 0 || mx >= (halfW << 1) || my < 0 || my >= (halfH << 1)) {
-        imgTarget->Visible = false;
+        for (Engine::IObject *img : imgTarget) img->Visible = false;
         return;
     }
-    imgTarget->Visible = true;
-    imgTarget->Position.x = x * ghostW;
-    imgTarget->Position.y = y * lineH;
+    for(Engine::IObject *img : imgTarget){
+        img->Visible = true;
+        img->Position.x = x * ghostW;
+        img->Position.y = y * lineH;
+    }
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
-    int x = (mx - x0) / ghostW, y = my / round(lineH * lpm);
-    if(!imgTarget || mx < x0 || mx >= x0 + 6 * ghostW || my < 0 || my >= 4 * lineH){
-        imgTarget = nullptr;
+    my = 1000 - my;
+    int x = (mx - x0) / ghostW, y = my / 250;
+    if(imgTarget.empty() || mx < x0 || mx > x0 + 6 * ghostW || my <= 0 || my > 1000){
+        for(Engine::IObject *img : imgTarget) RemoveObject(img->GetObjectIterator());
+        imgTarget.clear();
         return;
     }
-    AddNoteButton({holdtype, x, len, (float)((1000 - my) % 250) / (float)250, speed}, x0 + x * ghostW + ghostW / 2, y * lineH);
+    my = (int)round((float)(my / lpm) * lineH);
+    note N = {hold, x, len, (float)(my % 250) / (float)250, speed};
+    if(CheckSpaceValid(N, my)){
+        AddNoteButton(N, x0 + x * ghostW + ghostW / 2, my);
+        Note[y].push_back(N);
+    }
+    for(Engine::IObject *img : imgTarget) RemoveObject(img->GetObjectIterator());
+    imgTarget.clear();
 }
 void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
@@ -73,8 +86,7 @@ void EditScene::OnKeyDown(int keyCode) {
     if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
         BPM[pi + on - 1] *= 10;
         BPM[pi + on - 1] += ('0'+keyCode-ALLEGRO_KEY_0);
-    }
-    else if(keyCode >= ALLEGRO_KEY_PAD_0 && keyCode <= ALLEGRO_KEY_PAD_9) {
+    }else if(keyCode >= ALLEGRO_KEY_PAD_0 && keyCode <= ALLEGRO_KEY_PAD_9) {
         BPM[pi + on - 1] *= 10;
         BPM[pi + on - 1] +=('A'+keyCode-ALLEGRO_KEY_A);
     }
@@ -94,7 +106,7 @@ void EditScene::SaveOnClick(){
     for(int i = 0; i < total; i++){
         fout << BPM[i] << " " << Note[i].size() << "\n";
         for(auto [type, ghost, len, at, speed] : Note[i]){
-            fout << type << " " << len << " " << ghost << " " << time << " " << speed << "\n";
+            fout << type << " " << len << " " << ghost << " " << at << " " << speed << "\n";
         }
         fout << "\n";
     }
@@ -109,12 +121,44 @@ void EditScene::AddOnClick(){
     Word.push_back(new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5));
     Note.push_back({});
 }
-void EditScene::LPMOnClick(int val){
-    if(!(lpm + val) && lpm + val > 10) return;
+void EditScene::DeleteOnClick() {
+    BPM.pop_back(), Word.pop_back(), Note.pop_back();
+    if(pi + 3 == Note.size()){
+        pi = std::max(0, pi - 1);
+        ClearNote(), DisplayNote();
+    }
+}
+void EditScene::LineAddOnClick(int val){
+    if(!(lpm + val) || lpm + val > 12) return;
     lpm += val;
-    lineH = (float)halfH / 2.0 / (float)lpm;
+    lineH = 250.0 / (float)lpm;
     ClearLine();
     DisplayLine();
+}
+void EditScene::LenAddOnClick(int val){
+    if(!(len + val) || len + val > 4) return;
+    len += val;
+    if(~val) HoldNote[len]->Visible = 1;
+    else HoldNote[len + 1]->Visible = 0;
+}
+void EditScene::SpeedAddOnClick(float val){
+    if(speed + val <= 0 || speed + val > 5) return;
+    speed += val;
+}
+void EditScene::PiAddOnClick(int val){
+    if(!~(pi + val) || pi + val >= total) return;
+    pi += val;
+    ClearNote();
+    DisplayNote();
+}
+void EditScene::PlayOnClick(){
+
+}
+void EditScene::PlayHeadOnClick(){
+
+}
+void EditScene::PauseOnClick(){
+
 }
 void EditScene::POSSliderOnValueChanged(float value){
     ClearNote();
@@ -125,11 +169,10 @@ void EditScene::ReadScore(){
     BPM.clear(), Word.clear(), Note.clear();
     std::string file = "Resource/EditScore/" + filename;
     std::ifstream fin(file);
-    int bpm, time, notes, type, ghost;
-    float len, at, speed;
+    int bpm, time, notes, type, ghost, len;
+    float at, speed;
     fin >> total;
-    BPM.push_back(0), Word.push_back(nullptr), Note.push_back({});
-    for(int i = 1; i <= total; i++){
+    for(int i = 0; i < total; i++){
         if(!(fin >> bpm >> notes)) break;
         BPM.push_back(bpm);
         //TODO : label position
@@ -141,55 +184,11 @@ void EditScene::ReadScore(){
     }
     fin.close();
 }
-void EditScene::ConstructUI(){
-    Engine::ImageButton* btn;
-    //TODO : button position
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 7 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 7 / 4, 125, 30, 32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 7 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Save", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 7 / 4, 125,30,32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 5 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("bpm", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 5 / 4, 125,30,32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 5 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 2));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("meter", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 5 / 4, 125,30,32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::LPMOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("+", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 125,30,32, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH * 3 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::LPMOnClick, this, -1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("-", "pirulen.ttf", 48, halfW - 100, halfH * 3 / 4, 0, 0, 0, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label("lines per meter", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 255, 255, 255, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("ADD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 200, halfH * 3 / 4, 125,30,32, 255, 0.5, 0.5));
-
-    Slider *sliderPOS;
-    sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
-    sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
-    AddNewControlObject(sliderPOS);
-    sliderPOS->SetValue(0);
-}
 void EditScene::DisplayNote(){
     for(int i = pi; i < pi + 4; i++){
+        if(i >= Note.size()) break;
         for(note N : Note[i]){
-            AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, halfH * 2 - (i - pi + N.at) * lineH * (float)lpm);
+            AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, round(250.0 * ((float)(i - pi) + N.at)));
         }
     }
 }
@@ -216,16 +215,18 @@ void EditScene::DeleteNoteClick(int k){
     DeleteNoteButton(k);
 }
 void EditScene::DeleteNoteButton(int n){
-    RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonObj[n]->GetObjectIterator());
-    NoteButtonCtrl[n] = nullptr, NoteButtonObj[n] = nullptr;
+    RemoveControl(NoteButtonCtrl[n]->GetControlIterator());
+    for(Engine::IObject *img : NoteButtonObj[n]) RemoveObject(img->GetObjectIterator());
+    NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
 }
 void EditScene::AddNoteButton(note N, int x, int y){
     //TODO : button position
-    onField.push_back({(2 * halfH - y) / (int)((float)lpm * lineH), N});
-    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150, 0.5, 0.5);
+    onField.push_back({(2 * halfH - y) / (int)round((float)lpm * lineH), N});
+    Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", x, 1000 - y, 0, 0, 0.5, 0.5);
     btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
-    NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back(dynamic_cast<IObject*>(btn));
-    addObject(true, NoteButtonObj.back());
+    NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back({dynamic_cast<IObject*>(btn)});
+    for(int i = 1; i < N.len; i++) NoteButtonObj.back().push_back(new Engine::Image("HoldNote.png", x, 1000 - (y + round((float)i * 250.0 / 4.0)), 0, 0, 0.5, 0.5));
+    for(int i = 0; i < N.len; i++) addObject(true, NoteButtonObj.back()[i]);
     addControl(true, btn);
 }
 void EditScene::ClearNote(){
@@ -240,4 +241,36 @@ void EditScene::ClearLine(){
         RemoveObject(line->GetObjectIterator());
     }
     Line.clear();
+}
+bool EditScene::CheckSpaceValid(note N, int my){
+    if(N.type && (float)(my % 250) + (float)(len - 1) * 250.0 / 4.0 < 250.0) return 0;
+}
+void EditScene::ConstructUI(){
+    Engine::ImageButton* btn;
+    //TODO : button position
+    btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 2));
+    btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::DeleteOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::LineAddOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&EditScene::LineAddOnClick, this, -1));
+    btn->SetOnClickCallback(std::bind(&EditScene::LenAddOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&EditScene::LenAddOnClick, this, -1));
+    btn->SetOnClickCallback(std::bind(&EditScene::SpeedAddOnClick, this, 0.1));
+    btn->SetOnClickCallback(std::bind(&EditScene::SpeedAddOnClick, this, -0.1));
+    btn->SetOnClickCallback(std::bind(&EditScene::SpeedAddOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&EditScene::SpeedAddOnClick, this, -1));
+    btn->SetOnClickCallback(std::bind(&EditScene::PiAddOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&EditScene::PiAddOnClick, this, -1));
+    btn->SetOnClickCallback(std::bind(&EditScene::PlayOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::PlayHeadOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::PauseOnClick, this));
+    //TODO HoldNote
+    Slider *sliderPOS;
+    sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
+    sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
+    AddNewControlObject(sliderPOS);
+    sliderPOS->SetValue(0);
 }
