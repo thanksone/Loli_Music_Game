@@ -65,7 +65,7 @@ void EditScene::OnMouseUp(int button, int mx, int my) {
         imgTarget = nullptr;
         return;
     }
-    AddNoteButton(holdtype, len, x0 + x * ghostW + ghostW / 2, y * lineH);
+    AddNoteButton({holdtype, x, len, (float)((1000 - my) % 250) / (float)250, speed}, x0 + x * ghostW + ghostW / 2, y * lineH);
 }
 void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
@@ -189,7 +189,7 @@ void EditScene::ConstructUI(){
 void EditScene::DisplayNote(){
     for(int i = pi; i < pi + 4; i++){
         for(note N : Note[i]){
-            AddNoteButton(N.type, N.len , x0 + N.ghost * ghostW + ghostW / 2, halfH * 2 - (i - pi + N.at) * lineH * (float)lpm);
+            AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, halfH * 2 - (i - pi + N.at) * lineH * (float)lpm);
         }
     }
 }
@@ -205,22 +205,23 @@ void EditScene::DisplayLine(){
     }
     std::cout << "\n";
 }
-void EditScene::DeleteNoteClick(int p){
+void EditScene::DeleteNoteClick(int k){
+    auto [p, N] = onField[k];
     for(int i = 0; i < Note[p].size(); i++){
-        if(Note[p][i] == ){
-            Note[g].erase(Note[g].begin() + i);
+        if(Note[p][i] == N){
+            Note[p].erase(Note[p].begin() + i);
             break;
         }
     }
-    DeleteNoteButton(n);
+    DeleteNoteButton(k);
 }
 void EditScene::DeleteNoteButton(int n){
     RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonObj[n]->GetObjectIterator());
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n] = nullptr;
 }
-void EditScene::AddNoteButton(int type, float len, int x, int y){
+void EditScene::AddNoteButton(note N, int x, int y){
     //TODO : button position
-    onField.push_back(Note())
+    onField.push_back({(2 * halfH - y) / (int)((float)lpm * lineH), N});
     Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH * 3 / 4 - 50, 300, 150, 0.5, 0.5);
     btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
     NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back(dynamic_cast<IObject*>(btn));
@@ -229,7 +230,6 @@ void EditScene::AddNoteButton(int type, float len, int x, int y){
 }
 void EditScene::ClearNote(){
     onField.clear();
-    for(int i = 0; i < 4; i++) L[G[i]] = -1, G[i] = 0;
     for(int i = 0; i < NoteButtonCtrl.size(); i++){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }

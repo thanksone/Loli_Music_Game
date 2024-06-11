@@ -24,14 +24,14 @@ private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
     int pi, on, total, lpm, x0, holdtype;
-    float ghostW, lineH, len;
+    float ghostW, lineH, len, speed;
     std::vector<std::vector<note>> Note;
     std::vector<int> BPM;
     std::vector<Engine::Label*> Word;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<Engine::IObject*> NoteButtonObj;
     std::vector<Engine::Label*> Line;
-    std::vector<note> onField;
+    std::vector<std::pair<int, note>> onField;
     Engine::Image* imgTarget;
 public:
     std::string filename;
@@ -59,7 +59,7 @@ public:
     void DisplayLine();
     void DeleteNoteClick(int n);
     void DeleteNoteButton(int n);
-    void AddNoteButton(int type, float len, int x, int y);
+    void AddNoteButton(note N, int x, int y);
     void ClearNote();
     void ClearLine();
 };
