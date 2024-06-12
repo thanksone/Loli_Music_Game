@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 
 #include "Engine/AudioHelper.hpp"
@@ -82,7 +83,7 @@ void SongSelectScene::Initialize() {
     if(songlist[page].songlan=="english") {
         AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     }
-    else AddNewObject(new Engine::Label(songlist[page].songname, "はなぞめフォント.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    else AddNewObject(new Engine::Label(songlist[page].songname, "hanazomefont.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
 }
 void SongSelectScene::Terminate() {
 	AudioHelper::StopSample(bgmInstance);

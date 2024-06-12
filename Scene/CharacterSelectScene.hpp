@@ -4,6 +4,7 @@
 
 #include <allegro5/allegro_audio.h>
 #include <memory>
+#include <vector>
 #include "Engine/IScene.hpp"
 
 struct character {

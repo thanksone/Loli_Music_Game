@@ -20,6 +20,39 @@
 #include "EditScene.hpp"
 #include "UI/Component/Slider.hpp"
 
+#define mid (l + r >> 1)
+#define lc (p << 1)
+#define rc (p << 1 | 1)
+#define ff first
+#define ss second
+
+int seg[6][4096], tag[6][4096];
+void pull(int g, int p){
+    seg[g][p] = seg[g][lc] + seg[g][rc];
+}
+void push(int g, int p, int l, int r){
+    seg[g][lc] += (mid - l + 1) * tag[g][p];
+    seg[g][rc] += (r - mid) * tag[g][p];
+    tag[g][lc] += tag[g][p], tag[g][rc] += tag[g][p];
+    tag[g][p] = 0;
+}
+void update(int g, int p, int l, int r, int ql, int qr, int x){
+    if(ql > r || qr < l) return;
+    if(l >= ql && r <= qr){
+        seg[g][p] += (r - l + 1) * x;
+        tag[g][p] += x;
+    }
+    push(g, p, l, r);
+    update(g, lc, l, mid, ql, qr, x);
+    update(g, rc, mid + 1, r, ql, qr, x);
+    pull(g, p);
+}
+int query(int g, int p, int l, int r, int ql, int qr){
+    if(ql > r || qr < l) return 0;
+    if(l >= ql && r <= qr) return seg[g][p];
+    push(g, p, l, r);
+    return query(g, lc, l, mid, ql, qr) + query(g, rc, mid + 1, r, ql, qr);
+}
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
@@ -27,19 +60,31 @@ void EditScene::Initialize() {
     ghostW = 250, lineH = 250;
     x0 = 50;
     speed = 1;
+    last = 0;
     imgTarget.clear();
+    for(int i = 0; i < 6; i++){
+        for(int &s : seg[i]) s = 0;
+        for(int &t : tag[i]) t = 0;
+    }
+    std::cout << "flag1\n";
     ReadScore();
+    std::cout << "flag2\n";
     ConstructUI();
+    std::cout << "flag3\n";
     ClearNote();
+    std::cout << "flag4\n";
     ClearLine();
+    std::cout << "flag5\n";
     DisplayNote();
+    std::cout << "flag6\n";
     DisplayLine();
+    std::cout << "flag7\n";
 }
 void EditScene::Terminate() {
     IScene::Terminate();
 }
 void EditScene::Update(float deltatime) {
-
+    if(last <= 0) return;
 }
 void EditScene::Draw() const {
     IScene::Draw();
@@ -152,7 +197,11 @@ void EditScene::PiAddOnClick(int val){
     DisplayNote();
 }
 void EditScene::PlayOnClick(){
-
+    float time = 0;
+    last = 0;
+    for(int i = 0; i < pi; i++) time += (float)BPM[i] / 60.0;
+    for(int i = pi; i < pi + 4; i++) last += (float)BPM[i] / 60.0;
+    audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname, 0, 1, time);
 }
 void EditScene::PlayHeadOnClick(){
 
@@ -167,7 +216,7 @@ void EditScene::POSSliderOnValueChanged(float value){
 }
 void EditScene::ReadScore(){
     BPM.clear(), Word.clear(), Note.clear();
-    std::string file = "Resource/EditScore/" + filename;
+    std::string file = "Resource/EditScore/Score/" + filename;
     std::ifstream fin(file);
     int bpm, time, notes, type, ghost, len;
     float at, speed;
@@ -215,13 +264,18 @@ void EditScene::DeleteNoteClick(int k){
     DeleteNoteButton(k);
 }
 void EditScene::DeleteNoteButton(int n){
+    int y = onField[n].ff * 250 + round(onField[n].ss.at * 250.0);
+    if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1024, y, y + round((float)onField[n].ss.len * 250.0 / 4.0) - 1, -1);
+    else update(onField[n].ss.ghost, 1, 0, 1024, y, y, -1);
     RemoveControl(NoteButtonCtrl[n]->GetControlIterator());
     for(Engine::IObject *img : NoteButtonObj[n]) RemoveObject(img->GetObjectIterator());
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
 }
 void EditScene::AddNoteButton(note N, int x, int y){
     //TODO : button position
-    onField.push_back({(2 * halfH - y) / (int)round((float)lpm * lineH), N});
+    onField.push_back({(1000 - y) / 250, N});
+    if(N.type) update(N.ghost, 1, 0, 1024, y, y + round((float)N.len * 250.0 / 4.0) - 1, 1);
+    else update(N.ghost, 1, 0, 1024, y, y, 1);
     Engine::ImageButton *btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", x, 1000 - y, 0, 0, 0.5, 0.5);
     btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
     NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back({dynamic_cast<IObject*>(btn)});
@@ -242,8 +296,11 @@ void EditScene::ClearLine(){
     }
     Line.clear();
 }
-bool EditScene::CheckSpaceValid(note N, int my){
-    if(N.type && (float)(my % 250) + (float)(len - 1) * 250.0 / 4.0 < 250.0) return 0;
+bool EditScene::CheckSpaceValid(note N, int y){
+    if(N.type && (float)(y % 250) + (float)(len - 1) * 250.0 / 4.0 < 250.0) return 0;
+    if(N.type && query(N.ghost, 1, 0, 1024, y, y + round((float)N.len * 250.0 / 4.0) - 1)) return 0;
+    if(!N.type && query(N.ghost, 1, 0, 1024, y, y)) return 0;
+    return 1;
 }
 void EditScene::ConstructUI(){
     Engine::ImageButton* btn;

@@ -24,7 +24,7 @@ private:
 	ALLEGRO_SAMPLE_ID bgmId;
 protected:
     int pi, on, total, lpm, x0, hold, len;
-    float ghostW, lineH, speed;
+    float ghostW, lineH, speed, last;
     std::vector<std::vector<note>> Note;
     std::vector<int> BPM;
     std::vector<Engine::Label*> Word;
@@ -35,8 +35,9 @@ protected:
     std::vector<Engine::IObject*> imgTarget;
     std::vector<Engine::IObject*> HoldNote;
     Engine::Label *LPM, *LEN, *SPEED;
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> audio;
 public:
-    std::string filename;
+    std::string filename, songname;
     int halfW, halfH;
 	explicit EditScene() = default;
 	void Initialize() override;

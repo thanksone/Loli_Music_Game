@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
