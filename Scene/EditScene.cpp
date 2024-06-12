@@ -53,6 +53,9 @@ int query(int g, int p, int l, int r, int ql, int qr){
     push(g, p, l, r);
     return query(g, lc, l, mid, ql, qr) + query(g, rc, mid + 1, r, ql, qr);
 }
+bool cmp(note a, note b){
+    return a.at < b.at;
+}
 void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
@@ -61,7 +64,11 @@ void EditScene::Initialize() {
     x0 = 50;
     speed = 1;
     last = 0;
-    imgTarget.clear();
+    imgTarget.clear(), Boing.clear();
+    std::string L;
+    for(int i = 0; i < 60; i++) L += '_';
+    RunningLine = new Engine::Label(L, "pirulen.ttf", 30, x0, 1000);
+    RunningLine->Visible = 0;
     for(int i = 0; i < 6; i++){
         for(int &s : seg[i]) s = 0;
         for(int &t : tag[i]) t = 0;
@@ -85,6 +92,27 @@ void EditScene::Terminate() {
 }
 void EditScene::Update(float deltatime) {
     if(last <= 0) return;
+    past += deltatime, last -= deltatime;
+    while(front < Boing.size() && Boing[front].at <= past){
+        if(Boing[front].type) tapsound = AudioHelper::PlaySample("Resources/audios/tap.ogg", 0, AudioHelper::SFXVolume, 0);
+        else holdsound = AudioHelper::PlaySample("Resources/audios/hold.ogg", 0, AudioHelper::SFXVolume, 0);
+    }
+    while(!Time.empty() && past >= Time.front()){
+        Time.pop();
+        now++;
+        if(now >= pi + 4){
+            pi += 4;
+            ClearNote();
+            DisplayNote();
+            RunningLine->Position = Engine::Point(x0, 1000);
+        }
+    }
+    RunningLine->Position.y += 250.0 * (60.0 / BPM[now]) * deltatime;
+    if(last <= 0){
+        AudioHelper::StopSample(audio);
+        RunningLine->Position = Engine::Point(x0, 1000);
+        RunningLine->Visible = 0;
+    }
 }
 void EditScene::Draw() const {
     IScene::Draw();
@@ -198,16 +226,52 @@ void EditScene::PiAddOnClick(int val){
 }
 void EditScene::PlayOnClick(){
     float time = 0;
-    last = 0;
-    for(int i = 0; i < pi; i++) time += (float)BPM[i] / 60.0;
-    for(int i = pi; i < pi + 4; i++) last += (float)BPM[i] / 60.0;
-    audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname, 0, 1, time);
+    last = past = 0;
+    now = pi, front = 0;
+    Boing.clear();
+    while(!Time.empty()) Time.pop();
+    for(int i = 0; i < pi; i++) time += 60.0 / (float)BPM[i];
+    for(int i = pi; i < pi + 4; i++){
+        for(auto [t, g, l, a, s] : Note[i]){
+            if(!t){
+                Boing.push_back({t, g, l, a * (float)60 / (float)BPM[i] + last, s});
+                continue;
+            }
+            for(int j = 0; j < l; j++){
+                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / (float)BPM[i] + last, s});
+            }
+        }
+        last += 60.0 / (float)BPM[i];
+        Time.push(last);
+    }
+    std::sort(Boing.begin(), Boing.end(), cmp);
+    audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname + ".ogg", 0, AudioHelper::BGMVolume, time);
 }
 void EditScene::PlayHeadOnClick(){
-
+    last = past = 0;
+    now = front = 0;
+    while(!Time.empty()) Time.pop();
+    for(int i = 0; i < total; i++){
+        for(auto [t, g, l, a, s] : Note[i]){
+            if(!t){
+                Boing.push_back({t, g, l, a * (float)60 / (float)BPM[i] + last, s});
+                continue;
+            }
+            for(int j = 0; j < l; j++){
+                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / (float)BPM[i] + last, s});
+            }
+        }
+        last += 60.0 / (float)BPM[i];
+        Time.push(last);
+    }
+    pi = 0, ClearNote(), DisplayNote();
+    std::sort(Boing.begin(), Boing.end(), cmp);
+    audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname + ".ogg", 0, AudioHelper::BGMVolume, 0);
 }
-void EditScene::PauseOnClick(){
-
+void EditScene::StopOnClick(){
+    last = 0;
+    Boing.clear();
+    AudioHelper::StopSample(audio);
 }
 void EditScene::POSSliderOnValueChanged(float value){
     ClearNote();
@@ -247,7 +311,7 @@ void EditScene::DisplayLine(){
     for(int i = 0; i < 60; i++) foo += '_';
     for(int i = 0; i < 90; i++) bar += '_';
     for(float i = 1000; i > 0; i -= lineH){
-        line = new Engine::Label((int)round(i) % (int)round((float)lpm * lineH)? bar : foo, "pirulen.ttf", (int)round(i) % (int)round((float)lpm * lineH)? 20 : 30, x0, (int)i, 255, 255, 255, 255, 0, 1);
+        line = new Engine::Label((int)round(i) % 250? bar : foo, "pirulen.ttf", (int)round(i) % (int)round((float)lpm * lineH)? 20 : 30, x0, (int)i, 255, 255, 255, 255, 0, 1);
         Line.push_back(line);
         addObject(1, line);
     }
@@ -323,7 +387,7 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::PiAddOnClick, this, -1));
     btn->SetOnClickCallback(std::bind(&EditScene::PlayOnClick, this));
     btn->SetOnClickCallback(std::bind(&EditScene::PlayHeadOnClick, this));
-    btn->SetOnClickCallback(std::bind(&EditScene::PauseOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::StopOnClick, this));
     //TODO HoldNote
     Slider *sliderPOS;
     sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
