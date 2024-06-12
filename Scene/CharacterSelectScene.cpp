@@ -32,17 +32,15 @@ void CharacterSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
-
     characterlist.clear();
-    std::string charactername;
+    std::string charactername,san,maxsan;
     std::ifstream fin("Resource/images/characters/characterlist.txt");
-    //std::cout<<"ouob\n";
-    while(fin>>charactername ){
-        //std::cout<<"douo\n";
+    while(fin>>charactername && fin>>san && fin>>maxsan){
         characterlist.push_back(
-            {charactername});
-        std::cout<<charactername<<"\n";
+            {charactername,std::stoi(san),std::stoi(maxsan)});
+        //std::cout<<characterlist[0].charactername<<" "<<characterlist[0].san<<" "<<characterlist[0].maxsan<<"\n";
     }
+
     maxpage= characterlist.size();
     fin.close();
     std::sort(characterlist.begin(),characterlist.end(),cmp);
@@ -62,6 +60,9 @@ void CharacterSelectScene::Initialize() {
     AddNewControlObject(btn);
     if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);
     fl=0;
+    std::string sanality=std::to_string(characterlist[page].san)+"/"+std::to_string(characterlist[page].maxsan);
+    AddNewObject(new Engine::Label(characterlist[page].charactername, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label(sanality, "Black-Magic-2.ttf", 60, halfW, halfH +380, 225,180,182, 255, 0.5, 0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 }
 void CharacterSelectScene::Terminate() {
