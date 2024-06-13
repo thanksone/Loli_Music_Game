@@ -5,7 +5,7 @@
 #include "Engine/IScene.hpp"
 
 struct song {
-    std::string songname,songlan;
+    std::string songname,filename, songlan;
     int ez,hd,in;
 };
 

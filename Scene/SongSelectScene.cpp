@@ -31,13 +31,13 @@ void SongSelectScene::Initialize() {
     Engine::ImageButton* btn;
 
     songlist.clear();
-    std::string songname, songlan;
+    std::string songname, filename, songlan;
     std::ifstream fin("Resource/audios/songs/songlist.txt");
     //std::cout<<"ouob\n";
-    while(fin>>songname && fin>>songlan){
+    while(fin>>songname && fin >> filename && fin>>songlan){
         //std::cout<<"douo\n";
         songlist.push_back(
-            {songname,songlan});
+            {songname,filename, songlan});
         std::cout<<songname<<"\n";
     }
     maxpage= songlist.size();
@@ -85,9 +85,9 @@ void SongSelectScene::Initialize() {
     AddNewObject(new Engine::Label("Scoreboard", "WOODCUTTER-BCN-Style-1.ttf", 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
-	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].songname+".ogg", true, AudioHelper::BGMVolume);
+	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].filename+".ogg", true, AudioHelper::BGMVolume);
     Engine::Image* img;
-    img=new Engine::Image("songs/"+songlist[page].songname+".png", halfW, halfH-100,720,720,0.5,0.5);
+    img=new Engine::Image("songs/"+songlist[page].filename+".png", halfW, halfH-100,720,720,0.5,0.5);
     addObject(1,img);
     if(songlist[page].songlan=="english") {
         AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
