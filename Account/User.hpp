@@ -1,24 +1,30 @@
 #ifndef USER_HPP
 #define USER_HPP
 #include <string>
-#include <vector>
+#include <map>
 #include <utility>
+#include <vector>
 #include "Character/Loli.hpp"
+std::string hash(std::string pa55word);
+struct settings{
+    float BGMVolume, SFXVolume, fallspeed;
+};
 class User{
 private:
-    std::string name, password;
+    std::string password;
     std::vector<Loli> Character;
-    std::vector<std::pair<int, float>> BestRecord;
-    int onField;
+    std::map<std::string, std::pair<int, float>> BestRecord;
+    Loli *loli;
 public:
+    std::string name;
+    bool wind;
+    float seal;
     User(){};
     User(std::string namae, std::string pa55word);
-    std::string GetName();
     bool cmp(std::string pa55word);
-    void UpdateRecord(int song, int score, float acc);
+    void UpdateRecord(std::string song, int score, float acc);
     void AddCharacter(Loli ll);
-    void ChangeOnField(int p);
+    bool ChangeOnField(std::string name);
     void ChangeSan(int val);
-    bool SanCheck();
 };
-#endif //_USER_HPP
+#endif //USER_HPP
