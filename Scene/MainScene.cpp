@@ -76,7 +76,7 @@ void MainScene::SettingsOnClick() {
 
 void MainScene::EditOnClick() {
 
-    Engine::GameEngine::GetInstance().ChangeScene("edit");
+    Engine::GameEngine::GetInstance().ChangeScene("file-select");
 }
 
 void MainScene::SongSelectOnClick() {

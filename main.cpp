@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("main", new MainScene());
 	game.AddNewScene("character-select", new CharacterSelectScene());
 	game.AddNewScene("song-select", new SongSelectScene());
+    game.AddNewScene("file-select", new FileSelectScene());
 
 
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene

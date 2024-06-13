@@ -27,7 +27,8 @@ protected:
     int pi, on, total, lpm, x0, hold, len, front, now;
     float ghostW, lineH, speed, last, past;
     std::vector<std::vector<note>> Note;
-    std::vector<int> BPM;
+    std::vector<float> BPM;
+    std::vector<std::string> BPMS;
     std::vector<Engine::Label*> Word;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<std::vector<Engine::IObject*>> NoteButtonObj;
