@@ -56,7 +56,7 @@ void LoginScene::LoginOnClick(){
         float acc;
         std::string file = "Resource/account-status/" + username + ".txt", name, songname;
         std::ifstream fin(file);
-        user = User(username, password);
+        user = User(username, hash(password));
         fin >> n;
         while(n--){
             if(!(fin >> name >> san >> fullsan)) break;

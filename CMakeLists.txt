@@ -104,6 +104,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/CharacterSelectScene.hpp
         Scene/LoginScene.hpp
         Scene/LoginScene.cpp
+        Scene/RegisterScene.hpp
+        Scene/RegisterScene.cpp
         #        UI/Component/TextInput.cpp
 #        UI/Component/TextInput.hpp
 )

@@ -2,6 +2,10 @@
 #include "User.hpp"
 #define ff first
 #define ss second
+
+std::string hash(std::string S){
+
+}
 User::User(std::string namae, std::string pa55word): name(namae), password(pa55word){}
 bool User::cmp(std::string pa55word){
     return pa55word == password;
