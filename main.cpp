@@ -13,7 +13,7 @@
 #include "Scene/SettingsScene.hpp"
 #include "Scene/MainScene.hpp"
 #include "Scene/SongSelectScene.hpp"
-
+#include "Scene/FileSelectScene.hpp"
 #include "Scene/EditScene.hpp"
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);

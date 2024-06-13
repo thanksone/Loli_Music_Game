@@ -19,7 +19,7 @@ public:
     explicit SongSelectScene() = default;
     void Initialize() override;
     void Terminate() override;
-    void PlayOnClick(int stage);
+    void PlayOnClick(std::string songname, std::string diff);
     void ScoreboardOnClick();
     void BackOnClick(int stage);
     void SettingsOnClick();

@@ -1,39 +1,113 @@
-#include "FileSelectScene.hpp"
-#include "EditScene.hpp"
+#include <allegro5/allegro_audio.h>
+#include <functional>
+#include <memory>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <algorithm>
+
+
+#include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "UI/Component/ImageButton.hpp"
-void FileSelectScene::Initialize(){
+#include "UI/Component/Label.hpp"
+#include "PlayScene.hpp"
+#include "Engine/Point.hpp"
+#include "Engine/Sprite.hpp"
+#include "Engine/Resources.hpp"
+#include "UI/Component/Slider.hpp"
+#include "FileSelectScene.hpp"
+#include "EditScene.hpp"
+
+bool comp(song &a,song &b){
+    return a.songname<b.songname;
+}
+void FileSelectScene::Initialize() {
+
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
-    filename.clear(), songname.clear();
-    on = 0;
-    Engine::ImageButton *btn;
-    btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this));
-    btn->SetOnClickCallback(std::bind(&FileSelectScene::InsertOnClick, this, 1));
-    btn->SetOnClickCallback(std::bind(&FileSelectScene::InsertOnClick, this, 2));
-    File = new Engine::Label("", "Black-Magic-2.ttf", 48, w-170, h-85, 125, 30, 32, 255, 0.5, 0.5));
-    Song = new Engine::Label("", "Black-Magic-2.ttf", 48, w-170, h-85, 125, 30, 32, 255, 0.5, 0.5));
-    AddNewObject(File), AddNewObject(Song);
-    AddNewObject(new Engine::Label("Score : ", "Black-Magic-2.ttf", 48, w-170, h-85, 125, 30, 32, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label("Audio : ", "Black-Magic-2.ttf", 48, w-170, h-85, 125, 30, 32, 255, 0.5, 0.5));
+    Engine::ImageButton* btn;
+    songlist.clear();
+    std::string songname, songlan;
+    std::ifstream fin("Resource/audios/Files/songlist.txt");
+    //std::cout<<"ouob\n";
+    while(fin>>songname && fin>>songlan){
+        //std::cout<<"douo\n";
+        songlist.push_back({songname,songlan});
+        std::cout<<songname<<"\n";
+    }
+    maxpage= songlist.size();
+    fin.close();
+    sort(songlist.begin(), songlist.end(), comp);
+
+
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::BackOnClick, this));
+    AddNewControlObject(btn);
+
+    btn = new Engine::ImageButton("stage-select/sangoodsettingdirt.png", "stage-select/sangoodsettingfloor.png", w-80, 10, 70, 70);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::SettingsOnClick, this));
+    AddNewControlObject(btn);
+
+    btn = new Engine::ImageButton("stage-select/blueright.png", "stage-select/pinkright.png", w-150 , halfH-50, 100, 100);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::AboriginalOnClick, this, 1));
+    AddNewControlObject(btn);
+
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::AboriginalOnClick, this, -1));
+    AddNewControlObject(btn);
+
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].songname, "ez"));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("EZ", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].songname, "hd"));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("HD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].songname, "in"));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("IN", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+
+    // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+    bgmInstance = AudioHelper::PlaySample("Files/"+songlist[page].songname+".ogg", true, AudioHelper::BGMVolume);
+    Engine::Image* img;
+    img=new Engine::Image("Files/"+songlist[page].songname+".png", halfW, halfH-100,720,720,0.5,0.5);
+    addObject(1,img);
+    if(songlist[page].songlan=="english") {
+        AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    }
+    else AddNewObject(new Engine::Label(songlist[page].songname, "hanazomefont.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
 }
-void FileSelectScene::Terminate(){
+void FileSelectScene::Terminate() {
+    AudioHelper::StopSample(bgmInstance);
+    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
-void FileSelectScene::EditOnClick() {
+void FileSelectScene::BackOnClick() {
+    Engine::GameEngine::GetInstance().ChangeScene("main");
+}
+void FileSelectScene::EditOnClick(std::string songname, std::string diff) {
     EditScene* scene = dynamic_cast<EditScene*>(Engine::GameEngine::GetInstance().GetScene("edit"));
-    scene->filename = filename, scene->songname = songname;
-    Engine::GameEngine::GetInstance().ChangeScene("edit");
+    scene->songname = songname, scene->diff = diff;
+    Engine::GameEngine::GetInstance().ChangeScene("play");
 }
-void FileSelectScene::InsertOnClick(int t){
-    on = t;
+void FileSelectScene::SettingsOnClick() {
+    Engine::GameEngine::GetInstance().ChangeScene("settings");
 }
-void FileSelectScene::OnKeyDown(int keyCode){
-    IScene::OnKeyDown(keyCode);
-}
-void FileSelectScene::OnMouseDown(int button, int mx, int my) {
-    on = 0;
-    IScene::OnMouseDown(button, mx, my);
+
+void FileSelectScene::AboriginalOnClick(int square) {
+    if(page +square< 0){
+        page=maxpage-1;
+    }
+    else if(page+square>=maxpage) {
+        page=0;
+    }
+    else page+=square;
+    Engine::GameEngine::GetInstance().ChangeScene("File-select");
 }

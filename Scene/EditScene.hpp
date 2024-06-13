@@ -28,8 +28,8 @@ protected:
     float ghostW, lineH, speed, last, past;
     std::vector<std::vector<note>> Note;
     std::vector<float> BPM;
+    std::vector<Engine::Label*> show;
     std::vector<std::string> BPMS;
-    std::vector<Engine::Label*> Word;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<std::vector<Engine::IObject*>> NoteButtonObj;
     std::vector<Engine::Label*> Line;
@@ -41,7 +41,7 @@ protected:
     std::vector<note> Boing;
     std::queue<float> Time;
 public:
-    std::string filename, songname;
+    std::string songname, diff;
     int halfW, halfH;
 	explicit EditScene() = default;
 	void Initialize() override;
@@ -53,7 +53,7 @@ public:
 	void OnMouseUp(int button, int mx, int my) override;
 	void OnKeyDown(int keyCode) override;
     void BackOnClick();
-    void SaveOnClick();
+    void SaveOnClick(std::string dir);
     void InsertOnClick(int type);
     void AddOnClick();
     void DeleteOnClick();
