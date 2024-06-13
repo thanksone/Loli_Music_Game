@@ -16,8 +16,11 @@
 #include "UI/Component/Slider.hpp"
 #include "CharacterSelectScene.hpp"
 
-bool cmp(character &a,character &b){
+bool cmpn(character &a,character &b){
     return a.charactername<b.charactername;
+}
+bool cmps(character &a,character &b){
+    return a.san>b.san;
 }
 
 int f=0,fl=1;
@@ -32,6 +35,7 @@ void CharacterSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
+    int cmptype=1;
     characterlist.clear();
     std::string charactername,san,maxsan;
     std::ifstream fin("Resource/images/characters/characterlist.txt");
@@ -40,11 +44,12 @@ void CharacterSelectScene::Initialize() {
             {charactername,std::stoi(san),std::stoi(maxsan)});
         //std::cout<<characterlist[0].charactername<<" "<<characterlist[0].san<<" "<<characterlist[0].maxsan<<"\n";
     }
-
     maxpage= characterlist.size();
     fin.close();
-    std::sort(characterlist.begin(),characterlist.end(),cmp);
-
+    if(cmptype==0)
+        std::sort(characterlist.begin(),characterlist.end(),cmpn);
+    else
+        std::sort(characterlist.begin(),characterlist.end(),cmps);
 
     btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));

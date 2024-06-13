@@ -1,2 +1,2 @@
 Lily 90 90
-Alice 90 90
+Alice 80 90
