@@ -64,10 +64,12 @@ void EditScene::Initialize() {
     x0 = 50;
     speed = 1;
     last = 0;
-    imgTarget.clear(), Boing.clear();
+    imgTarget.clear(), Boing.clear(), show.clear();
+    for(int i = 0; i < 4; i++) show.push_back(nullptr);
     std::string L;
     for(int i = 0; i < 60; i++) L += '_';
     RunningLine = new Engine::Label(L, "pirulen.ttf", 30, x0, 1000);
+    AddNewObject(RunningLine); 
     RunningLine->Visible = 0;
     for(int i = 0; i < 6; i++){
         for(int &s : seg[i]) s = 0;
@@ -88,6 +90,7 @@ void EditScene::Initialize() {
     std::cout << "flag7\n";
 }
 void EditScene::Terminate() {
+    AudioHelper::StopSample(audio);
     IScene::Terminate();
 }
 void EditScene::Update(float deltatime) {
@@ -101,10 +104,10 @@ void EditScene::Update(float deltatime) {
         Time.pop();
         now++;
         if(now >= pi + 4){
-            pi += 4;
+            pi = std::min(now, total - 4);
             ClearNote();
             DisplayNote();
-            RunningLine->Position = Engine::Point(x0, 1000);
+            RunningLine->Position = Engine::Point(x0, (pi - now) * 250);
         }
     }
     RunningLine->Position.y += 250.0 * (60.0 / BPM[now]) * deltatime;
@@ -139,7 +142,7 @@ void EditScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
     my = 1000 - my;
     int x = (mx - x0) / ghostW, y = my / 250;
-    if(imgTarget.empty() || mx < x0 || mx > x0 + 6 * ghostW || my <= 0 || my > 1000){
+    if(imgTarget.empty() || mx < x0 || mx > x0 + 6 * ghostW || my < 0 || my >= 1000 || pi + y >= total){
         for(Engine::IObject *img : imgTarget) RemoveObject(img->GetObjectIterator());
         imgTarget.clear();
         return;
@@ -157,24 +160,23 @@ void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     if(!on) return;
     if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
-        BPM[pi + on - 1] *= 10;
-        BPM[pi + on - 1] += ('0'+keyCode-ALLEGRO_KEY_0);
-    }else if(keyCode >= ALLEGRO_KEY_PAD_0 && keyCode <= ALLEGRO_KEY_PAD_9) {
-        BPM[pi + on - 1] *= 10;
-        BPM[pi + on - 1] +=('A'+keyCode-ALLEGRO_KEY_A);
+        BPMS[pi + on - 1] += (char)('0' + keyCode - ALLEGRO_KEY_0);
+    }else if(keyCode == ALLEGRO_KEY_FULLSTOP) {
+        BPMS[pi + on - 1] += '.';
+    }else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
+        if(BPMS[pi + on - 1].size()) BPMS[pi + on - 1].pop_back();
     }
-    else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
-        BPM[pi + on - 1] /= 10;
-    }
-    Word[pi + on - 1]->Text = std::to_string(BPM[pi + on - 1]);
+    if(BPMS[pi + on - 1].empty() || std::stof(BPMS[pi + on - 1]) == 0.0) BPM[pi + on - 1] = 60;
+    else BPM[pi + on - 1] = std::stof(BPMS[pi + on - 1]);
+    show[on - 1]->Text = BPMS[pi + on - 1];
 }
 void EditScene::BackOnClick(){
-    SaveOnClick();
+    SaveOnClick("editting");
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void EditScene::SaveOnClick(){
+void EditScene::SaveOnClick(std::string dir){
     std::ofstream fout;
-    fout.open("Resource/scoreboard.txt");
+    fout.open("Resource/" + dir + "/" + songname + "/" + diff + ".txt");
     fout << total << "\n";
     for(int i = 0; i < total; i++){
         fout << BPM[i] << " " << Note[i].size() << "\n";
@@ -189,13 +191,15 @@ void EditScene::InsertOnClick(int type){
     on = type;
 }
 void EditScene::AddOnClick(){
-    BPM.push_back(BPM.back());
+    total++;
+    if(BPM.size()) BPM.push_back(BPM.back()), BPMS.push_back(BPMS.back());
+    else BPM.push_back(60), BPMS.push_back("60");
     //TODO : label position
-    Word.push_back(new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5));
     Note.push_back({});
 }
 void EditScene::DeleteOnClick() {
-    BPM.pop_back(), Word.pop_back(), Note.pop_back();
+    total--;
+    BPM.pop_back(), BPMS.pop_back(), Note.pop_back();
     if(pi + 3 == Note.size()){
         pi = std::max(0, pi - 1);
         ClearNote(), DisplayNote();
@@ -230,22 +234,23 @@ void EditScene::PlayOnClick(){
     now = pi, front = 0;
     Boing.clear();
     while(!Time.empty()) Time.pop();
-    for(int i = 0; i < pi; i++) time += 60.0 / (float)BPM[i];
+    for(int i = 0; i < pi; i++) time += 60.0 / BPM[i];
     for(int i = pi; i < pi + 4; i++){
         for(auto [t, g, l, a, s] : Note[i]){
             if(!t){
-                Boing.push_back({t, g, l, a * (float)60 / (float)BPM[i] + last, s});
+                Boing.push_back({t, g, l, a * (float)60 / BPM[i] + last, s});
                 continue;
             }
             for(int j = 0; j < l; j++){
-                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / (float)BPM[i] + last, s});
+                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / BPM[i] + last, s});
             }
         }
-        last += 60.0 / (float)BPM[i];
+        last += 60.0 / BPM[i];
         Time.push(last);
     }
     std::sort(Boing.begin(), Boing.end(), cmp);
-    audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname + ".ogg", 0, AudioHelper::BGMVolume, time);
+    RunningLine->Visible = 1;
+    audio = AudioHelper::PlaySample("Resources/audios/songs/" + songname + ".ogg", 0, AudioHelper::BGMVolume, time);
 }
 void EditScene::PlayHeadOnClick(){
     last = past = 0;
@@ -254,24 +259,26 @@ void EditScene::PlayHeadOnClick(){
     for(int i = 0; i < total; i++){
         for(auto [t, g, l, a, s] : Note[i]){
             if(!t){
-                Boing.push_back({t, g, l, a * (float)60 / (float)BPM[i] + last, s});
+                Boing.push_back({t, g, l, a * (float)60 / BPM[i] + last, s});
                 continue;
             }
             for(int j = 0; j < l; j++){
-                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / (float)BPM[i] + last, s});
+                Boing.push_back({t, g, l, (a + (float)j / (float)4) * (float)60 / BPM[i] + last, s});
             }
         }
-        last += 60.0 / (float)BPM[i];
+        last += 60.0 / BPM[i];
         Time.push(last);
     }
     pi = 0, ClearNote(), DisplayNote();
     std::sort(Boing.begin(), Boing.end(), cmp);
+    RunningLine->Visible = 1;
     audio = AudioHelper::PlaySample("Resources/EditScore/Song/" + songname + ".ogg", 0, AudioHelper::BGMVolume, 0);
 }
 void EditScene::StopOnClick(){
     last = 0;
     Boing.clear();
     AudioHelper::StopSample(audio);
+    RunningLine->Visible = 0;
 }
 void EditScene::POSSliderOnValueChanged(float value){
     ClearNote();
@@ -279,43 +286,21 @@ void EditScene::POSSliderOnValueChanged(float value){
     DisplayNote();
 }
 void EditScene::ReadScore(){
-    BPM.clear(), Word.clear(), Note.clear();
-    std::string file = "Resource/EditScore/Score/" + filename;
+    BPM.clear(), BPMS.clear(), Note.clear();
+    std::string file = "Resource/editting/" + songname +  "/" + diff + ".txt";
     std::ifstream fin(file);
-    int bpm, time, notes, type, ghost, len;
-    float at, speed;
+    int time, notes, type, ghost, len;
+    float at, speed, bpm;
     fin >> total;
     for(int i = 0; i < total; i++){
         if(!(fin >> bpm >> notes)) break;
-        BPM.push_back(bpm);
-        //TODO : label position
-        Word.push_back(new Engine::Label("", "pirulen.ttf", 48, halfW, halfH, 0, 0, 0, 255, 0.5, 0.5));
+        BPM.push_back(bpm), BPMS.push_back(std::to_string(bpm));
         for(int j = 0; j < notes; j++){
             fin >> type >> ghost >> len >> at >> speed;
             Note[i].push_back({type, ghost, len, at, speed});
         }
     }
     fin.close();
-}
-void EditScene::DisplayNote(){
-    for(int i = pi; i < pi + 4; i++){
-        if(i >= Note.size()) break;
-        for(note N : Note[i]){
-            AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, round(250.0 * ((float)(i - pi) + N.at)));
-        }
-    }
-}
-void EditScene::DisplayLine(){
-    Engine::Label* line;
-    std::string foo, bar;
-    for(int i = 0; i < 60; i++) foo += '_';
-    for(int i = 0; i < 90; i++) bar += '_';
-    for(float i = 1000; i > 0; i -= lineH){
-        line = new Engine::Label((int)round(i) % 250? bar : foo, "pirulen.ttf", (int)round(i) % (int)round((float)lpm * lineH)? 20 : 30, x0, (int)i, 255, 255, 255, 255, 0, 1);
-        Line.push_back(line);
-        addObject(1, line);
-    }
-    std::cout << "\n";
 }
 void EditScene::DeleteNoteClick(int k){
     auto [p, N] = onField[k];
@@ -336,7 +321,6 @@ void EditScene::DeleteNoteButton(int n){
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
 }
 void EditScene::AddNoteButton(note N, int x, int y){
-    //TODO : button position
     onField.push_back({(1000 - y) / 250, N});
     if(N.type) update(N.ghost, 1, 0, 1024, y, y + round((float)N.len * 250.0 / 4.0) - 1, 1);
     else update(N.ghost, 1, 0, 1024, y, y, 1);
@@ -347,12 +331,37 @@ void EditScene::AddNoteButton(note N, int x, int y){
     for(int i = 0; i < N.len; i++) addObject(true, NoteButtonObj.back()[i]);
     addControl(true, btn);
 }
+void EditScene::DisplayNote(){
+    for(int i = pi; i < pi + 4; i++){
+        if(i >= Note.size()) break;
+        for(note N : Note[i]){
+            AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, round(250.0 * ((float)(i - pi) + N.at)));
+        }
+    }
+    for(int i = 0; i < 4; i++){
+        show[i] = new Engine::Label(BPMS[pi + i], "pirulen.ttf", 48, 100, 200, 255, 255, 255, 255, 0.5, 0.5);
+        addObject(1, show[i]);
+    }
+}
+void EditScene::DisplayLine(){
+    Engine::Label* line;
+    std::string foo, bar;
+    for(int i = 0; i < 60; i++) foo += '_';
+    for(int i = 0; i < 90; i++) bar += '_';
+    for(float i = 1000; i > 0; i -= lineH){
+        line = new Engine::Label((int)round(i) % 250? bar : foo, "pirulen.ttf", (int)round(i) % (int)round((float)lpm * lineH)? 20 : 30, x0, (int)i, 255, 255, 255, 255, 0, 1);
+        Line.push_back(line);
+        addObject(1, line);
+    }
+    std::cout << "\n";
+}
 void EditScene::ClearNote(){
     onField.clear();
     for(int i = 0; i < NoteButtonCtrl.size(); i++){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }
     NoteButtonCtrl.clear(), NoteButtonObj.clear();
+    for(int i = 0; i < 4; i++) RemoveObject(show[i]->GetObjectIterator());
 }
 void EditScene::ClearLine(){
     for(Engine::Label* &line : Line){
@@ -370,7 +379,8 @@ void EditScene::ConstructUI(){
     Engine::ImageButton* btn;
     //TODO : button position
     btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
-    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "editting"));
+    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "scores"));
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 2));
     btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));

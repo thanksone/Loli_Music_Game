@@ -20,6 +20,6 @@ public:
     void PlayOnClick(int stage);
     void SettingsOnClick(int stage);
     void EditOnClick();
-    User user();
+    User user;
 };
 #endif //INC_2024_I2P2_TOWERDEFENSE_WITH_ANSWER_STARTSCENE_H

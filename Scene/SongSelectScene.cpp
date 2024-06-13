@@ -21,8 +21,7 @@
 bool cmp1(song &a,song &b){
     return a.songname<b.songname;
 }
-int cmptype=1;
-
+int cmptype = 1;
 void SongSelectScene::Initialize() {
 
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -65,7 +64,17 @@ void SongSelectScene::Initialize() {
     AddNewControlObject(btn);
 
     /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "ez"));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "hd"));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
+    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "in"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
 
@@ -93,9 +102,9 @@ void SongSelectScene::Terminate() {
 void SongSelectScene::BackOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void SongSelectScene::PlayOnClick(int stage) {
+void SongSelectScene::PlayOnClick(std::string songname, std::string diff) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    scene->MapId = stage;
+    //scene->MapId = stage;
     Engine::GameEngine::GetInstance().ChangeScene("play");
 }
 void SongSelectScene::ScoreboardOnClick() {

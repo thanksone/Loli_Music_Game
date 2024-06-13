@@ -13,7 +13,7 @@
 #include "Scene/SettingsScene.hpp"
 #include "Scene/MainScene.hpp"
 #include "Scene/SongSelectScene.hpp"
-
+#include "Scene/FileSelectScene.hpp"
 #include "Scene/EditScene.hpp"
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);
@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("main", new MainScene());
 	game.AddNewScene("character-select", new CharacterSelectScene());
 	game.AddNewScene("song-select", new SongSelectScene());
+    game.AddNewScene("file-select", new FileSelectScene());
 
 
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
