@@ -12,6 +12,7 @@
 #include "Engine/Group.hpp"
 #include "Engine/IControl.hpp"
 #include "Engine/IObject.hpp"
+#include "UI/Component/Slider.hpp"
 struct note{
     int type, ghost, len;
     float at, speed;
@@ -28,18 +29,19 @@ protected:
     float ghostW, lineH, speed, last, past;
     std::vector<std::vector<note>> Note;
     std::vector<float> BPM;
-    std::vector<Engine::Label*> show;
+    std::vector<Engine::Label*> show, SB;
     std::vector<std::string> BPMS;
     std::vector<Engine::IControl*> NoteButtonCtrl;
     std::vector<std::vector<Engine::IObject*>> NoteButtonObj;
     std::vector<Engine::Label*> Line;
     std::vector<std::pair<int, note>> onField;
-    std::vector<Engine::IObject*> imgTarget;
-    std::vector<Engine::IObject*> HoldNote;
-    Engine::Label *LPM, *LEN, *SPEED, *RunningLine;
+    std::vector<Engine::Image*> imgTarget;
+    std::vector<Engine::Image*> HoldNote;
+    Engine::Label *LPM, *SPEED, *TIMES, *NOWAT, *RunningLine;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> audio, tapsound, holdsound;
     std::vector<note> Boing;
     std::queue<float> Time;
+    Slider *sliderPOS;
 public:
     std::string songname, diff;
     int halfW, halfH;
@@ -64,6 +66,8 @@ public:
     void PlayOnClick();
     void PlayHeadOnClick();
     void StopOnClick();
+    void TapOnClick();
+    void HoldOnClick();
     void POSSliderOnValueChanged(float value);
     void ReadScore();
     void DisplayNote();

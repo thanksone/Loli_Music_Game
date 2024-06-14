@@ -39,9 +39,22 @@
 [INFO] Changed to file-select scene
 [INFO] stopped audio (sample)
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 30
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 450x80
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 36
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 220x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 150x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 140x80
+[INFO] Loaded Resource<image>: Resource/images/edit/tapdirt.png scaled to 180x80
+[INFO] Loaded Resource<image>: Resource/images/edit/tapdirt.png
+[INFO] Loaded Resource<image>: Resource/images/edit/tapfloor.png
+[INFO] Loaded Resource<image>: Resource/images/edit/holddirt.png scaled to 180x80
+[INFO] Loaded Resource<image>: Resource/images/edit/holddirt.png
+[INFO] Loaded Resource<image>: Resource/images/edit/holdfloor.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 1200x4
 [INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
 [INFO] Changed to edit scene
-[INFO] Game Terminating...
