@@ -77,8 +77,8 @@ void FileSelectScene::Initialize() {
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
     bgmInstance = AudioHelper::PlaySample("songs/" + songlist[page].filename+".ogg", true, AudioHelper::BGMVolume);
     Engine::Image* img;
-    //img=new Engine::Image("Files/"+songlist[page].filename+".png", halfW, halfH-100,720,720,0.5,0.5);
-    //addObject(1,img);
+    img=new Engine::Image("songs/"+songlist[page].filename+".png", halfW, halfH-100,720,720,0.5,0.5);
+    addObject(1,img);
     if(songlist[page].songlan=="english") {
         AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     }
@@ -109,5 +109,5 @@ void FileSelectScene::AboriginalOnClick(int square) {
         page=0;
     }
     else page+=square;
-    Engine::GameEngine::GetInstance().ChangeScene("File-select");
+    Engine::GameEngine::GetInstance().ChangeScene("file-select");
 }
