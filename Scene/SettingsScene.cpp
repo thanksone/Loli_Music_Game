@@ -24,8 +24,8 @@ void SettingsScene::Initialize() {
     AddNewControlObject(btn);
 
 
-    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 150, halfH * 3 / 2 +70,
-                              300, 150);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 150, halfH * 3 / 2 +55,
+                              300, 180);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("back to start", "Black-Magic-2.ttf", 48, halfW, halfH * 3 / 2+145, 125, 30, 32, 255, 0.5, 0.5));
