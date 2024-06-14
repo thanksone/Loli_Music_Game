@@ -32,3 +32,13 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
 [INFO] Loaded Resource<font>: Resource/fonts/WOODCUTTER-BCN-Style-1.ttf with size 48
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 75x75
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 100x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
+[INFO] Loaded Resource<audio>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
