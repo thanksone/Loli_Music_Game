@@ -31,14 +31,14 @@ void SettingsScene::Initialize() {
     AddNewObject(new Engine::Label("back to start", "Black-Magic-2.ttf", 48, halfW, halfH * 3 / 2+145, 125, 30, 32, 255, 0.5, 0.5));
 
     Slider *sliderBGM, *sliderSFX;
-    sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
+    sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4, 190);
     sliderBGM->SetOnValueChangedCallback(
             std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderBGM);
     AddNewObject(
             new Engine::Label("BGM: ", "Black-Magic-2.ttf", 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,
                               0.5));
-    sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 2, 190, 4);
+    sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 2, 190, 4, 190);
     sliderSFX->SetOnValueChangedCallback(
             std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderSFX);

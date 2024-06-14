@@ -31,7 +31,7 @@ void FileSelectScene::Initialize() {
     Engine::ImageButton* btn;
     songlist.clear();
     std::string songname, filename, songlan;
-    std::ifstream fin(u8"Resource/audios/songs/songlist.txt");
+    std::ifstream fin("Resource/audios/songs/songlist.txt");
     //std::cout<<"ouob\n";
     while(fin>>songname && fin >> filename && fin>>songlan){
         //std::cout<<"douo\n";
@@ -95,7 +95,7 @@ void FileSelectScene::BackOnClick() {
 void FileSelectScene::EditOnClick(std::string songname, std::string diff) {
     EditScene* scene = dynamic_cast<EditScene*>(Engine::GameEngine::GetInstance().GetScene("edit"));
     scene->songname = songname, scene->diff = diff;
-    Engine::GameEngine::GetInstance().ChangeScene("play");
+    Engine::GameEngine::GetInstance().ChangeScene("edit");
 }
 void FileSelectScene::SettingsOnClick() {
     Engine::GameEngine::GetInstance().ChangeScene("settings");

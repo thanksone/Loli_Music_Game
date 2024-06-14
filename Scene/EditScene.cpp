@@ -60,8 +60,8 @@ void EditScene::Initialize() {
     halfW = Engine::GameEngine::GetInstance().GetScreenSize().x / 2;
     halfH = Engine::GameEngine::GetInstance().GetScreenSize().y / 2;
     pi = 0, on = total = 0, lpm = 1;
-    ghostW = 250, lineH = 250;
-    x0 = 50;
+    ghostW = 200, lineH = 250;
+    x0 = 40;
     speed = 1;
     last = 0;
     imgTarget.clear(), Boing.clear(), show.clear();
@@ -332,13 +332,13 @@ void EditScene::AddNoteButton(note N, int x, int y){
     addControl(true, btn);
 }
 void EditScene::DisplayNote(){
-    for(int i = pi; i < pi + 4; i++){
+    for(int i = pi; i < std::min(total, pi + 4); i++){
         if(i >= Note.size()) break;
         for(note N : Note[i]){
             AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, round(250.0 * ((float)(i - pi) + N.at)));
         }
     }
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < std::min(total - pi, 4); i++){
         show[i] = new Engine::Label(BPMS[pi + i], "pirulen.ttf", 48, 100, 200, 255, 255, 255, 255, 0.5, 0.5);
         addObject(1, show[i]);
     }
@@ -353,7 +353,6 @@ void EditScene::DisplayLine(){
         Line.push_back(line);
         addObject(1, line);
     }
-    std::cout << "\n";
 }
 void EditScene::ClearNote(){
     onField.clear();
@@ -361,7 +360,9 @@ void EditScene::ClearNote(){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }
     NoteButtonCtrl.clear(), NoteButtonObj.clear();
-    for(int i = 0; i < 4; i++) RemoveObject(show[i]->GetObjectIterator());
+    for(int i = 0; i < 4; i++){
+        if(show[i]) RemoveObject(show[i]->GetObjectIterator());
+    }
 }
 void EditScene::ClearLine(){
     for(Engine::Label* &line : Line){
@@ -376,9 +377,12 @@ bool EditScene::CheckSpaceValid(note N, int y){
     return 1;
 }
 void EditScene::ConstructUI(){
+    int w = Engine::GameEngine::GetInstance().GetScreenSize().x, h = Engine::GameEngine::GetInstance().GetScreenSize().y;
+    halfW = w / 2;
+    halfH = h / 2;
     Engine::ImageButton* btn;
     //TODO : button position
-    btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
+    /*btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
     btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "editting"));
     btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "scores"));
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
@@ -397,10 +401,10 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::PiAddOnClick, this, -1));
     btn->SetOnClickCallback(std::bind(&EditScene::PlayOnClick, this));
     btn->SetOnClickCallback(std::bind(&EditScene::PlayHeadOnClick, this));
-    btn->SetOnClickCallback(std::bind(&EditScene::StopOnClick, this));
+    btn->SetOnClickCallback(std::bind(&EditScene::StopOnClick, this));*/
     //TODO HoldNote
     Slider *sliderPOS;
-    sliderPOS = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4);
+    sliderPOS = new Slider(x0, h - 60, 6 * ghostW, 4, 0);
     sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderPOS);
     sliderPOS->SetValue(0);
