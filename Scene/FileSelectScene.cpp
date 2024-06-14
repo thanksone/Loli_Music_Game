@@ -59,20 +59,20 @@ void FileSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&FileSelectScene::AboriginalOnClick, this, -1));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 400, halfH  + 350, 300, 150, 0.5, 0.5);
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 550, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].filename, "ez"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("EZ", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 400, halfH + 350, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("EZ", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW - 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW, halfH + 350, 300, 150, 0.5, 0.5);
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].filename, "hd"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("HD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH + 350, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("HD", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW + 400, halfH + 350, 300, 150 ,0.5, 0.5);
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW + 250, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&FileSelectScene::EditOnClick, this, songlist[page].filename, "in"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("IN", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW + 400, halfH + 350, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("IN", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW + 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
     bgmInstance = AudioHelper::PlaySample("songs/" + songlist[page].filename+".ogg", true, AudioHelper::BGMVolume);
