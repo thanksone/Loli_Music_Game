@@ -290,6 +290,7 @@ void EditScene::StopOnClick(){
     last = 0;
     Boing.clear();
     AudioHelper::StopSample(audio);
+    RunningLine->Position.y = 960;
     RunningLine->Visible = 0;
 }
 void EditScene::TapOnClick(){
