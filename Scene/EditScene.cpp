@@ -72,6 +72,7 @@ void EditScene::Initialize() {
     x0 = 40;
     speed = 1;
     last = 0;
+    hold = 0;
     imgTarget.clear(), Boing.clear(), show = std::vector<Engine::Label*>(4, nullptr), Line.clear(), SB = std::vector<Engine::Label*>(4, nullptr);
     NoteButtonCtrl.clear(), NoteButtonObj.clear(), imgTarget.clear(), HoldNote.clear();
     for(int i = 0; i < 4; i++) show.push_back(nullptr);
@@ -145,10 +146,10 @@ void EditScene::OnMouseMove(int mx, int my) {
         for (Engine::IObject *img : imgTarget) img->Visible = false;
         return;
     }
-    for(Engine::IObject *img : imgTarget){
-        img->Visible = true;
-        img->Position.x = x * ghostW;
-        img->Position.y = y * lineH;
+    for(int i = 0; i < imgTarget.size(); i++){
+        imgTarget[i]->Visible = true;
+        imgTarget[i]->Position.x = mx;
+        imgTarget[i]->Position.y = my - 60 * i;
     }
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
@@ -157,9 +158,10 @@ void EditScene::OnMouseUp(int button, int mx, int my) {
     int x = (mx - x0) / ghostW, y = my / 240;
     if(imgTarget.empty() || mx < x0 || mx > x0 + 6 * ghostW || my < 0 || my >= 960 || pi + y >= total){
         for(Engine::IObject *img : imgTarget) RemoveObject(img->GetObjectIterator());
-        imgTarget.clear();
+        imgTarget.clear(), hold = 0;
         return;
     }
+    std::cout << "OnMouseUp\n";
     my = (int)round((float)(my / lpm) * lineH);
     note N = {hold, x, hold * len, (float)(my % 240) / (float)240, speed};
     if(CheckSpaceValid(N, my)){
@@ -167,7 +169,7 @@ void EditScene::OnMouseUp(int button, int mx, int my) {
         Note[y].push_back(N);
     }
     for(Engine::IObject *img : imgTarget) RemoveObject(img->GetObjectIterator());
-    imgTarget.clear();
+    imgTarget.clear(), hold = 0;
 }
 void EditScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
@@ -233,8 +235,8 @@ void EditScene::LineAddOnClick(int val){
 void EditScene::LenAddOnClick(int val){
     if(!(len + val) || len + val > 4) return;
     len += val;
-    if(~val) HoldNote[len]->Visible = 1;
-    else HoldNote[len + 1]->Visible = 0;
+    if(~val) HoldNote[len - 1]->Visible = 1;
+    else HoldNote[len]->Visible = 0;
 }
 void EditScene::SpeedAddOnClick(float val){
     if(speed + val <= 0 || speed + val > 5) return;
@@ -300,12 +302,14 @@ void EditScene::StopOnClick(){
     RunningLine->Visible = 0;
 }
 void EditScene::TapOnClick(){
-    imgTarget.push_back(new Engine::Image("edit/tapdirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 500, Engine::GameEngine::GetInstance().GetScreenSize().y - 785, 180, 80));
+    hold = 0;
+    imgTarget.push_back(new Engine::Image("edit/tapdirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 410, Engine::GameEngine::GetInstance().GetScreenSize().y - 745, 180, 80, 0.5, 0.5));
     addObject(1, imgTarget[0]);
 }
 void EditScene::HoldOnClick(){
+    hold = 1;
     for(int i = 0; i < len; i++){
-        imgTarget.push_back(new Engine::Image("edit/holddirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 230, Engine::GameEngine::GetInstance().GetScreenSize().y - 785 - i * 60, 180, 80));
+        imgTarget.push_back(new Engine::Image("edit/holddirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 140, Engine::GameEngine::GetInstance().GetScreenSize().y - 745 - i * 60, 180, 80, 0.5, 0.5));
         addObject(1, imgTarget[i]);
     }
 }
@@ -347,6 +351,7 @@ void EditScene::DeleteNoteClick(int k){
     DeleteNoteButton(k);
 }
 void EditScene::DeleteNoteButton(int n){
+    std::cout << "DeleteNoteButton\n";
     int y = onField[n].ff * 240 + round(onField[n].ss.at * 240.0);
     if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1024, y, y + round((float)onField[n].ss.len * 240.0 / 4.0) - 1, -1);
     else update(onField[n].ss.ghost, 1, 0, 1024, y, y, -1);
@@ -355,17 +360,17 @@ void EditScene::DeleteNoteButton(int n){
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
 }
 void EditScene::AddNoteButton(note N, int x, int y){
-    onField.push_back({(960 - y) / 240, N});
-    if(N.type) update(N.ghost, 1, 0, 1024, y, y + round((float)N.len * 240.0 / 4.0) - 1, 1);
-    else update(N.ghost, 1, 0, 1024, y, y, 1);
-    Engine::ImageButton *btn;
-    if(N.type) btn = new Engine::ImageButton("edit/holddirt.png", "edit/holdfloor.png", x, 960 - y, 180, 80, 0.5, 0.5);
-    else btn = new Engine::ImageButton("edit/tapdirt.png", "edit/tapfloor.png", x, 960 - y, 180, 80, 0.5, 0.5);
-    btn->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
-    NoteButtonCtrl.push_back(btn), NoteButtonObj.push_back({dynamic_cast<IObject*>(btn)});
-    for(int i = 1; i < N.len; i++) NoteButtonObj.back().push_back(new Engine::Image("play/holdnote.png", x, 960 - (y + round((float)i * 240.0 / 4.0)), 0, 0, 0.5, 0.5));
-    for(int i = 0; i < N.len; i++) addObject(true, NoteButtonObj.back()[i]);
-    addControl(true, btn);
+    std::cout << "AddNoteButton\n";
+    onField.push_back({y / 240, N});
+    if(N.type) update(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1, 1);
+    else update(N.ghost, 1, 0, 1023, y, y, 1);
+    if(N.type) NoteBTN = new Engine::ImageButton("edit/holddirt.png", "edit/holdfloor.png", x, 960 - y, 180, 80, 0.5, 0.5);
+    else NoteBTN = new Engine::ImageButton("edit/tapdirt.png", "edit/tapfloor.png", x, 960 - y, 180, 80, 0.5, 0.5);
+    NoteBTN->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size()));
+    NoteButtonCtrl.push_back(NoteBTN), NoteButtonObj.push_back({NoteBTN});
+    for(int i = 1; i < N.len; i++) NoteButtonObj.back().push_back(new Engine::Image("play/holdnote.png", x, 960 - (y + i * 60), 180, 80, 0.5, 0.5));
+
+    std::cout << NoteButtonCtrl.size() << " " << NoteButtonObj.back().size() << "\n";
 }
 void EditScene::DisplayNote(){
     for(int i = pi; i < std::min(total, pi + 4); i++){
@@ -391,9 +396,6 @@ void EditScene::DisplayLine(){
 }
 void EditScene::ClearNote(){
     onField.clear();
-    for(int i = 0; i < NoteButtonCtrl.size(); i++){
-        if(NoteButtonCtrl[i]) DeleteNoteButton(i);
-    }
     NoteButtonCtrl.clear(), NoteButtonObj.clear();
 }
 void EditScene::ClearLine(){
@@ -404,7 +406,7 @@ void EditScene::ClearLine(){
 }
 bool EditScene::CheckSpaceValid(note N, int y){
     if(N.type && (float)(y % 240) + (float)(len - 1) * 240.0 / 4.0 < 240.0) return 0;
-    if(N.type && query(N.ghost, 1, 0, 1024, y, y + round((float)N.len * 240.0 / 4.0) - 1)) return 0;
+    if(N.type && query(N.ghost, 1, 0, 1024, y, y + N.len * 60 - 1)) return 0;
     if(!N.type && query(N.ghost, 1, 0, 1024, y, y)) return 0;
     return 1;
 }
@@ -526,8 +528,9 @@ void EditScene::ConstructUI(){
     btn = new Engine::ImageButton("edit/holddirt.png", "edit/holdfloor.png", w - 230, h - 785, 180, 80);
     btn->SetOnClickCallback(std::bind(&EditScene::HoldOnClick, this));
     AddNewControlObject(btn);
-    for(int i = 0; i < 4; i++){
-        HoldNote.push_back(new Engine::Image("edit/holddirt.png", w - 230, h - 785 - i * 60, 180, 80));
+    HoldNote.push_back(nullptr);
+    for(int i = 1; i < 4; i++){
+        HoldNote.push_back(new Engine::Image("edit/holddirt.png", w - 140, h - 745 - i * 60, 180, 80, 0.5, 0.5));
         HoldNote[i]->Visible = 0;
         AddNewObject(HoldNote[i]);
     }

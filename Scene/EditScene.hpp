@@ -42,6 +42,7 @@ protected:
     std::vector<note> Boing;
     std::queue<float> Time;
     Slider *sliderPOS;
+    Engine::ImageButton *NoteBTN;
 public:
     std::string songname, diff;
     int halfW, halfH;

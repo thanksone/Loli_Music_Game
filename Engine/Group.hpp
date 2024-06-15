@@ -163,7 +163,6 @@ namespace Engine {
 		/// The added objects will not be deleted by Scene at remove or terminate.
 		/// </summary>
 		/// <param name="obj">The Object to add.</param>
-		void addNewControlObject(IControl* ctrl);
 		void AddRefObject(IObject& obj);
 		/// <summary>
 		/// Insert Object to scene before the iterator.

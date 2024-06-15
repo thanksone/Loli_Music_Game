@@ -107,12 +107,6 @@ namespace Engine {
 		addObject(false, dynamic_cast<IObject*>(ctrl));
 		addControl(true, ctrl);
 	}
-    void Group::addNewControlObject(IControl* ctrl) {
-        if (!dynamic_cast<IObject*>(ctrl))
-            throw std::invalid_argument("The control must inherit both IObject and IControl.");
-        addObject(true, dynamic_cast<IObject*>(ctrl));
-        addControl(true, ctrl);
-    }
 	void Group::AddRefObject(IObject& obj) {
 		addObject(false, &obj);
 	}
