@@ -31,7 +31,7 @@ protected:
     std::vector<float> BPM;
     std::vector<Engine::Label*> show, SB;
     std::vector<std::string> BPMS;
-    std::vector<Engine::IControl*> NoteButtonCtrl;
+    std::vector<Engine::ImageButton*> NoteButtonCtrl;
     std::vector<std::vector<Engine::IObject*>> NoteButtonObj;
     std::vector<Engine::Label*> Line;
     std::vector<std::pair<int, note>> onField;
@@ -42,7 +42,6 @@ protected:
     std::vector<note> Boing;
     std::queue<float> Time;
     Slider *sliderPOS;
-    Engine::ImageButton *NoteBTN;
 public:
     std::string songname, diff;
     int halfW, halfH;
