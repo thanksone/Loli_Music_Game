@@ -80,4 +80,9 @@ void StartScene::Terminate() {
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
+void StartScene::PlayOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("main");
+}
+
+
 

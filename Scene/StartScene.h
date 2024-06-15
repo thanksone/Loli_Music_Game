@@ -17,6 +17,8 @@ public:
     explicit StartScene() = default;
     void Initialize() override;
     void Terminate() override;
+    void PlayOnClick(int stage);
+
 
     User user;
 };
