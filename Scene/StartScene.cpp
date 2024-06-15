@@ -83,9 +83,7 @@ void StartScene::Terminate() {
 void StartScene::PlayOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void StartScene::SettingsOnClick(int stage) {
-    Engine::GameEngine::GetInstance().ChangeScene("settings");
-}
+
 
 void StartScene::EditOnClick() {
     Engine::GameEngine::GetInstance().ChangeScene("edit");
