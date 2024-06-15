@@ -81,7 +81,7 @@ void EditScene::Initialize() {
     for(int i = 0; i < 4; i++) show.push_back(nullptr);
     std::string L;
     for(int i = 0; i < 60; i++) L += '_';
-    RunningLine = new Engine::Label(L, "pirulen.ttf", 30, x0, 960);
+    RunningLine = new Engine::Label(L, "pirulen.ttf", 30, x0, 960, 255, 255, 255, 255, 0, 1);
     AddNewObject(RunningLine); 
     RunningLine->Visible = 0;
     for(int i = 0; i < 6; i++){
@@ -111,16 +111,15 @@ void EditScene::Update(float deltatime) {
         Time.pop();
         now++;
         if(now >= pi + 4){
-            pi = std::min(now, total - 4);
-            ClearNote();
-            DisplayNote();
-            RunningLine->Position = Engine::Point(x0, (pi - now) * 240.0);
+            sliderPOS->Position.x = x0 + 1200.0 * (float)(pi + 4) / (float)total;
+            POSSliderOnValueChanged((float)(pi + 4) / (float)total);
+            RunningLine->Position.y = (std::min(pi + 4, total) - now) * 240.0;
         }
     }
-    RunningLine->Position.y += 240.0 * (60.0 / BPM[now]) * deltatime;
+    RunningLine->Position.y -= 4.0 * BPM[now] * deltatime;
     if(last <= 0){
         AudioHelper::StopSample(audio);
-        RunningLine->Position = Engine::Point(x0, 960);
+        RunningLine->Position.y = 960;
         RunningLine->Visible = 0;
     }
 }
