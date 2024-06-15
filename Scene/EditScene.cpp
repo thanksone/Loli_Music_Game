@@ -9,6 +9,7 @@
 #include <memory>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 #include "Engine/Point.hpp"
 #include "Engine/AudioHelper.hpp"
