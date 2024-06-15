@@ -18,7 +18,7 @@ public:
     void Initialize() override;
     void Terminate() override;
     void PlayOnClick(int stage);
-    void SettingsOnClick(int stage);
+
     void EditOnClick();
     User user;
 };
