@@ -241,6 +241,7 @@ void EditScene::PiAddOnClick(int val){
     POSSliderOnValueChanged(x);
 }
 void EditScene::PlayOnClick(){
+    if(last > 0) StopOnClick();
     float time = 0;
     last = past = 0;
     now = pi, front = 0;
@@ -265,6 +266,7 @@ void EditScene::PlayOnClick(){
     audio = AudioHelper::PlaySample("songs/" + songname + ".ogg", 0, AudioHelper::BGMVolume, time);
 }
 void EditScene::PlayHeadOnClick(){
+    if(last > 0) StopOnClick();
     last = past = 0;
     now = front = 0;
     while(!Time.empty()) Time.pop();
