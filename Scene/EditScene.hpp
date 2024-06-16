@@ -13,6 +13,8 @@
 #include "Engine/IControl.hpp"
 #include "Engine/IObject.hpp"
 #include "UI/Component/Slider.hpp"
+#include "Account/User.hpp"
+
 struct note{
     int type, ghost, len;
     float at, speed;
@@ -43,6 +45,7 @@ protected:
     std::queue<float> Time;
     Slider *sliderPOS;
 public:
+    User user;
     std::string songname, diff;
     int halfW, halfH;
 	explicit EditScene() = default;

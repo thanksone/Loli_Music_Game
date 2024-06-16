@@ -6,6 +6,7 @@
 #include <memory>
 #include <vector>
 #include "Engine/IScene.hpp"
+#include "Account/User.hpp"
 
 struct character {
     std::string charactername;
@@ -19,6 +20,7 @@ private:
     int page=0;
     int maxpage;
 public:
+    User user;
     explicit CharacterSelectScene() = default;
     void Initialize() override;
     void Terminate() override;

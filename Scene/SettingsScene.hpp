@@ -6,11 +6,13 @@
 
 #include <memory>
 #include "Engine/IScene.hpp"
+#include "Account/User.hpp"
 
 class SettingsScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
 public:
+    User user;
     explicit SettingsScene() = default;
 
     void Initialize() override;

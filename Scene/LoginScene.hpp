@@ -9,7 +9,7 @@
 #include <map>
 class LoginScene final : public Engine::IScene {
 private:
-    std::map<std::string, std::string> mamamia;
+    std::map<std::string, long long> mamamia;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
     std::string username, password;
     Engine::Label *usr, *pwd;
@@ -23,6 +23,7 @@ public:
     void OnMouseDown(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void OnKeyUp(int keyCode) override;
+    void BackOnClick();
     User user;
 };
 #endif //LOGINSCENE_HPP

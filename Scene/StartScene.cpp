@@ -18,6 +18,7 @@
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
+#include "MainScene.hpp"
 
 std::string sancheck;
 
@@ -65,14 +66,14 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-195 , 300, 180);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Guest Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));
 
 
 
-    /*btn = new Engine::ImageButton(dirtimg, floorimg,  w- 300, h-160, 300, 150);
-    btn->SetOnClickCallback(std::bind(&StartScene::EditOnClick, this));
+    btn = new Engine::ImageButton(dirtimg, floorimg,  halfW - 150, h-390, 300, 180);
+    btn->SetOnClickCallback(std::bind(&StartScene::LoginOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Edit mode", fontname, 48, w-150, h-85, 125, 30, 32, 255, 0.5, 0.5));*/
+    AddNewObject(new Engine::Label("Login", fontname, 48, halfW, h-300, 125, 30, 32, 255, 0.5, 0.5));*/
 
 }
 void StartScene::Terminate() {
@@ -81,10 +82,12 @@ void StartScene::Terminate() {
     IScene::Terminate();
 }
 void StartScene::PlayOnClick(int stage) {
+    MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+    scene->user = Guest();
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 
 
-void StartScene::EditOnClick() {
-    Engine::GameEngine::GetInstance().ChangeScene("edit");
+void StartScene::LoginOnClick() {
+    Engine::GameEngine::GetInstance().ChangeScene("login");
 }

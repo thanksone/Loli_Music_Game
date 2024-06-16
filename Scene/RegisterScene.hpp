@@ -23,6 +23,7 @@ public:
     void OnMouseDown(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void OnKeyUp(int keyCode) override;
+    void BackOnClick();
     User user;
 };
 #endif //REGISTERSCENE_HPP

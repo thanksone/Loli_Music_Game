@@ -4,6 +4,7 @@
 #include <vector>
 #include "Engine/IScene.hpp"
 #include "SongSelectScene.hpp"
+#include "Account/User.hpp"
 
 class FileSelectScene final : public Engine::IScene {
 private:
@@ -11,6 +12,7 @@ private:
     std::vector<song> songlist;
     int page, maxpage;
 public:
+    User user;
     explicit FileSelectScene() = default;
     void Initialize() override;
     void Terminate() override;

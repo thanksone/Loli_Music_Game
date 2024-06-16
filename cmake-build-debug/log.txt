@@ -60,6 +60,7 @@
 [INFO] Changed to edit scene
 [INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
 [INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 20
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] Game Terminating...
@@ -101,6 +102,7 @@
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?140x80
 [INFO] Destroyed Resource<image>: edit/holddirt.png?180x80
+[INFO] Destroyed Resource<font>: pirulen.ttf?20
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?36
 [INFO] Destroyed Resource<font>: pirulen.ttf?30
 [INFO] Destroyed Resource<font>: hanazomefont.ttf?60

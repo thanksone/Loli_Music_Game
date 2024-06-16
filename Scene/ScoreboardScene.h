@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include "Engine/IScene.hpp"
+#include "Account/User.hpp"
 
 struct people{
 
@@ -19,6 +20,7 @@ struct people{
 
 class ScoreboardScene final : public Engine::IScene {
 public:
+    User user;
     explicit ScoreboardScene() = default;
     void Initialize() override;
     void Terminate() override;

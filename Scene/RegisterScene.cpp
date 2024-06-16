@@ -3,14 +3,16 @@
 #include "Engine/GameEngine.hpp"
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
-
+#include "MainScene.hpp"
+#include "LoginScene.hpp"
 void RegisterScene::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
     username.clear(), password1.clear(), password2.clear();
-    std::string namae, pa55word;
+    std::string namae;
+    long long pa55word;
     std::ifstream fin("Resource/accountlist.txt");
     while(fin >> namae >> pa55word) ExistUser.insert(namae);
     fin.close();
@@ -19,6 +21,7 @@ void RegisterScene::Initialize(){
     btn->SetOnClickCallback(std::bind(&RegisterScene::RegisterOnClick, this));
     btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 1));
     btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 2));
+    btn->SetOnClickCallback(std::bind(&RegisterScene::BackOnClick, this));
     usr = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH - 100, 255, 255, 255, 255, 0.5, 0.5);
     pwd1 = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 100, 255, 255, 255, 255, 0.5, 0.5);
     pwd2 = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 200, 255, 255, 255, 255, 0.5, 0.5);
@@ -63,14 +66,20 @@ void RegisterScene::RegisterOnClick(){
         fout << username << " " << hash(password1) << "\n";
         user = User(username, hash(password1));
         user.AddCharacter(Loli("loli", 0, 0));
+        user.ChangeOnField("loli");
         fout.close();
         std::ofstream fin(file);
         fin << 1 << "\n";
         fin << "loli" << " " << "san" << " " << "fullsan" << "\n";
         fin.close();
+        MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+        scene->user = user;
         Engine::GameEngine::GetInstance().ChangeScene("main");
     }
 }
 void RegisterScene::InsertOnClick(int t){
     on = t;
+}
+void RegisterScene::BackOnClick(){
+    Engine::GameEngine::GetInstance().ChangeScene("login");
 }

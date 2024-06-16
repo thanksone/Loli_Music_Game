@@ -8,6 +8,7 @@
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
+#include "Account/User.hpp"
 
 class Turret;
 namespace Engine {
@@ -31,6 +32,7 @@ protected:
 	int money;
 	int SpeedMult;
 public:
+    User user;
 	static bool DebugMode;
 	static const std::vector<Engine::Point> directions;
 	static const int MapWidth, MapHeight;

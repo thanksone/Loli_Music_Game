@@ -3,6 +3,7 @@
 #include <allegro5/allegro_audio.h>
 #include <memory>
 #include "Engine/IScene.hpp"
+#include "Account/User.hpp"
 
 struct song {
     std::string songname,filename, songlan;
@@ -16,6 +17,7 @@ private:
     int page=0;
     int maxpage;
 public:
+    User user;
     explicit SongSelectScene() = default;
     void Initialize() override;
     void Terminate() override;

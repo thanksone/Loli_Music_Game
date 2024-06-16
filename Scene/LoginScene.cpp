@@ -3,6 +3,7 @@
 #include "Engine/GameEngine.hpp"
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
+#include "MainScene.hpp"
 
 void LoginScene::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -10,15 +11,19 @@ void LoginScene::Initialize(){
     int halfW = w / 2;
     int halfH = h / 2;
     username.clear(), password.clear();
-    std::string namae, pa55word;
+    std::string namae;
+    long long pa55word;
     std::ifstream fin("Resource/accountlist.txt");
     while(fin >> namae >> pa55word) mamamia[namae] = pa55word;
     fin.close();
     shift = 0;
     Engine::ImageButton* btn;
-    btn->SetOnClickCallback(std::bind(&LoginScene::LoginOnClick, this));
+    btn = new Engine::ImageButton("stage-select/sangooddirt", "stage-select/sangoodfloor", halfW -150, h-195 , 300, 180);
     btn->SetOnClickCallback(std::bind(&LoginScene::InsertOnClick, this, 1));
+
     btn->SetOnClickCallback(std::bind(&LoginScene::InsertOnClick, this, 2));
+    btn->SetOnClickCallback(std::bind(&LoginScene::BackOnClick, this));
+    btn->SetOnClickCallback(std::bind(&LoginScene::LoginOnClick, this));
     usr = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH - 100, 255, 255, 255, 255, 0.5, 0.5);
     pwd = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 100, 255, 255, 255, 255, 0.5, 0.5);
 }
@@ -66,9 +71,14 @@ void LoginScene::LoginOnClick(){
             user.UpdateRecord(songname, score, acc);
         }
         fin.close();
+        MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+        scene->user = user;
         Engine::GameEngine::GetInstance().ChangeScene("main");
     }
 }
 void LoginScene::InsertOnClick(int t){
     on = t;
+}
+void LoginScene::BackOnClick(){
+    Engine::GameEngine::GetInstance().ChangeScene("start");
 }
