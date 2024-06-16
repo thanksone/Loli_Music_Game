@@ -27,7 +27,7 @@ void User::UpdateRecord(std::string song, int score, float acc){
     BestRecord[song].ss = std::max(acc, BestRecord[song].ss);
 }
 void User::update(){
-    font = wind? "WOODCUTTER-BCN-Style-1.ttf" : "Black-Magic-2.ttf";
+    font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
     dirt = wind? "stage-select/sanbaddirt" : "stage-select/sangooddirt";
     floor = wind? "stage-select/sanbadfloor" : "stage-select/sangoodfloor";
 }
