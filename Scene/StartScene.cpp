@@ -73,7 +73,7 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton(dirtimg, floorimg,  halfW - 150, h-390, 300, 180);
     btn->SetOnClickCallback(std::bind(&StartScene::LoginOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Login", fontname, 48, halfW, h-300, 125, 30, 32, 255, 0.5, 0.5));*/
+    AddNewObject(new Engine::Label("Login", fontname, 48, halfW, h-300, 125, 30, 32, 255, 0.5, 0.5));
 
 }
 void StartScene::Terminate() {
