@@ -19,6 +19,7 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
 [INFO] Changed to login scene
+[INFO] Changed to register scene
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png scaled to 70x70
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingfloor.png

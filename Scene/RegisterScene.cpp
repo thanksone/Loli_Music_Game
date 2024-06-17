@@ -17,7 +17,7 @@ void RegisterScene::Initialize(){
     while(fin >> namae >> pa55word) ExistUser.insert(namae);
     fin.close();
     shift = 0;
-    message = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW, halfH - 250, 255, 255, 255, 255, 0.5, 0.5);
+    message = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW, halfH - 400, 255, 255, 255, 255, 0.5, 0.5);
     Engine::ImageButton* btn;
     btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH - 295 , 500, 180);
     btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 1));
@@ -81,8 +81,8 @@ void RegisterScene::RegisterOnClick(){
     else if(password1 != password2) message->Text = "Password different";
     else{
         //TODO loli status
-        std::string file = "Resource/account-status/" + username + ".txt", name, songname;
-        std::ofstream fout("Resource/accountlist.txt", std::ios_base::app);
+        std::string file = "Loli_Music_Game/Resource/account-status/" + username + ".txt", name, songname;
+        std::ofstream fout("Loli_Music_Game/Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
         user = User(username, hash(password1));
         user.AddCharacter(Loli("loli", 0, 0));

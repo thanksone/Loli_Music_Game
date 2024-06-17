@@ -186,7 +186,7 @@ void EditScene::BackOnClick(){
 }
 void EditScene::SaveOnClick(std::string dir){
     std::ofstream fout;
-    fout.open("Resource/" + dir + "/" + songname + "/" + diff + ".txt");
+    fout.open("Loli_Music_Game/Resource/" + dir + "/" + songname + "/" + diff + ".txt", std::ios::trunc);
     fout << total << "\n";
     for(int i = 0; i < total; i++){
         fout << BPM[i] << " " << Note[i].size() << "\n";
@@ -316,7 +316,7 @@ void EditScene::POSSliderOnValueChanged(float value){
 }
 void EditScene::ReadScore(){
     BPM.clear(), BPMS.clear(), Note.clear();
-    std::string file = "Resource/editting/" + songname +  "/" + diff + ".txt";
+    std::string file = "Loli_Music_Game/Resource/editting/" + songname +  "/" + diff + ".txt";
     std::ifstream fin(file);
     int time, notes, type, ghost, len;
     float at, speed, bpm;
