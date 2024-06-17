@@ -7,7 +7,7 @@ private:
 
 public:
     Loli();
-    Loli(std::string namae, int san, int fullsan): name(namae), san(san), fullsan(fullsan){}
+    Loli(std::string namae, int san, int fullsan, bool wind): name(namae), san(san), fullsan(fullsan), wind(wind){}
     std::string name;
     int fullsan, san;
     bool wind;

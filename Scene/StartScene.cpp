@@ -28,25 +28,32 @@ void StartScene::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
     Engine::ImageButton* btn;
-    std::string account,sanity,maxsan;
-    std::string filename="Resource/account-status/guest.txt";
-    std::ifstream fin(filename);
-
-
-
-    /*if(user.SanCheck()) {
-        std::cout<<"ouob\n";
-    }*/
-
-    fin>>account>>sanity>>maxsan;
-    if(std::stoi(sanity)<std::stoi(maxsan)/5) {
-        sancheck="bad";
+    std::string account, name, songname;
+    int llcnt, san, fullsan, wind, score;
+    float acc;
+    std::ifstream fout("../Resource/account-status/guest.txt");
+    if(fout >> account && account != "guest"){
+        user = User(account);
+        fout.close();
+        std::ifstream fin("../Resource/account-status/" + account + ".txt");
+        fin >> llcnt;
+        while(llcnt--){
+            if(!(fin >> name >> san >> fullsan >> wind)) break;
+            user.AddCharacter(Loli(name, san, fullsan, wind));
+        }
+        fin >> name;
+        user.ChangeOnField(name);
+        while(fin >> songname >> score >> acc){
+            user.UpdateRecord(songname, score, acc);
+        }
+        fin.close();
+    }else{
+        user = Guest();
+        fout.close();
     }
-    else sancheck="good";
+    sancheck = user.wind? "bad" : "good";
     //std::cout<<account<<" "<<sanity<<" "<<maxsan<<"\n";
     //std::cout<<account<<" "<<stoi(sanity)<<" "<<maxsan<<"\n";
-
-    fin.close();
 
     std::string dirtimg="stage-select/san" +sancheck+"dirt.png";
     std::string floorimg="stage-select/san" +sancheck+"floor.png";
@@ -66,7 +73,7 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-195 , 300, 180);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Guest Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Play", fontname, 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5));
 
 
 
@@ -83,7 +90,7 @@ void StartScene::Terminate() {
 }
 void StartScene::PlayOnClick(int stage) {
     MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
-    scene->user = Guest();
+    scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 

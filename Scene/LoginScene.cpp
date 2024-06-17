@@ -13,7 +13,7 @@ void LoginScene::Initialize(){
     username.clear(), password.clear();
     std::string namae;
     long long pa55word;
-    std::ifstream fin("Resource/accountlist.txt");
+    std::ifstream fin("../Resource/accountlist.txt");
     while(fin >> namae >> pa55word) mamamia[namae] = pa55word;
     fin.close();
     shift = 0;
@@ -72,19 +72,21 @@ void LoginScene::OnKeyUp(int keyCode){
     if(keyCode == ALLEGRO_KEY_LSHIFT || keyCode == ALLEGRO_KEY_RSHIFT) shift = 0;
 }
 void LoginScene::LoginOnClick(){
-    if(mamamia[username] != hash(password)){
-        message->Text = "User name or password incorrect";
-    }else{
-        int n, san, fullsan, score;
+    if(mamamia.find(username) == mamamia.end()) message->Text = "User does not exist";
+    else if(mamamia[username] != hash(password)) message->Text = "User name or password incorrect";
+    else{
+        int n, san, fullsan, score, wind;
         float acc;
-        std::string file = "Resource/account-status/" + username + ".txt", name, songname;
+        std::string file = "../Resource/account-status/" + username + ".txt", name, songname;
         std::ifstream fin(file);
-        user = User(username, hash(password));
+        user = User(username);
         fin >> n;
         while(n--){
-            if(!(fin >> name >> san >> fullsan)) break;
-            user.AddCharacter(Loli(name, san, fullsan));
+            if(!(fin >> name >> san >> fullsan >> wind)) break;
+            user.AddCharacter(Loli(name, san, fullsan, wind));
         }
+        fin >> name;
+        user.ChangeOnField(name);
         while(fin >> songname >> score >> acc){
             user.UpdateRecord(songname, score, acc);
         }

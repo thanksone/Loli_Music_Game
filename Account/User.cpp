@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <fstream>
 #include "User.hpp"
 #define ff first
 #define ss second
@@ -13,15 +14,12 @@ long long hash(std::string S){
     return sum;
 }
 User Guest(){
-    User guest = User("guest", 0);
-    guest.AddCharacter(Loli("loli", 0, 0));
+    User guest = User("guest");
+    guest.AddCharacter(Loli("loli", 1, 1, 0));
     guest.ChangeOnField("loli");
     return guest;
 }
-User::User(std::string namae, long long pa55word): name(namae), password(pa55word){}
-bool User::cmp(long long pa55word){
-    return pa55word == password;
-}
+User::User(std::string namae): name(namae){}
 void User::UpdateRecord(std::string song, int score, float acc){
     BestRecord[song].ff = std::max(score, BestRecord[song].ff);
     BestRecord[song].ss = std::max(acc, BestRecord[song].ss);
@@ -30,6 +28,16 @@ void User::update(){
     font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
     dirt = wind? "stage-select/sanbaddirt.png" : "stage-select/sangooddirt.png";
     floor = wind? "stage-select/sanbadfloor.png" : "stage-select/sangoodfloor.png";
+    std::ofstream fout("../Resource/account-status/" + name + ".txt", std::ios::trunc);
+    fout << Character.size() << "\n";
+    for(Loli ll : Character){
+        fout << ll.name << " " << ll.san << " " << ll.fullsan << " " << (ll.wind? "1\n" : "0\n");
+    }
+    fout << loli->name << "\n";
+    for(auto [song, score] : BestRecord){
+        fout << song << " " << score.ff << " " << score.ss << "\n";
+    }
+    fout.close();
 }
 void User::AddCharacter(Loli avocado){
     for(Loli ll : Character){
@@ -46,7 +54,6 @@ bool User::ChangeOnField(std::string name){
             return 1;
         }
     }
-    update();
     return 0;
 }
 void User::ChangeSan(int val){

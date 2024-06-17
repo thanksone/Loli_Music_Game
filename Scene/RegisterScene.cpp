@@ -81,16 +81,16 @@ void RegisterScene::RegisterOnClick(){
     else if(password1 != password2) message->Text = "Password different";
     else{
         //TODO loli status
-        std::string file = "Loli_Music_Game/Resource/account-status/" + username + ".txt", name, songname;
-        std::ofstream fout("Loli_Music_Game/Resource/accountlist.txt", std::ios_base::app);
+        std::string file = "../Resource/account-status/" + username + ".txt", name, songname;
+        std::ofstream fout("../Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
-        user = User(username, hash(password1));
-        user.AddCharacter(Loli("loli", 0, 0));
+        user = User(username);
+        user.AddCharacter(Loli("loli", 1, 1, 0));
         user.ChangeOnField("loli");
         fout.close();
-        std::ofstream fin(file);
+        std::ofstream fin(file, std::ios::trunc);
         fin << 1 << "\n";
-        fin << "loli" << " " << "san" << " " << "fullsan" << "\n";
+        fin << "loli" << " " << 1 << " " << 1 << " " << 0 << "\nloli\n";
         fin.close();
         MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
         scene->user = user;

@@ -10,7 +10,6 @@ struct settings{
 };
 class User{
 private:
-    long long password;
     std::vector<Loli> Character;
     std::map<std::string, std::pair<int, float>> BestRecord;
     Loli *loli;
@@ -21,8 +20,7 @@ public:
     float seal;
     settings setting;
     User() = default;
-    User(std::string namae, long long pa55word);
-    bool cmp(long long pa55word);
+    User(std::string namae);
     void update();
     void UpdateRecord(std::string song, int score, float acc);
     void AddCharacter(Loli ll);
