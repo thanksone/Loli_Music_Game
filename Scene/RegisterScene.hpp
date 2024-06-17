@@ -12,7 +12,7 @@ private:
     std::set<std::string> ExistUser;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
     std::string username, password1, password2;
-    Engine::Label *usr, *pwd1, *pwd2;
+    Engine::Label *usr, *pwd1, *pwd2, *message;
     int shift, on;
 public:
     explicit RegisterScene() = default;
