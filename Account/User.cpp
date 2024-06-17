@@ -28,8 +28,8 @@ void User::UpdateRecord(std::string song, int score, float acc){
 }
 void User::update(){
     font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
-    dirt = wind? "stage-select/sanbaddirt" : "stage-select/sangooddirt";
-    floor = wind? "stage-select/sanbadfloor" : "stage-select/sangoodfloor";
+    dirt = wind? "stage-select/sanbaddirt.png" : "stage-select/sangooddirt.png";
+    floor = wind? "stage-select/sanbadfloor.png" : "stage-select/sangoodfloor.png";
 }
 void User::AddCharacter(Loli avocado){
     for(Loli ll : Character){

@@ -15,6 +15,8 @@
 #include "Scene/SongSelectScene.hpp"
 #include "Scene/FileSelectScene.hpp"
 #include "Scene/EditScene.hpp"
+#include "Scene/LoginScene.hpp"
+#include "Scene/RegisterScene.hpp"
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
@@ -32,7 +34,8 @@ int main(int argc, char **argv) {
 	game.AddNewScene("character-select", new CharacterSelectScene());
 	game.AddNewScene("song-select", new SongSelectScene());
     game.AddNewScene("file-select", new FileSelectScene());
-
+    game.AddNewScene("login", new LoginScene());
+    game.AddNewScene("register", new RegisterScene());
 
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
 	game.Start("start", 60, 1800, 1020);

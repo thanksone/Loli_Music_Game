@@ -17,14 +17,34 @@ void RegisterScene::Initialize(){
     while(fin >> namae >> pa55word) ExistUser.insert(namae);
     fin.close();
     shift = 0;
+    message = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW, halfH - 400, 255, 255, 255, 255, 0.5, 0.5);
     Engine::ImageButton* btn;
-    btn->SetOnClickCallback(std::bind(&RegisterScene::RegisterOnClick, this));
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH - 295 , 500, 180);
     btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("User Name: ", "Black-Magic-2.ttf", 48, halfW - 120, halfH - 205, 255, 255, 255, 255, 1, 0.5));
+    usr = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW - 40, halfH - 205, 0, 0, 0, 255, 0, 0.5);
+    AddNewObject(usr);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH - 90 , 500, 180);
     btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 2));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Password: ", "Black-Magic-2.ttf", 48, halfW - 120, halfH, 255, 255, 255, 255, 1, 0.5));
+    pwd1 = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW - 40, halfH, 0, 0, 0, 255, 0, 0.5);
+    AddNewObject(pwd1);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH + 115 , 500, 180);
+    btn->SetOnClickCallback(std::bind(&RegisterScene::InsertOnClick, this, 3));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Confirm Password: ", "Black-Magic-2.ttf", 48, halfW - 120, halfH + 205, 255, 255, 255, 255, 1, 0.5));
+    pwd2 = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW - 40, halfH + 205, 0, 0, 0, 255, 0, 0.5);
+    AddNewObject(pwd2);
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&RegisterScene::BackOnClick, this));
-    usr = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH - 100, 255, 255, 255, 255, 0.5, 0.5);
-    pwd1 = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 100, 255, 255, 255, 255, 0.5, 0.5);
-    pwd2 = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 200, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewControlObject(btn);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 150, halfH + 310 , 300, 180);
+    btn->SetOnClickCallback(std::bind(&RegisterScene::RegisterOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Register", "Black-Magic-2.ttf", 48, halfW, halfH + 400, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(message);
 }
 void RegisterScene::Terminate(){
     IScene::Terminate();
@@ -56,13 +76,13 @@ void RegisterScene::OnKeyUp(int keyCode){
     if(keyCode == ALLEGRO_KEY_LSHIFT || keyCode == ALLEGRO_KEY_RSHIFT) shift = 0;
 }
 void RegisterScene::RegisterOnClick(){
-    if(ExistUser.find(username) != ExistUser.end()) AddNewObject(new Engine::Label("User name crash", "pirulen.ttf", 30, 500, 900, 255, 255, 255, 255, 0.5, 0.5));
-    else if(password1 != password2){
-        AddNewObject(new Engine::Label("Password different", "pirulen.ttf", 30, 500, 900, 255, 255, 255, 255, 0.5, 0.5));
-    }else{
+    if(ExistUser.find(username) != ExistUser.end()) message->Text = "User name crash";
+    else if(username.empty() || password1.empty()) message->Text = "Empty name or password";
+    else if(password1 != password2) message->Text = "Password different";
+    else{
         //TODO loli status
-        std::string file = "Resource/account-status/" + username + ".txt", name, songname;
-        std::ofstream fout("Resource/accountlist.txt", std::ios_base::app);
+        std::string file = "Loli_Music_Game/Resource/account-status/" + username + ".txt", name, songname;
+        std::ofstream fout("Loli_Music_Game/Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
         user = User(username, hash(password1));
         user.AddCharacter(Loli("loli", 0, 0));

@@ -17,15 +17,32 @@ void LoginScene::Initialize(){
     while(fin >> namae >> pa55word) mamamia[namae] = pa55word;
     fin.close();
     shift = 0;
+    message = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW, halfH - 250, 255, 255, 255, 255, 0.5, 0.5);
+    usr = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW - 40, halfH - 105, 0, 0, 0, 255, 0, 0.5);
+    pwd = new Engine::Label("", "Black-Magic-2.ttf", 48, halfW - 40, halfH + 105, 0, 0, 0, 255, 0, 0.5);
     Engine::ImageButton* btn;
-    btn = new Engine::ImageButton("stage-select/sangooddirt", "stage-select/sangoodfloor", halfW -150, h-195 , 300, 180);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH - 195 , 500, 180);
     btn->SetOnClickCallback(std::bind(&LoginScene::InsertOnClick, this, 1));
-
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("User Name: ", "Black-Magic-2.ttf", 48, halfW - 120, halfH - 105, 255, 255, 255, 255, 1, 0.5));
+    AddNewObject(usr);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 100, halfH + 15 , 500, 180);
     btn->SetOnClickCallback(std::bind(&LoginScene::InsertOnClick, this, 2));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Password: ", "Black-Magic-2.ttf", 48, halfW - 120, halfH + 105, 255, 255, 255, 255, 1, 0.5));
+    AddNewObject(pwd);
+    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&LoginScene::BackOnClick, this));
+    AddNewControlObject(btn);
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 320, halfH + 225 , 300, 180);
+    btn->SetOnClickCallback(std::bind(&LoginScene::RegisterOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Register", "Black-Magic-2.ttf", 48, halfW - 170, halfH + 315, 0, 0, 0, 255, 0.5, 0.5));
+    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW + 20, halfH + 225 , 300, 180);
     btn->SetOnClickCallback(std::bind(&LoginScene::LoginOnClick, this));
-    usr = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH - 100, 255, 255, 255, 255, 0.5, 0.5);
-    pwd = new Engine::Label("", "pirulen.ttf", 48, halfW, halfH + 100, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Login", "Black-Magic-2.ttf", 48, halfW + 170, halfH + 315, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(message);
 }
 void LoginScene::Terminate(){
     IScene::Terminate();
@@ -55,8 +72,9 @@ void LoginScene::OnKeyUp(int keyCode){
     if(keyCode == ALLEGRO_KEY_LSHIFT || keyCode == ALLEGRO_KEY_RSHIFT) shift = 0;
 }
 void LoginScene::LoginOnClick(){
-    if(mamamia[username] != hash(password)) AddNewObject(new Engine::Label("User name or password incorrect", "pirulen.ttf", 30, 500, 900, 255, 255, 255, 255, 0.5, 0.5));
-    else{
+    if(mamamia[username] != hash(password)){
+        message->Text = "User name or password incorrect";
+    }else{
         int n, san, fullsan, score;
         float acc;
         std::string file = "Resource/account-status/" + username + ".txt", name, songname;
@@ -81,4 +99,7 @@ void LoginScene::InsertOnClick(int t){
 }
 void LoginScene::BackOnClick(){
     Engine::GameEngine::GetInstance().ChangeScene("start");
+}
+void LoginScene::RegisterOnClick(){
+    Engine::GameEngine::GetInstance().ChangeScene("register");
 }

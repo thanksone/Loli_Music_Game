@@ -12,7 +12,7 @@ private:
     std::map<std::string, long long> mamamia;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
     std::string username, password;
-    Engine::Label *usr, *pwd;
+    Engine::Label *usr, *pwd, *message;
     int shift, on;
 public:
     explicit LoginScene() = default;
@@ -24,6 +24,7 @@ public:
     void OnKeyDown(int keyCode) override;
     void OnKeyUp(int keyCode) override;
     void BackOnClick();
+    void RegisterOnClick();
     User user;
 };
 #endif //LOGINSCENE_HPP
