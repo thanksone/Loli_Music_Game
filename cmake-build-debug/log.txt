@@ -19,10 +19,19 @@
 [INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
 [INFO] Changed to login scene
-[INFO] Changed to register scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png scaled to 70x70
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingfloor.png
+[INFO] Loaded Resource<audio>: Resource/audios/mainscene.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
 [INFO] Game Terminating...
+[INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
 [INFO] Destroyed Resource<image>: stage-select/pinkleft.png
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?500x180
@@ -33,5 +42,7 @@
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed<sample_instance>: mainscene.ogg
 [INFO] Destroyed<sample_instance>: startscene.ogg
+[INFO] Destroyed Resource<audio>: mainscene.ogg
 [INFO] Destroyed Resource<audio>: startscene.ogg
