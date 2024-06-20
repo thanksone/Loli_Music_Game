@@ -533,6 +533,9 @@ void EditScene::ConstructUI(){
         HoldNote[i]->Visible = 0;
         AddNewObject(HoldNote[i]);
     }
+    for(int i = 0; i < 7; i++){
+        AddNewObject(new Engine::Image("stage-select/foo.png", x0 + ghostW * i, 957, 4, 957, 0.5, 1));
+    }
     sliderPOS = new Slider(x0, h - 26, 6 * ghostW, 4, 0);
     sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderPOS);

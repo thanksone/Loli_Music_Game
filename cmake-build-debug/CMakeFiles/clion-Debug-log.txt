@@ -1,4 +1,4 @@
-/snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/thanksone/CLionProjects/Loli_Music_Game -B /home/thanksone/CLionProjects/Loli_Music_Game/cmake-build-debug
+/snap/clion/284/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/thanksone/CLionProjects/Loli_Music_Game -B /home/thanksone/CLionProjects/Loli_Music_Game/cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
