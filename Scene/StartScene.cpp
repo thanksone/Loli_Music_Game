@@ -31,11 +31,11 @@ void StartScene::Initialize() {
     std::string account, name, songname;
     int llcnt, san, fullsan, wind, score;
     float acc;
-    std::ifstream fout("../Resource/account-status/guest.txt");
+    std::ifstream fout("../Resource/account-status/guest.loli");
     if(fout >> account && account != "guest"){
         user = User(account);
         fout.close();
-        std::ifstream fin("../Resource/account-status/" + account + ".txt");
+        std::ifstream fin("../Resource/account-status/" + account + ".loli");
         fin >> llcnt;
         while(llcnt--){
             if(!(fin >> name >> san >> fullsan >> wind)) break;
