@@ -59,6 +59,9 @@ void CharacterSelectScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/blueright.png", "stage-select/pinkright.png", w-150 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
+    Engine::Image* img;
+    img=new Engine::Image("characters/"+characterlist[page].charactername+".png", halfW, halfH-100,720,720,0.5,0.5);
+    addObject(1,img);
 
     btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));

@@ -14,6 +14,7 @@
 #include "Engine/IObject.hpp"
 #include "UI/Component/Slider.hpp"
 #include "Account/User.hpp"
+#include "UI/Component/Label.hpp"
 
 struct note{
     int type, ghost, len;
