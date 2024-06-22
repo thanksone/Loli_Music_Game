@@ -100,7 +100,13 @@ void EditScene::Terminate() {
     IScene::Terminate();
 }
 void EditScene::Update(float deltatime) {
-    if(last <= 0) return;
+    if(last <= 0) {
+        if(play){
+            PiAddOnClick(-4);
+            play = 0;
+        }
+        return;
+    }
     past += deltatime, last -= deltatime;
     while(front < Boing.size() && Boing[front].at <= past){
         if(Boing[front].type) tapsound = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume, 0);
@@ -126,7 +132,6 @@ void EditScene::Draw() const {
     IScene::Draw();
 }
 void EditScene::OnMouseDown(int button, int mx, int my) {
-    mouse = 1;
     if(on){
         show[pi + on - 1]->Text = tostring(BPM[pi + on - 1]);
         on = 0;
@@ -147,7 +152,6 @@ void EditScene::OnMouseMove(int mx, int my) {
     }
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
-    mouse = 0;
     IScene::OnMouseUp(button, mx, my);
     my = 960 - my;
     int x = (mx - x0) / (int)ghostW, y = my / 240;
@@ -160,8 +164,8 @@ void EditScene::OnMouseUp(int button, int mx, int my) {
     note N = {hold, x, hold * len, (float)(my % 240) / (float)240, speed};
     if(CheckSpaceValid(N, my)){
         AddNoteButton(N, x0 + x * ghostW + (int)ghostW / 2, my);
-        Note[y].push_back(N);
-    }else std::cout << "Invalid\n";
+        Note[y + pi].push_back(N);
+    }
     for(Engine::Image* img : imgTarget) RemoveObject(img->GetObjectIterator());
     imgTarget.clear();
 }
@@ -236,17 +240,20 @@ void EditScene::SpeedAddOnClick(float val){
     SPEED->Text = "Speed :" + tostring(speed);
 }
 void EditScene::PiAddOnClick(int val){
-    pi = std::max(0, std::min(pi + val, total - 4));
     ClearNote();
+    pi = std::max(0, std::min(pi + val, total - 4));
     DisplayNote();
     NOWAT->Text = "Times " + std::to_string(pi + 1) + " ~ " + std::to_string(pi + 4);
 }
 void EditScene::PlayOnClick(){
     if(last > 0) StopOnClick();
     float time = 0;
+    play = 1;
     last = past = 0;
     now = pi, front = 0;
     Boing.clear();
+    ClearNote();
+    DisplayNote();
     while(!Time.empty()) Time.pop();
     for(int i = 0; i < pi; i++) time += 60.0 / BPM[i];
     for(int i = pi; i < pi + 4; i++){
@@ -270,6 +277,9 @@ void EditScene::PlayHeadOnClick(){
     if(last > 0) StopOnClick();
     last = past = 0;
     now = front = 0;
+    Boing.clear();
+    ClearNote();
+    DisplayNote();
     while(!Time.empty()) Time.pop();
     for(int i = 0; i < total; i++){
         for(auto [t, g, l, a, s] : Note[i]){
@@ -341,7 +351,7 @@ void EditScene::DeleteNoteClick(int k){
     DeleteNoteButton(k);
 }
 void EditScene::DeleteNoteButton(int n){
-    int y = onField[n].ff * 240 + round(onField[n].ss.at * 240.0);
+    int y = (onField[n].ff - pi) * 240 + round(onField[n].ss.at * 240.0);
     if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1023, y, y + onField[n].ss.len * 60 - 1, -1);
     else update(onField[n].ss.ghost, 1, 0, 1023, y, y, -1);
     RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonCtrl[n]->GetObjectIterator());
@@ -349,7 +359,7 @@ void EditScene::DeleteNoteButton(int n){
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
 }
 void EditScene::AddNoteButton(note N, int x, int y){
-    onField.push_back({y / 240, N});
+    onField.push_back({pi + y / 240, N});
     if(N.type) update(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1, 1);
     else update(N.ghost, 1, 0, 1023, y, y, 1);
     if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodhold.png", "play/sangoodholdbomb.png", x - 90, 960 - y - 90, 180, 180));
@@ -364,6 +374,7 @@ void EditScene::AddNoteButton(note N, int x, int y){
     std::cout << NoteButtonCtrl.size() << " " << NoteButtonObj.back().size() << "\n";
 }
 void EditScene::DisplayNote(){
+    NOWAT->Text = "Times " + std::to_string(pi + 1) + " ~ " + std::to_string(pi + 4);
     for(int i = pi; i < std::min(total, pi + 4); i++){
         if(i >= Note.size()) break;
         for(note N : Note[i]){
@@ -373,7 +384,6 @@ void EditScene::DisplayNote(){
     for(int i = 0; i < std::min(total - pi, 4); i++){
         show[i]->Text = BPMS[pi + i];
     }
-    std::cout << "digolian\n";
 }
 void EditScene::DisplayLine(){
     Engine::Label* line;
@@ -450,7 +460,7 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::DeleteOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("-", user.font, 36, w - 460, h - 325, 125,30,32, 255, 0.5, 0.5));
-    TIMES = new Engine::Label("Times :4", user.font, 36, w - 400, h - 325, 125,30,32, 255, 0, 0.5);
+    TIMES = new Engine::Label("Times :" + std::to_string(total), user.font, 36, w - 400, h - 325, 125,30,32, 255, 0, 0.5);
     AddNewObject(TIMES);
     btn = new Engine::ImageButton(user.dirt, user.floor, w - 130, h - 365, 80, 80);
     btn->SetOnClickCallback(std::bind(&EditScene::AddOnClick, this));

@@ -26,9 +26,8 @@ struct note{
 };
 class EditScene final : public Engine::IScene {
 private:
-	ALLEGRO_SAMPLE_ID bgmId;
 protected:
-    int pi, on, total, lpm, x0, hold, len, front, now, premouse, mouse;
+    int pi, on, total, lpm, x0, hold, len, front, now, play;
     float ghostW, lineH, speed, last, past;
     std::vector<std::vector<note>> Note;
     std::vector<float> BPM;
