@@ -39,7 +39,6 @@ void push(int g, int p, int l, int r){
     tag[g][p] = 0;
 }
 void update(int g, int p, int l, int r, int ql, int qr, int x){
-    std::cout << p << " " << l << " " << r << " " << ql << " " << qr << "\n";
     if(ql > r || qr < l) return;
     if(l >= ql && r <= qr){
         seg[g][p] += (r - l + 1) * x;
@@ -298,14 +297,14 @@ void EditScene::StopOnClick(){
 }
 void EditScene::TapOnClick(){
     hold = 0;
-    imgTarget.push_back(new Engine::Image("play/sangoodtap.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 410, Engine::GameEngine::GetInstance().GetScreenSize().y - 745, 180, 80, 0.5, 0.5));
+    imgTarget.push_back(new Engine::Image("play/sangoodtap.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 410, Engine::GameEngine::GetInstance().GetScreenSize().y - 745, 180, 180, 0.5, 0.5));
     addObject(1, imgTarget[0]);
 }
 void EditScene::HoldOnClick(){
     hold = 1;
     imgTarget.clear();
     for(int i = 0; i < len; i++){
-        imgTarget.push_back(new Engine::Image("play/sangoodhold.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 140, Engine::GameEngine::GetInstance().GetScreenSize().y - 745 - i * 60, 180, 80, 0.5, 0.5));
+        imgTarget.push_back(new Engine::Image("play/sangoodhold.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 140, Engine::GameEngine::GetInstance().GetScreenSize().y - 745 - i * 60, 180, 180, 0.5, 0.5));
         addObject(1, imgTarget[i]);
     }
 }
@@ -392,10 +391,10 @@ void EditScene::DisplayLine(){
     }
 }
 void EditScene::ClearNote(){
-    onField.clear();
     for(int i = 0; i < NoteButtonCtrl.size(); i++){
         if(NoteButtonCtrl[i]) DeleteNoteButton(i);
     }
+    onField.clear();
     NoteButtonCtrl.clear(), NoteButtonObj.clear();
 }
 void EditScene::ClearLine(){
