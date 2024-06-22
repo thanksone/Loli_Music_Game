@@ -517,10 +517,10 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::LenAddOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("+", user.font, 36, w - 90, h - 675, 125,30,32, 255, 0.5, 0.5));
-    btn = new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtap.png", w - 455, h - 785, 180, 180, 0.5, 0.5);
+    btn = new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtap.png", w - 455, h - 785, 180, 180);
     btn->SetOnClickCallback(std::bind(&EditScene::TapOnClick, this));
     AddNewControlObject(btn);
-    btn = new Engine::ImageButton("play/sangoodhold.png", "play/sangoodhold.png", w - 195, h - 785, 180, 180, 0.5, 0.5);
+    btn = new Engine::ImageButton("play/sangoodhold.png", "play/sangoodhold.png", w - 195, h - 785, 180, 180);
     btn->SetOnClickCallback(std::bind(&EditScene::HoldOnClick, this));
     AddNewControlObject(btn);
     HoldNote.push_back(nullptr);
