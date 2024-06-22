@@ -91,6 +91,9 @@ void LoginScene::LoginOnClick(){
             user.UpdateRecord(songname, score, acc);
         }
         fin.close();
+        std::ofstream fout("../Resource/account-status/guest.loli", std::ios::trunc);
+        fout << username;
+        fout.close();
         MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
         scene->user = user;
         Engine::GameEngine::GetInstance().ChangeScene("main");
