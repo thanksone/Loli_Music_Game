@@ -240,6 +240,7 @@ void EditScene::SpeedAddOnClick(float val){
     SPEED->Text = "Speed :" + tostring(speed);
 }
 void EditScene::PiAddOnClick(int val){
+    on = 0;
     ClearNote();
     pi = std::max(0, std::min(pi + val, total - 4));
     DisplayNote();
@@ -371,7 +372,6 @@ void EditScene::AddNoteButton(note N, int x, int y){
         NoteButtonObj.back().push_back(new Engine::Image("play/sangoodhold.png", x, 960 - (y + i * 60), 180, 180, 0.5, 0.5));
         addObject(1, NoteButtonObj.back().back());
     }
-    std::cout << NoteButtonCtrl.size() << " " << NoteButtonObj.back().size() << "\n";
 }
 void EditScene::DisplayNote(){
     NOWAT->Text = "Times " + std::to_string(pi + 1) + " ~ " + std::to_string(pi + 4);
@@ -381,7 +381,7 @@ void EditScene::DisplayNote(){
             AddNoteButton(N, x0 + N.ghost * ghostW + ghostW / 2, round(240.0 * ((float)(i - pi) + N.at)));
         }
     }
-    for(int i = 0; i < std::min(total - pi, 4); i++){
+    for(int i = 0; i < 4; i++){
         show[i]->Text = BPMS[pi + i];
     }
 }
