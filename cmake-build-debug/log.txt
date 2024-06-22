@@ -1,7 +1,7 @@
 [INFO] Game Initializing...
 [INFO] Loaded Resource<image>: Resource/images/icon.png
 [INFO] Loaded window icon from: icon.png
-[INFO] There are total 10 supported mouse buttons
+[INFO] There are total 1 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
 [INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 120
@@ -13,15 +13,3 @@
 [INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 48
 [INFO] Game initialized
 [INFO] Game start event loop
-[INFO] Game Terminating...
-[INFO] stopped audio (sample)
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
-[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x180
-[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
-[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
-[INFO] Destroyed<sample_instance>: startscene.ogg
-[INFO] Destroyed Resource<audio>: startscene.ogg
