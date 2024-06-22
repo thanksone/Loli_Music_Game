@@ -7,16 +7,12 @@
 #include <vector>
 #include "Engine/IScene.hpp"
 #include "Account/User.hpp"
-
-struct character {
-    std::string charactername;
-    int san, maxsan;
-};
+#include "Character/Loli.hpp"
 
 class CharacterSelectScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
-    std::vector<character> characterlist;
+    std::vector<Loli> characterlist;
     int page=0;
     int maxpage;
 public:

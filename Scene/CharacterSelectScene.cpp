@@ -42,7 +42,7 @@ void CharacterSelectScene::Initialize() {
     std::ifstream fin("Resource/images/characters/characterlist.txt");
     while(fin>>charactername && fin>>san && fin>>maxsan){
         characterlist.push_back(
-            {charactername,std::stoi(san),std::stoi(maxsan)});
+            Loli(charactername,std::stoi(san),std::stoi(maxsan), 0));
         //std::cout<<characterlist[0].charactername<<" "<<characterlist[0].san<<" "<<characterlist[0].maxsan<<"\n";
     }
     maxpage= characterlist.size();
@@ -60,8 +60,7 @@ void CharacterSelectScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/blueright.png", "stage-select/pinkright.png", w-150 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
-
-    user.loli->draw(this,halfW,halfH-125,456,798,0.5,0.5);
+    characterlist[page].draw(this,halfW,halfH-125,456,798,0.5,0.5);
 
     btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
