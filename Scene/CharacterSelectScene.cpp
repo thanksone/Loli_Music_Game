@@ -31,6 +31,13 @@ void CharacterSelectScene::Initialize() {
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
+    std::string backgroundimg=user.wind?"scenes/sanbadcharacter.png":"scenes/sangoodcharacter.png";
+    std::string boardimg=user.wind?"scenes/sanbadboard.png":"scenes/sangoodboard.png";
+    Engine::Image* img;
+    img=new Engine::Image(backgroundimg, halfW, halfH,1800,1020,0.5,0.5);
+    addObject(1,img);
+
+
     Engine::ImageButton* btn;
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
@@ -48,6 +55,7 @@ void CharacterSelectScene::Initialize() {
     characterlist = user.Character;
     maxpage= characterlist.size();
     fin.close();
+
     if(cmptype==0)
         std::sort(characterlist.begin(),characterlist.end(),cmpn);
     else
@@ -68,10 +76,13 @@ void CharacterSelectScene::Initialize() {
     AddNewControlObject(btn);
     if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);
     fl=0;
+    img=new Engine::Image(boardimg, halfW, halfH+325,400,400,0.5,0.5);
+    addObject(1,img);
     std::string sanality=std::to_string(characterlist[page].san)+"/"+std::to_string(characterlist[page].fullsan);
     AddNewObject(new Engine::Label(characterlist[page].name, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     AddNewObject(new Engine::Label(sanality, "Black-Magic-2.ttf", 60, halfW, halfH +380, 225,180,182, 255, 0.5, 0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+
 }
 void CharacterSelectScene::Terminate() {
     if(f==1) {
