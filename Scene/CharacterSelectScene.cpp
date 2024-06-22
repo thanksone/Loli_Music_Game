@@ -45,6 +45,7 @@ void CharacterSelectScene::Initialize() {
             Loli(charactername,std::stoi(san),std::stoi(maxsan), 0));
         //std::cout<<characterlist[0].charactername<<" "<<characterlist[0].san<<" "<<characterlist[0].maxsan<<"\n";
     }
+    characterlist = user.Character;
     maxpage= characterlist.size();
     fin.close();
     if(cmptype==0)

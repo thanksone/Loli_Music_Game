@@ -10,10 +10,10 @@ struct settings{
 };
 class User{
 private:
-    std::vector<Loli> Character;
     std::map<std::string, std::pair<int, float>> BestRecord;
 public:
     Loli *loli;
+    std::vector<Loli> Character;
     std::string name;
     std::string font, dirt, floor, leftdirt, leftfloor, rightdirt, rightfloor;
     bool wind;
