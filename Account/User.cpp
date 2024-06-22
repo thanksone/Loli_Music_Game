@@ -28,7 +28,7 @@ void User::update(){
     font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
     dirt = wind? "stage-select/sanbaddirt.png" : "stage-select/sangooddirt.png";
     floor = wind? "stage-select/sanbadfloor.png" : "stage-select/sangoodfloor.png";
-    std::ofstream fout("../Resource/account-status/" + name + ".txt", std::ios::trunc);
+    std::ofstream fout("../Resource/account-status/" + name + ".loli", std::ios::trunc);
     fout << Character.size() << "\n";
     for(Loli ll : Character){
         fout << ll.name << " " << ll.san << " " << ll.fullsan << " " << (ll.wind? "1\n" : "0\n");

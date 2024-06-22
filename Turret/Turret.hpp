@@ -4,30 +4,23 @@
 #include <list>
 #include <string>
 
-#include "Engine/Sprite.hpp"
+#include "UI/Component/Image.hpp"
 
 class Enemy;
 class PlayScene;
 
-class Turret: public Engine::Sprite {
+class Turret: public Engine::Image {
 protected:
-    int price;
-    float coolDown;
-    float reload = 0;
-    float rotateRadian = 2 * ALLEGRO_PI;
-    Sprite imgBase;
-    std::list<Turret*>::iterator lockedTurretIterator;
+    int ghost;
     PlayScene* getPlayScene();
-    // Reference: Design Patterns - Factory Method.
-    virtual void CreateBullet() = 0;
-
+    std::string ouob, douo;
 public:
-    bool Enabled = true;
-    bool Preview = false;
-    Enemy* Target = nullptr;
-    Turret(std::string imgBase, std::string imgTurret, float x, float y, float radius, int price, float coolDown);
+    Enemy* Target[4];
+    Turret(std::string ouob, std::string douo, float x, float y, int ghost);
+    void Down();
+    void Up();
+    void Hit(int type);
+    void SearchTarget(int type);
     void Update(float deltaTime) override;
-    void Draw() const override;
-	int GetPrice() const;
 };
 #endif // TURRET_HPP

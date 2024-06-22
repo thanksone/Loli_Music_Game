@@ -17,16 +17,12 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Engine/Allegro5Exception.hpp
         Engine/AudioHelper.cpp
         Engine/AudioHelper.hpp
-        Bullet/Bullet.cpp
-        Bullet/Bullet.hpp
         Engine/Collider.cpp
         Engine/Collider.hpp
         UI/Animation/DirtyEffect.cpp
         UI/Animation/DirtyEffect.hpp
         Enemy/Enemy.cpp
         Enemy/Enemy.hpp
-        UI/Animation/ExplosionEffect.cpp
-        UI/Animation/ExplosionEffect.hpp
         Engine/GameEngine.cpp
         Engine/GameEngine.hpp
         Engine/Group.cpp
@@ -45,17 +41,7 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         UI/Component/Label.hpp
         Engine/LOG.cpp
         Engine/LOG.hpp
-        Scene/LoseScene.cpp
-        Scene/LoseScene.hpp
         main.cpp
-        Bullet/MissileBullet.cpp
-        Bullet/MissileBullet.hpp
-        Turret/MissileTurret.cpp
-        Turret/MissileTurret.hpp
-        UI/Animation/Plane.cpp
-        UI/Animation/Plane.hpp
-        Enemy/PlaneEnemy.cpp
-        Enemy/PlaneEnemy.hpp
         Scene/PlayScene.cpp
         Scene/PlayScene.hpp
         Engine/Point.cpp
@@ -64,20 +50,14 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Engine/Resources.hpp
         UI/Component/Slider.cpp
         UI/Component/Slider.hpp
-        Enemy/SoldierEnemy.cpp
-        Enemy/SoldierEnemy.hpp
+        Enemy/HoldEnemy.cpp
+        Enemy/HoldEnemy.hpp
         Engine/Sprite.cpp
         Engine/Sprite.hpp
-        Scene/StageSelectScene.cpp
-        Scene/StageSelectScene.hpp
-        Enemy/TankEnemy.cpp
-        Enemy/TankEnemy.hpp
-        Enemy/ouobEnemy.cpp
-        Enemy/ouobEnemy.hpp
+        Enemy/TapEnemy.cpp
+        Enemy/TapEnemy.hpp
         Turret/Turret.cpp
         Turret/Turret.hpp
-        Turret/TurretButton.cpp
-        Turret/TurretButton.hpp
         Scene/WinScene.cpp
         Scene/WinScene.hpp
 

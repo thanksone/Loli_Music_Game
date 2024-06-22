@@ -38,7 +38,7 @@ void WinScene::Initialize() {
 	AddNewControlObject(btn);
 	
 	namae= new Engine::Label ("Your name?", "pirulen.ttf", 48, halfW-200, halfH / 4 +50, 200, 200, 200, 255, 0, 0.5);
-	addObject(1,namae);
+	AddNewObject(namae);
 	AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
 	name.clear();
 	bgmId = AudioHelper::PlayAudio("win.wav");
@@ -46,14 +46,6 @@ void WinScene::Initialize() {
 void WinScene::Terminate() {
 	IScene::Terminate();
 	AudioHelper::StopBGM(bgmId);
-}
-void WinScene::Update(float deltaTime) {
-	ticks += deltaTime;
-	if (ticks > 4 && ticks < 100 &&
-		dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId == 2) {
-		ticks = 100;
-		bgmId = AudioHelper::PlayBGM("happy.ogg");
-	}
 }
 void WinScene::BackOnClick(int stage) {
 	// Change to select scene.
@@ -78,7 +70,5 @@ void WinScene::OnKeyDown(int keyCode) {
 			name.pop_back();
 		}
 	}
-	RemoveObject(namae->GetObjectIterator());
-	namae=new Engine::Label(name,"pirulen.ttf", 48, Engine::GameEngine::GetInstance().GetScreenSize().x/2-200, Engine::GameEngine::GetInstance().GetScreenSize().y/8+50, 255, 255, 255, 255, 0, 0.5);
-	addObject(1,namae);
+	namae->Text = name;
 }

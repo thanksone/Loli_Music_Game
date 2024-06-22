@@ -17,6 +17,9 @@
 #include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
 #include "SongSelectScene.hpp"
+#include "MainScene.hpp"
+#include "ScoreboardScene.h"
+#include "SettingsScene.hpp"
 
 bool cmp1(song &a,song &b){
     return a.songname<b.songname;
@@ -63,26 +66,26 @@ void SongSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&SongSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
 
-    /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "ez"));
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 550, h - 175, 300, 180);
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "ez"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("EZ", user.font, 48, halfW - 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "hd"));
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, h - 175, 300, 180);
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "hd"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("HD", user.font, 48, halfW, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH / 2 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&MainScene::PlayOnClick, this, songlist[page].songname, "in"));
+    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW + 250, h - 175, 300, 180);
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "in"));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Stage 1", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH / 2+25, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("IN", user.font, 48, halfW + 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH / 2 + 250, 400, 150);
+    /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH / 2 + 250, 400, 150);
     btn->SetOnClickCallback(std::bind(&StageSelectScene::ScoreboardOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Scoreboard", "WOODCUTTER-BCN-Style-1.ttf", 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
+    AddNewObject(new Engine::Label("Scoreboard", user.font, 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].filename+".ogg", true, AudioHelper::BGMVolume);
@@ -90,7 +93,7 @@ void SongSelectScene::Initialize() {
     img=new Engine::Image("songs/"+songlist[page].filename+".png", halfW, halfH-100,720,720,0.5,0.5);
     addObject(1,img);
     if(songlist[page].songlan=="english") {
-        AddNewObject(new Engine::Label(songlist[page].songname, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+        AddNewObject(new Engine::Label(songlist[page].songname, user.font, 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     }
     else AddNewObject(new Engine::Label(songlist[page].songname, "hanazomefont.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
 }
@@ -100,17 +103,23 @@ void SongSelectScene::Terminate() {
 	IScene::Terminate();
 }
 void SongSelectScene::BackOnClick(int stage) {
+    MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+    scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 void SongSelectScene::PlayOnClick(std::string songname, std::string diff) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    //scene->MapId = stage;
+    scene->filename = songname, scene->diff = diff, scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("play");
 }
 void SongSelectScene::ScoreboardOnClick() {
+    ScoreboardScene* scene = dynamic_cast<ScoreboardScene*>(Engine::GameEngine::GetInstance().GetScene("scoreboard"));
+    scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("scoreboard");
 }
 void SongSelectScene::SettingsOnClick() {
+    SettingsScene* scene = dynamic_cast<SettingsScene*>(Engine::GameEngine::GetInstance().GetScene("settings"));
+    scene->user = user, scene->pre = 0;
     Engine::GameEngine::GetInstance().ChangeScene("settings");
 }
 

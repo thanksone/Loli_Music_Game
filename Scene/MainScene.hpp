@@ -13,7 +13,6 @@ public:
     explicit MainScene() = default;
     void Initialize() override;
     void Terminate() override;
-    void PlayOnClick(int stage);
     void ScoreboardOnClick();
     void BackOnClick(int stage);
     void SettingsOnClick();

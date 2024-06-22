@@ -81,7 +81,7 @@ void RegisterScene::RegisterOnClick(){
     else if(password1 != password2) message->Text = "Password different";
     else{
         //TODO loli status
-        std::string file = "../Resource/account-status/" + username + ".txt", name, songname;
+        std::string file = "../Resource/account-status/" + username + ".loli", name, songname;
         std::ofstream fout("../Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
         user = User(username);

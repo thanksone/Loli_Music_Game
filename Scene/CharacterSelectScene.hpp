@@ -24,7 +24,6 @@ public:
     explicit CharacterSelectScene() = default;
     void Initialize() override;
     void Terminate() override;
-    void PlayOnClick(int stage);
     void BackOnClick(int stage);
     void ChangeOnClick(int changeway);
 

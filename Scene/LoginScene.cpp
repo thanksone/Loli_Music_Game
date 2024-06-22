@@ -77,7 +77,7 @@ void LoginScene::LoginOnClick(){
     else{
         int n, san, fullsan, score, wind;
         float acc;
-        std::string file = "../Resource/account-status/" + username + ".txt", name, songname;
+        std::string file = "../Resource/account-status/" + username + ".loli", name, songname;
         std::ifstream fin(file);
         user = User(username);
         fin >> n;

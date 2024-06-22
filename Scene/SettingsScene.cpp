@@ -10,6 +10,8 @@
 #include "UI/Component/Slider.hpp"
 #include "SettingsScene.hpp"
 #include "MainScene.hpp"
+#include "SongSelectScene.hpp"
+#include "StartScene.h"
 
 void SettingsScene::Initialize() {
 
@@ -20,15 +22,8 @@ void SettingsScene::Initialize() {
     Engine::ImageButton *btn;
 
     btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
-    btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 2));
+    btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, pre));
     AddNewControlObject(btn);
-
-
-    btn = new Engine::ImageButton("stage-select/sangooddirt.png", "stage-select/sangoodfloor.png", halfW - 150, halfH * 3 / 2 +55,
-                              300, 180);
-    btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("back to start", "Black-Magic-2.ttf", 48, halfW, halfH * 3 / 2+145, 125, 30, 32, 255, 0.5, 0.5));
 
     Slider *sliderBGM, *sliderSFX;
     sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 2, 190, 4, 190);
@@ -36,14 +31,14 @@ void SettingsScene::Initialize() {
             std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderBGM);
     AddNewObject(
-            new Engine::Label("BGM: ", "Black-Magic-2.ttf", 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,
+            new Engine::Label("BGM: ", user.font, 28, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5,
                               0.5));
     sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 2, 190, 4, 190);
     sliderSFX->SetOnValueChangedCallback(
             std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderSFX);
     AddNewObject(
-            new Engine::Label("SFX: ", "Black-Magic-2.ttf", 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
+            new Engine::Label("SFX: ", user.font, 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
                               0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 
@@ -58,21 +53,23 @@ void SettingsScene::Terminate() {
     IScene::Terminate();
 }
 
-void SettingsScene::BackOnClick(int stage) {
-    if(stage==1) {
-        Engine::GameEngine::GetInstance().ChangeScene("start");
-    }
-    else {
+void SettingsScene::BackOnClick(int prescene) {
+    if(!prescene){
+        SongSelectScene* scene = dynamic_cast<SongSelectScene*>(Engine::GameEngine::GetInstance().GetScene("song-select"));
+        scene->user = user;
+        Engine::GameEngine::GetInstance().ChangeScene("song-select");
+    }else {
+        MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+        scene->user = user;
         Engine::GameEngine::GetInstance().ChangeScene("main");
     }
-
 }
 
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);
-    AudioHelper::BGMVolume = value;
+    user.setting.BGMVolume = value;
 }
 
 void SettingsScene::SFXSlideOnValueChanged(float value) {
-    AudioHelper::SFXVolume = value;
+    user.setting.SFXVolume = value;
 }

@@ -12,6 +12,7 @@ class SettingsScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
 public:
+    int pre, page;
     User user;
     explicit SettingsScene() = default;
 

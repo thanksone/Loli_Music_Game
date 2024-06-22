@@ -11,27 +11,41 @@
 #include "Engine/Point.hpp"
 #include "Account/User.hpp"
 #include "EditScene.hpp"
+#include "Turret/Turret.hpp"
 
+struct noto{
+    int type, ghost;
+    float at, em, speed;
+};
 class PlayScene final : public Engine::IScene {
 private:
-	ALLEGRO_SAMPLE_ID bgmId;
-	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
+	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Song, tap, hold;
 protected:
-	float score, acc;
+    int perfect, good, bad, miss, combo, total, maxcombo;
+    float pretime, curtime, pause, score, acc;
+    Engine::Label *Score, *Combo, *Left;
+    Engine::ImageButton *Pause, *Back, *Restart, *Continue;
+    std::queue<noto> Note;
+    bool Hold[12], boing;
 public:
     User user;
-	std::string songname, filename, diff;
-    std::queue<note> Note;
+	std::string filename, diff;
+    int deadline, x0, ghostW;
+    Group *NoteGroup[6][4], *EffectGroup;
+    Turret *Line[6];
 	explicit PlayScene() = default;
 	void Initialize() override;
 	void Terminate() override;
 	void Update(float deltaTime) override;
 	void Draw() const override;
-	void OnMouseDown(int button, int mx, int my) override;
-	void OnMouseUp(int button, int mx, int my) override;
 	void OnKeyDown(int keyCode) override;
-	void Hit();
-	void ReadEnemyWave();
-	void ConstructUI();
+    void OnKeyUp(int keyCode) override;
+	void ReadScore();
+	void Construct();
+    void PauseOnClick();
+    void BackOnClick();
+    void RestartOnClick();
+    void ContinueOnClick();
+    void Hit(int type);
 };
 #endif // PLAYSCENE_HPP

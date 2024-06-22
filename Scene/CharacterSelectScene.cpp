@@ -82,11 +82,6 @@ void CharacterSelectScene::BackOnClick(int stage) {
     fl=1;
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void CharacterSelectScene::PlayOnClick(int stage) {
-    PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    scene->MapId = stage;
-    Engine::GameEngine::GetInstance().ChangeScene("play");
-}
 
 void CharacterSelectScene::ChangeOnClick(int changeway) {
     f=0;
