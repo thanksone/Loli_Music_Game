@@ -61,7 +61,7 @@ void CharacterSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
 
-    user.loli->draw(this,halfW,halfH,500,500,0.5,0.5);
+    user.loli->draw(this,halfW,halfH-125,456,798,0.5,0.5);
 
     btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
