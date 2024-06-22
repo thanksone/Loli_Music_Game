@@ -297,14 +297,14 @@ void EditScene::StopOnClick(){
 }
 void EditScene::TapOnClick(){
     hold = 0;
-    imgTarget.push_back(new Engine::Image("edit/tapdirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 410, Engine::GameEngine::GetInstance().GetScreenSize().y - 745, 180, 80, 0.5, 0.5));
+    imgTarget.push_back(new Engine::Image("play/sangoodtap.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 410, Engine::GameEngine::GetInstance().GetScreenSize().y - 745, 180, 80, 0.5, 0.5));
     addObject(1, imgTarget[0]);
 }
 void EditScene::HoldOnClick(){
     hold = 1;
     imgTarget.clear();
     for(int i = 0; i < len; i++){
-        imgTarget.push_back(new Engine::Image("edit/holddirt.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 140, Engine::GameEngine::GetInstance().GetScreenSize().y - 745 - i * 60, 180, 80, 0.5, 0.5));
+        imgTarget.push_back(new Engine::Image("play/sangoodhold.png", Engine::GameEngine::GetInstance().GetScreenSize().x - 140, Engine::GameEngine::GetInstance().GetScreenSize().y - 745 - i * 60, 180, 80, 0.5, 0.5));
         addObject(1, imgTarget[i]);
     }
 }
@@ -357,13 +357,13 @@ void EditScene::AddNoteButton(note N, int x, int y){
     onField.push_back({y / 240, N});
     if(N.type) update(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1, 1);
     else update(N.ghost, 1, 0, 1023, y, y, 1);
-    if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("edit/holddirt.png", "edit/holdfloor.png", x, 960 - y, 180, 80, 0.5, 0.5));
-    else NoteButtonCtrl.push_back(new Engine::ImageButton("edit/tapdirt.png", "edit/tapfloor.png", x, 960 - y, 180, 80, 0.5, 0.5));
+    if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodhold.png", "play/sangoodholdbomb.png", x, 960 - y, 180, 180, 0.5, 0.5));
+    else NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtapbomb.png", x, 960 - y, 180, 180, 0.5, 0.5));
     NoteButtonCtrl.back()->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size() - 1));
     AddNewControlObject(NoteButtonCtrl.back());
     NoteButtonObj.push_back({});
     for(int i = 1; i < N.len; i++){
-        NoteButtonObj.back().push_back(new Engine::Image("edit/holddirt.png", x, 960 - (y + i * 60), 180, 80, 0.5, 0.5));
+        NoteButtonObj.back().push_back(new Engine::Image("play/sangoodhold.png", x, 960 - (y + i * 60), 180, 180, 0.5, 0.5));
         addObject(1, NoteButtonObj.back().back());
     }
     std::cout << NoteButtonCtrl.size() << " " << NoteButtonObj.back().size() << "\n";
@@ -517,15 +517,15 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::LenAddOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("+", user.font, 36, w - 90, h - 675, 125,30,32, 255, 0.5, 0.5));
-    btn = new Engine::ImageButton("edit/tapdirt.png", "edit/tapfloor.png", w - 500, h - 785, 180, 80);
+    btn = new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtap.png", w - 500, h - 785, 180, 180);
     btn->SetOnClickCallback(std::bind(&EditScene::TapOnClick, this));
     AddNewControlObject(btn);
-    btn = new Engine::ImageButton("edit/holddirt.png", "edit/holdfloor.png", w - 230, h - 785, 180, 80);
+    btn = new Engine::ImageButton("play/sangoodhold.png", "play/sangoodhold.png", w - 230, h - 785, 180, 180);
     btn->SetOnClickCallback(std::bind(&EditScene::HoldOnClick, this));
     AddNewControlObject(btn);
     HoldNote.push_back(nullptr);
     for(int i = 1; i < 4; i++){
-        HoldNote.push_back(new Engine::Image("edit/holddirt.png", w - 140, h - 745 - i * 60, 180, 80, 0.5, 0.5));
+        HoldNote.push_back(new Engine::Image("play/sangoodhold.png", w - 140, h - 745 - i * 60, 180, 180, 0.5, 0.5));
         HoldNote[i]->Visible = 0;
         AddNewObject(HoldNote[i]);
     }
