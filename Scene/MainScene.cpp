@@ -25,6 +25,10 @@ void MainScene::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
     Engine::ImageButton* btn;
+    std::string backgroundimg=user.wind?"scenes/sanbadmain.png":"scenes/sangoodmain.png";
+    Engine::Image* img;
+    img=new Engine::Image(backgroundimg, halfW, halfH,1800,1020,0.5,0.5);
+    addObject(1,img);
     /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH * 3 / 2 - 50, 300, 150);
     btn->SetOnClickCallback(std::bind(&MainScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
