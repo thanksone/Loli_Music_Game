@@ -85,12 +85,12 @@ void RegisterScene::RegisterOnClick(){
         std::ofstream fout("../Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
         user = User(username);
-        user.AddCharacter(Loli("loli", 1, 1, 0));
+        user.AddCharacter(Loli("loli", 90, 90, 0));
         user.ChangeOnField("loli");
         fout.close();
         std::ofstream fin(file, std::ios::trunc);
         fin << 1 << "\n";
-        fin << "loli" << " " << 1 << " " << 1 << " " << 0 << "\nloli\n";
+        fin << "Mio" << " " << 90 << " " << 90 << " " << 0 << "\nMio\n";
         fin.close();
         MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
         scene->user = user;
