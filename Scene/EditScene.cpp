@@ -342,8 +342,8 @@ void EditScene::DeleteNoteClick(int k){
 }
 void EditScene::DeleteNoteButton(int n){
     int y = onField[n].ff * 240 + round(onField[n].ss.at * 240.0);
-    if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1024, y, y + onField[n].ss.len * 60 - 1, -1);
-    else update(onField[n].ss.ghost, 1, 0, 1024, y, y, -1);
+    if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1023, y, y + onField[n].ss.len * 60 - 1, -1);
+    else update(onField[n].ss.ghost, 1, 0, 1023, y, y, -1);
     RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonCtrl[n]->GetObjectIterator());
     for(Engine::IObject* img : NoteButtonObj[n]) RemoveObject(img->GetObjectIterator());
     NoteButtonCtrl[n] = nullptr, NoteButtonObj[n].clear();
