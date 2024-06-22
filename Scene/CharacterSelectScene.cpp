@@ -16,6 +16,7 @@
 #include "UI/Component/Slider.hpp"
 #include "CharacterSelectScene.hpp"
 
+
 bool cmpn(character &a,character &b){
     return a.charactername<b.charactername;
 }
