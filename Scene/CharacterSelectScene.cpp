@@ -69,6 +69,7 @@ void CharacterSelectScene::Initialize() {
     btn = new Engine::ImageButton(user.rightdirt, user.rightfloor, w-150 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
+
     characterlist[page].draw(this,halfW,halfH-125,608,1064,0.5,0.5);
 
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);

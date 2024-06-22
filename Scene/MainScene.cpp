@@ -33,6 +33,7 @@ void MainScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&MainScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 3 / 2+25, 125,30,32, 255, 0.5, 0.5));*/
+    user.loli->draw(this,halfW+350,halfH-50,684,1197,0.5,0.5);
 
     if(user.wind) btn = new Engine::ImageButton("stage-select/sanbadsettingdirt.png", "stage-select/sanbadsettingfloor.png", w-80, 10, 70, 70);
     else btn = new Engine::ImageButton("stage-select/sangoodsettingdirt.png", "stage-select/sangoodsettingfloor.png", w-80, 10, 70, 70);
