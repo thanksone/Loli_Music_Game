@@ -13,3 +13,38 @@
 [INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 48
 [INFO] Game initialized
 [INFO] Game start event loop
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 500x180
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 75x75
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
+[INFO] Changed to login scene
+[INFO] Changed to register scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png scaled to 70x70
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingfloor.png
+[INFO] Loaded Resource<audio>: Resource/audios/mainscene.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 28
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 100x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
+[INFO] Loaded Resource<audio>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Loaded Resource<image>: Resource/images/songs/MeikyuLyrith.png scaled to 720x720
+[INFO] Loaded Resource<font>: Resource/fonts/hanazomefont.ttf with size 60
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
