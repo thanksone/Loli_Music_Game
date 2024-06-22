@@ -50,19 +50,20 @@ void SongSelectScene::Initialize() {
     }
 
 
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
+    btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/sangoodsettingdirt.png", "stage-select/sangoodsettingfloor.png", w-80, 10, 70, 70);
+    if(user.wind) btn = new Engine::ImageButton("stage-select/sanbadsettingdirt.png", "stage-select/sanbadsettingfloor.png", w-80, 10, 70, 70);
+    else btn = new Engine::ImageButton("stage-select/sangoodsettingdirt.png", "stage-select/sangoodsettingfloor.png", w-80, 10, 70, 70);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::SettingsOnClick, this));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/blueright.png", "stage-select/pinkright.png", w-150 , halfH-50, 100, 100);
+    btn = new Engine::ImageButton(user.rightdirt, user.rightfloor, w-150 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
+    btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
 
@@ -95,7 +96,7 @@ void SongSelectScene::Initialize() {
     if(songlist[page].songlan=="english") {
         AddNewObject(new Engine::Label(songlist[page].songname, user.font, 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     }
-    else AddNewObject(new Engine::Label(songlist[page].songname, "hanazomefont.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    else AddNewObject(new Engine::Label(songlist[page].songname, user.wind? "07ReallyScaryMinchotai.ttf" : "hanazomefont.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
 }
 void SongSelectScene::Terminate() {
 	AudioHelper::StopSample(bgmInstance);

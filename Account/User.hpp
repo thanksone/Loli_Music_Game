@@ -15,7 +15,7 @@ private:
 public:
     Loli *loli;
     std::string name;
-    std::string font, dirt, floor;
+    std::string font, dirt, floor, leftdirt, leftfloor, rightdirt, rightfloor;
     bool wind;
     float seal;
     settings setting;

@@ -32,7 +32,7 @@ void CharacterSelectScene::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
     Engine::ImageButton* btn;
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
+    btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
@@ -52,17 +52,17 @@ void CharacterSelectScene::Initialize() {
     else
         std::sort(characterlist.begin(),characterlist.end(),cmps);
 
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 10, 10,75, 75);
+    btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
 
 
-    btn = new Engine::ImageButton("stage-select/blueright.png", "stage-select/pinkright.png", w-150 , halfH-50, 100, 100);
+    btn = new Engine::ImageButton(user.rightdirt, user.rightfloor, w-150 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
     characterlist[page].draw(this,halfW,halfH-125,456,798,0.5,0.5);
 
-    btn = new Engine::ImageButton("stage-select/blueleft.png", "stage-select/pinkleft.png", 50 , halfH-50, 100, 100);
+    btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
     if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);

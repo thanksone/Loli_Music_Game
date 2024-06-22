@@ -33,12 +33,16 @@ std::string tostring(int x){
     return S;
 }
 void PlayScene::Initialize() {
+    std::cout << "PlayScene\n";
     perfect = good = bad = miss = 0;
     score = 0, acc = 0, combo = 0, maxcombo = 0, total = 0;
     x0 = 150, ghostW = 300;
     deadline = 900;
+    std::cout << "flag1\n";
 	ReadScore();
+    std::cout << "flag2\n";
 	Construct();
+    std::cout << "flag3\n";
 	// Preload Lose Scene
 	Song = Engine::Resources::GetInstance().GetSampleInstance(filename + ".ogg");
     curtime = 0;
@@ -169,6 +173,9 @@ void PlayScene::Construct() {
         }
         Line[i] = new Turret("play/turretup.png", "play/turretdown.png", x0 + ghostW * i + ghostW / 2, deadline, i);
         AddNewObject(Line[i]);
+    }
+    for(int i = 0; i < 7; i++){
+        AddNewObject(new Engine::Image("stage-select/foo.png", x0 + ghostW * i, 957, 4, 957, 0.5, 1));
     }
 }
 void PlayScene::PauseOnClick(){
