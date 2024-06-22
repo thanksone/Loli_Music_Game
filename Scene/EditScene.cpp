@@ -401,8 +401,8 @@ void EditScene::ClearLine(){
 }
 bool EditScene::CheckSpaceValid(note N, int y){
     if(N.type && y % 240 + N.len * 60 > 240) return 0;
-    if(N.type && query(N.ghost, 1, 0, 1024, y, y + N.len * 60 - 1)) return 0;
-    if(!N.type && query(N.ghost, 1, 0, 1024, y, y)) return 0;
+    if(N.type && query(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1)) return 0;
+    if(!N.type && query(N.ghost, 1, 0, 1023, y, y)) return 0;
     return 1;
 }
 void EditScene::ConstructUI(){
