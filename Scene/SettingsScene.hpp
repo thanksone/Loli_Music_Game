@@ -21,6 +21,7 @@ public:
     void Terminate() override;
 
     void BackOnClick(int stage);
+    void StartOnClick();
 
     void BGMSlideOnValueChanged(float value);
 

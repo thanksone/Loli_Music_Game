@@ -75,7 +75,7 @@ void MainScene::ScoreboardOnClick() {
 }
 void MainScene::SettingsOnClick() {
     SettingsScene* scene = dynamic_cast<SettingsScene*>(Engine::GameEngine::GetInstance().GetScene("settings"));
-    scene->user = user, scene->page = 1;
+    scene->user = user, scene->pre = 1;
     Engine::GameEngine::GetInstance().ChangeScene("settings");
 }
 

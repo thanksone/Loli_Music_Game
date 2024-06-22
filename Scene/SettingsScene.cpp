@@ -41,6 +41,10 @@ void SettingsScene::Initialize() {
             new Engine::Label("SFX: ", user.font, 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5,
                               0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 180, halfH + 200, 360, 180);
+    btn->SetOnClickCallback(std::bind(&SettingsScene::StartOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Back To Start", user.font, 48, halfW, halfH + 290, 125, 30, 32, 255, 0.5, 0.5));
 
     bgmInstance = AudioHelper::PlaySample("mainscene.ogg", true, AudioHelper::BGMVolume);
     sliderBGM->SetValue(AudioHelper::BGMVolume);
@@ -64,7 +68,11 @@ void SettingsScene::BackOnClick(int prescene) {
         Engine::GameEngine::GetInstance().ChangeScene("main");
     }
 }
-
+void SettingsScene::StartOnClick(){
+    StartScene* scene = dynamic_cast<StartScene*>(Engine::GameEngine::GetInstance().GetScene("start"));
+    scene->user = user;
+    Engine::GameEngine::GetInstance().ChangeScene("start");
+}
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);
     user.setting.BGMVolume = value;
