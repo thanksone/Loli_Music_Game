@@ -38,6 +38,11 @@
 [INFO] Loaded Resource<font>: Resource/fonts/hanazomefont.ttf with size 60
 [INFO] Changed to file-select scene
 [INFO] stopped audio (sample)
+[INFO] Loaded Resource<audio>: Resource/audios/songs/Itogite.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
+[INFO] Loaded Resource<image>: Resource/images/songs/Itogite.png scaled to 720x720
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 30
 [INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 450x80
 [INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 36
@@ -52,3 +57,87 @@
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/foo.png scaled to 4x957
 [INFO] Changed to edit scene
+[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
+[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 20
+[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] Game Terminating...
+[INFO] stopped audio (sample)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: play/sangoodtapbomb.png
+[INFO] Destroyed Resource<image>: stage-select/foo.png?4x957
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
+[INFO] Destroyed Resource<image>: scenes/sangoodstart.png?1800x1020
+[INFO] Destroyed Resource<image>: scenes/sangoodmain.png?1800x1020
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?150x80
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x180
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
+[INFO] Destroyed Resource<image>: characters/sangoodALice.png?684x1197
+[INFO] Destroyed Resource<image>: scenes/sangoodboard.png?1400x500
+[INFO] Destroyed Resource<image>: stage-select/pinkleft.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?75x75
+[INFO] Destroyed Resource<image>: stage-select/pinkright.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?80x80
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
+[INFO] Destroyed Resource<image>: songs/Itogite.png?720x720
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png
+[INFO] Destroyed Resource<image>: songs/MeikyuLyrith.png?720x720
+[INFO] Destroyed Resource<image>: play/sangoodhold.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?80x80
+[INFO] Destroyed Resource<image>: play/sangoodhold.png?180x180
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?80x80
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?140x80
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?450x80
+[INFO] Destroyed Resource<image>: play/sangoodtap.png
+[INFO] Destroyed Resource<image>: play/sangoodtap.png?180x180
+[INFO] Destroyed Resource<font>: pirulen.ttf?20
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?36
+[INFO] Destroyed Resource<font>: pirulen.ttf?30
+[INFO] Destroyed Resource<font>: hanazomefont.ttf?60
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed<sample_instance>: hold.ogg
+[INFO] Destroyed<sample_instance>: songs/Itogite.ogg
+[INFO] Destroyed<sample_instance>: mainscene.ogg
+[INFO] Destroyed<sample_instance>: songs/MeikyuLyrith.ogg
+[INFO] Destroyed<sample_instance>: startscene.ogg
+[INFO] Destroyed Resource<audio>: hold.ogg
+[INFO] Destroyed Resource<audio>: songs/Itogite.ogg
+[INFO] Destroyed Resource<audio>: mainscene.ogg
+[INFO] Destroyed Resource<audio>: songs/MeikyuLyrith.ogg
+[INFO] Destroyed Resource<audio>: startscene.ogg

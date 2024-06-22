@@ -249,7 +249,7 @@ void EditScene::PiAddOnClick(int val){
 void EditScene::PlayOnClick(){
     if(last > 0) StopOnClick();
     float time = 0;
-    play = 1;
+    if(pi + 4 < total) play = 1;
     last = past = 0;
     now = pi, front = 0;
     Boing.clear();
