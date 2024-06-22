@@ -17,10 +17,10 @@
 #include "CharacterSelectScene.hpp"
 #include "Character/Loli.hpp"
 
-bool cmpn(character &a,character &b){
-    return a.charactername<b.charactername;
+bool cmpn(Loli &a, Loli &b){
+    return a.name<b.name;
 }
-bool cmps(character &a,character &b){
+bool cmps(Loli &a,Loli &b){
     return a.san>b.san;
 }
 
@@ -67,8 +67,8 @@ void CharacterSelectScene::Initialize() {
     AddNewControlObject(btn);
     if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);
     fl=0;
-    std::string sanality=std::to_string(characterlist[page].san)+"/"+std::to_string(characterlist[page].maxsan);
-    AddNewObject(new Engine::Label(characterlist[page].charactername, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
+    std::string sanality=std::to_string(characterlist[page].san)+"/"+std::to_string(characterlist[page].fullsan);
+    AddNewObject(new Engine::Label(characterlist[page].name, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
     AddNewObject(new Engine::Label(sanality, "Black-Magic-2.ttf", 60, halfW, halfH +380, 225,180,182, 255, 0.5, 0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 }
