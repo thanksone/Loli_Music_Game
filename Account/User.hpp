@@ -12,8 +12,8 @@ class User{
 private:
     std::vector<Loli> Character;
     std::map<std::string, std::pair<int, float>> BestRecord;
-    Loli *loli;
 public:
+    Loli *loli;
     std::string name;
     std::string font, dirt, floor;
     bool wind;
