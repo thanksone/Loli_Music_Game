@@ -353,7 +353,7 @@ void EditScene::DeleteNoteClick(int k){
 }
 void EditScene::DeleteNoteButton(int n){
     int y = (onField[n].ff - pi) * 240 + round(onField[n].ss.at * 240.0);
-    if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1023, y, y + onField[n].ss.len * 60 - 1, -1);
+    if(onField[n].ss.type) update(onField[n].ss.ghost, 1, 0, 1023, y, y + (onField[n].ss.len - 1) * 60, -1);
     else update(onField[n].ss.ghost, 1, 0, 1023, y, y, -1);
     RemoveControlObject(NoteButtonCtrl[n]->GetControlIterator(), NoteButtonCtrl[n]->GetObjectIterator());
     for(Engine::IObject* img : NoteButtonObj[n]) RemoveObject(img->GetObjectIterator());
@@ -361,7 +361,7 @@ void EditScene::DeleteNoteButton(int n){
 }
 void EditScene::AddNoteButton(note N, int x, int y){
     onField.push_back({pi + y / 240, N});
-    if(N.type) update(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1, 1);
+    if(N.type) update(N.ghost, 1, 0, 1023, y, y + (N.len - 1) * 60, 1);
     else update(N.ghost, 1, 0, 1023, y, y, 1);
     if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodhold.png", "play/sangoodholdbomb.png", x - 90, 960 - y - 90, 180, 180));
     else NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtapbomb.png", x - 90, 960 - y - 90, 180, 180));
@@ -410,8 +410,8 @@ void EditScene::ClearLine(){
     Line.clear();
 }
 bool EditScene::CheckSpaceValid(note N, int y){
-    if(N.type && y % 240 + N.len * 60 > 240) return 0;
-    if(N.type && query(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1)) return 0;
+    if(N.type && y % 240 + (N.len - 1) * 60 > 240) return 0;
+    if(N.type && query(N.ghost, 1, 0, 1023, y, y + (N.len - 1) * 60)) return 0;
     if(!N.type && query(N.ghost, 1, 0, 1023, y, y)) return 0;
     return 1;
 }
