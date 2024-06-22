@@ -28,10 +28,10 @@ void User::update(){
     font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
     dirt = wind? "stage-select/sanbaddirt.png" : "stage-select/sangooddirt.png";
     floor = wind? "stage-select/sanbadfloor.png" : "stage-select/sangoodfloor.png";
-    leftdirt = wind? "stage-select/redleft.png" : "stage-select/blueleft.png";
-    leftfloor = wind? "stage-select/darkleft.png" : "stage-select/pinkleft.png";
-    rightdirt = wind? "stage-select/redright.png" : "stage-select/blueright.png";
-    rightfloor = wind? "stage-select/darkright.png" : "stage-select/pinkright.png";
+    leftdirt = wind? "stage-select/darkleft.png" : "stage-select/blueleft.png";
+    leftfloor = wind? "stage-select/redleft.png" : "stage-select/pinkleft.png";
+    rightdirt = wind? "stage-select/darkright.png" : "stage-select/blueright.png";
+    rightfloor = wind? "stage-select/redright.png" : "stage-select/pinkright.png";
     std::ofstream fout("../Resource/account-status/" + name + ".loli", std::ios::trunc);
     fout << Character.size() << "\n";
     for(Loli ll : Character){
