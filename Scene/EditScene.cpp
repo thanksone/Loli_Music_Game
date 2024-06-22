@@ -192,7 +192,7 @@ void EditScene::SaveOnClick(){
     for(int i = 0; i < total; i++){
         fout << BPM[i] << " " << Note[i].size() << "\n";
         for(auto [type, ghost, len, at, speed] : Note[i]){
-            fout << type << " " << len << " " << ghost << " " << at << " " << speed << "\n";
+            fout << type << " " << ghost << " " << len << " " << at << " " << speed << "\n";
         }
         fout << "\n";
     }
