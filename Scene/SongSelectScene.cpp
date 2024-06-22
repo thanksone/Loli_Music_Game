@@ -66,23 +66,23 @@ void SongSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&SongSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 550, h - 175, 300, 180);
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 550, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "ez"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("EZ", user.font, 48, halfW - 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, h - 175, 300, 180);
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 150, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "hd"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("HD", user.font, 48, halfW, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW + 250, h - 175, 300, 180);
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW + 250, h - 175, 300, 180);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "in"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("IN", user.font, 48, halfW + 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
 
-    /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 200, halfH / 2 + 250, 400, 150);
+    /*btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 200, halfH / 2 + 250, 400, 150);
     btn->SetOnClickCallback(std::bind(&StageSelectScene::ScoreboardOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Scoreboard", user.font, 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
