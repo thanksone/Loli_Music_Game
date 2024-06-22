@@ -358,8 +358,8 @@ void EditScene::AddNoteButton(note N, int x, int y){
     onField.push_back({y / 240, N});
     if(N.type) update(N.ghost, 1, 0, 1023, y, y + N.len * 60 - 1, 1);
     else update(N.ghost, 1, 0, 1023, y, y, 1);
-    if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodhold.png", "play/sangoodholdbomb.png", x, 960 - y, 180, 180, 0.5, 0.5));
-    else NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtapbomb.png", x, 960 - y, 180, 180, 0.5, 0.5));
+    if(N.type) NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodhold.png", "play/sangoodholdbomb.png", x - 90, 960 - y - 90, 180, 180));
+    else NoteButtonCtrl.push_back(new Engine::ImageButton("play/sangoodtap.png", "play/sangoodtapbomb.png", x - 90, 960 - y - 90, 180, 180));
     NoteButtonCtrl.back()->SetOnClickCallback(std::bind(&EditScene::DeleteNoteClick, this, NoteButtonCtrl.size() - 1));
     AddNewControlObject(NoteButtonCtrl.back());
     NoteButtonObj.push_back({});

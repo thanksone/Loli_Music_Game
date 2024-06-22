@@ -54,15 +54,12 @@
 [INFO] Changed to edit scene
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodtap.png scaled to 180x80
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png
-[INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png scaled to 180x80
-[INFO] Loaded Resource<image>: Resource/images/play/sangoodholdbomb.png
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: play/sangoodhold.png?180x80
 [INFO] Destroyed Resource<image>: play/sangoodtapbomb.png
 [INFO] Destroyed Resource<image>: stage-select/end.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?150x80
@@ -81,7 +78,6 @@
 [INFO] Destroyed Resource<image>: stage-select/pinkright.png
 [INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png?80x80
-[INFO] Destroyed Resource<image>: play/sangoodholdbomb.png
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<image>: songs/MeikyuLyrith.png?720x720
 [INFO] Destroyed Resource<image>: play/sangoodhold.png?180x180
