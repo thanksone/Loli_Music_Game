@@ -132,7 +132,10 @@ void PlayScene::ReadScore() {
                     notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - (float)15 / (speed * user.setting.fallspeed), speed * user.setting.fallspeed});
                     total++;
                 }
-            }else notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - (float)15 / (speed * user.setting.fallspeed), speed * user.setting.fallspeed});
+            }else {
+                notes.push_back({type, ghost, time + at * (float) 60 / bpm,time + at * (float) 60 / bpm - (float) 15 / (speed * user.setting.fallspeed),speed * user.setting.fallspeed});
+                total++;
+            }
         }
         time += 60.0 / bpm;
     }
@@ -162,7 +165,7 @@ void PlayScene::Construct() {
     Left = new Engine::Label("", user.font, 108, halfW, halfH, 255, 255, 255, 255, 0.5, 0.5);
     AddNewObject(Left);
     Left->Visible = 0;
-    Score = new Engine::Label("000000", user.font, 48, w - 30, 30, 255, 255, 255, 255, 1, 0);
+    Score = new Engine::Label("0000000", user.font, 48, w - 30, 30, 255, 255, 255, 255, 1, 0);
     AddNewObject(Score);
     Combo = new Engine::Label("", user.font, 60, halfW, 30, 255, 255, 255, 255, 0.5, 0);
     AddNewObject(Combo);

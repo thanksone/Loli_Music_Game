@@ -181,13 +181,12 @@ void EditScene::OnKeyDown(int keyCode) {
     show[on - 1]->Text = BPMS[pi + on - 1];
 }
 void EditScene::BackOnClick(){
-    SaveOnClick("editting");
+    SaveOnClick();
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void EditScene::SaveOnClick(std::string dir){
+void EditScene::SaveOnClick(){
     std::ofstream fout;
-    if(dir == "editting") dir += "/" + user.name;
-    fout.open("../Resource/" + dir + "/" + songname + "_" + diff + ".loli", std::ios::trunc);
+    fout.open("../Resource/scores/" + filename+ ".loli", std::ios::trunc);
     fout << total << "\n";
     for(int i = 0; i < total; i++){
         fout << BPM[i] << " " << Note[i].size() << "\n";
@@ -317,7 +316,7 @@ void EditScene::POSSliderOnValueChanged(float value){
 }
 void EditScene::ReadScore(){
     BPM.clear(), BPMS.clear(), Note.clear();
-    std::string file = "../Resource/editting/" + user.name + "/" + songname +  "_" + diff + ".loli";
+    std::string file = "../Resource/scores/" + filename + ".loli";
     std::ifstream fin(file);
     int time, notes, type, ghost, len;
     float at, speed, bpm;
@@ -419,14 +418,10 @@ void EditScene::ConstructUI(){
     btn->SetOnClickCallback(std::bind(&EditScene::BackOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", user.font, 36, w - 275, h - 45, 125,30,32, 255, 0.5, 0.5));
-    btn = new Engine::ImageButton(user.dirt, user.floor, w - 500, h - 155, 220, 80);
-    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "editting"));
+    btn = new Engine::ImageButton(user.dirt, user.floor, w - 500, h - 155, 450, 80);
+    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Save", user.font, 36, w - 390, h - 115, 125,30,32, 255, 0.5, 0.5));
-    btn = new Engine::ImageButton(user.dirt, user.floor, w - 270, h - 155, 220, 80);
-    btn->SetOnClickCallback(std::bind(&EditScene::SaveOnClick, this, "scores"));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Upload", user.font, 36, w - 160, h - 115, 125,30,32, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Save", user.font, 36, w - 275, h - 115, 125,30,32, 255, 0.5, 0.5));
     btn = new Engine::ImageButton(user.dirt, user.floor, w - 430, h - 225, 150, 80);
     btn->SetOnClickCallback(std::bind(&EditScene::InsertOnClick, this, 1));
     AddNewControlObject(btn);

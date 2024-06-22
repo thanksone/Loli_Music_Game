@@ -99,7 +99,7 @@ void FileSelectScene::BackOnClick() {
 }
 void FileSelectScene::EditOnClick(std::string songname, std::string diff) {
     EditScene* scene = dynamic_cast<EditScene*>(Engine::GameEngine::GetInstance().GetScene("edit"));
-    scene->songname = songname, scene->diff = diff, scene->user = user;
+    scene->songname = songname, scene->filename = songname + "_" + diff, scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("edit");
 }
 void FileSelectScene::SettingsOnClick() {

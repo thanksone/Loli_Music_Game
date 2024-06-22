@@ -47,7 +47,7 @@ protected:
     Slider *sliderPOS;
 public:
     User user;
-    std::string songname, diff;
+    std::string songname, filename;
     int halfW, halfH;
 	explicit EditScene() = default;
 	void Initialize() override;
@@ -59,7 +59,7 @@ public:
 	void OnMouseUp(int button, int mx, int my) override;
 	void OnKeyDown(int keyCode) override;
     void BackOnClick();
-    void SaveOnClick(std::string dir);
+    void SaveOnClick();
     void InsertOnClick(int type);
     void AddOnClick();
     void DeleteOnClick();
