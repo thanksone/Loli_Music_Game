@@ -111,8 +111,7 @@ void EditScene::Update(float deltatime) {
         Time.pop();
         now++;
         if(now >= pi + 4){
-            sliderPOS->Position.x = x0 + 1200.0 * (float)(pi + 4) / (float)total;
-            POSSliderOnValueChanged((float)(pi + 4) / (float)total);
+            PiAddOnClick(4);
             RunningLine->Position.y = (std::min(pi + 4, total) - now) * 240.0;
         }
     }
@@ -127,6 +126,7 @@ void EditScene::Draw() const {
     IScene::Draw();
 }
 void EditScene::OnMouseDown(int button, int mx, int my) {
+    mouse = 1;
     if(on){
         show[pi + on - 1]->Text = tostring(BPM[pi + on - 1]);
         on = 0;
@@ -147,6 +147,7 @@ void EditScene::OnMouseMove(int mx, int my) {
     }
 }
 void EditScene::OnMouseUp(int button, int mx, int my) {
+    mouse = 0;
     IScene::OnMouseUp(button, mx, my);
     my = 960 - my;
     int x = (mx - x0) / (int)ghostW, y = my / 240;
@@ -235,10 +236,10 @@ void EditScene::SpeedAddOnClick(float val){
     SPEED->Text = "Speed :" + tostring(speed);
 }
 void EditScene::PiAddOnClick(int val){
-    if(pi + val < 0 || pi + val >= total) return;
-    float x = (float)(pi + val) / (float)total;
-    sliderPOS->Position.x = x0 + 1200.0 * x;
-    POSSliderOnValueChanged(x);
+    pi = std::max(0, std::min(pi + val, total - 4));
+    ClearNote();
+    DisplayNote();
+    NOWAT->Text = "Times " + std::to_string(pi + 1) + " ~ " + std::to_string(pi + 4);
 }
 void EditScene::PlayOnClick(){
     if(last > 0) StopOnClick();
@@ -308,12 +309,6 @@ void EditScene::HoldOnClick(){
         addObject(1, imgTarget[i]);
     }
 }
-void EditScene::POSSliderOnValueChanged(float value){
-    ClearNote();
-    pi = std::max(0, std::min((int)((float)total * value), total - 4));
-    DisplayNote();
-    NOWAT->Text = "Times " + std::to_string(pi + 1) + " ~ " + std::to_string(pi + 4);
-}
 void EditScene::ReadScore(){
     BPM.clear(), BPMS.clear(), Note.clear();
     std::string file = "../Resource/scores/" + filename + ".loli";
@@ -378,6 +373,7 @@ void EditScene::DisplayNote(){
     for(int i = 0; i < std::min(total - pi, 4); i++){
         show[i]->Text = BPMS[pi + i];
     }
+    std::cout << "digolian\n";
 }
 void EditScene::DisplayLine(){
     Engine::Label* line;
@@ -532,8 +528,4 @@ void EditScene::ConstructUI(){
     for(int i = 0; i < 7; i++){
         AddNewObject(new Engine::Image("stage-select/foo.png", x0 + ghostW * i, 957, 4, 957, 0.5, 1));
     }
-    sliderPOS = new Slider(x0, h - 26, 6 * ghostW, 4, 0);
-    sliderPOS->SetOnValueChangedCallback(std::bind(&EditScene::POSSliderOnValueChanged, this, std::placeholders::_1));
-    AddNewControlObject(sliderPOS);
-    sliderPOS->SetValue(0);
 }
