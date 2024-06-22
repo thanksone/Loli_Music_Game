@@ -54,10 +54,16 @@ void StartScene::Initialize() {
     sancheck = user.wind? "bad" : "good";
     //std::cout<<account<<" "<<sanity<<" "<<maxsan<<"\n";
     //std::cout<<account<<" "<<stoi(sanity)<<" "<<maxsan<<"\n";
-
+    std::string backgroundimg="scenes/san"+sancheck+"start.png";
     std::string dirtimg="stage-select/san" +sancheck+"dirt.png";
     std::string floorimg="stage-select/san" +sancheck+"floor.png";
     std::string fontname;
+    Engine::Image* img;
+    img=new Engine::Image(backgroundimg, halfW, halfH,1800,1020,0.5,0.5);
+    addObject(1,img);
+    img=new Engine::Image("scenes/san"+sancheck+"board.png", halfW, 210,1400,500,0.5,0.5);
+    addObject(1,img);
+
     if(sancheck=="bad"){
         fontname="Raslani-Kavaliar-Kaiser-1.ttf";
         AddNewObject(new Engine::Label("Abyssal Tunes", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
@@ -65,7 +71,7 @@ void StartScene::Initialize() {
     }
     else{
         fontname="Black-Magic-2.ttf";
-        AddNewObject(new Engine::Label("Heartbeat Rhythmo", fontname, 120, halfW, halfH / 3 + 50, 225,180,182, 255, 0.5, 0.5));
+        AddNewObject(new Engine::Label("Heartbeat Rhythmo", fontname, 120, halfW, halfH / 3 + 50, 225,130,132, 255, 0.5, 0.5));
         bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
     }
 
