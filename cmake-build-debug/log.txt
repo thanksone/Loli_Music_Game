@@ -47,16 +47,21 @@
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png scaled to 180x180
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/foo.png scaled to 4x957
-[INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png
 [INFO] Changed to edit scene
-[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
-[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
-[INFO] Created<sample_instance>: Resource/audios/hold.ogg
-[INFO] stopped audio (sample)
 [INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
-[INFO] Game Terminating...
 [INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<audio>: Resource/audios/songs/Itogite.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
+[INFO] Loaded Resource<image>: Resource/images/songs/Itogite.png scaled to 720x720
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png
+[INFO] Changed to edit scene
+[INFO] Game Terminating...
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Destroyed Resource<image>: stage-select/foo.png?4x957
@@ -81,6 +86,7 @@
 [INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
 [INFO] Destroyed Resource<image>: stage-select/blueleft.png
 [INFO] Destroyed Resource<image>: stage-select/pinkleft.png
+[INFO] Destroyed Resource<image>: songs/Itogite.png?720x720
 [INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
 [INFO] Destroyed Resource<image>: stage-select/blueright.png
 [INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?150x80
@@ -91,11 +97,11 @@
 [INFO] Destroyed Resource<font>: hanazomefont.ttf?60
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
 [INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
-[INFO] Destroyed<sample_instance>: hold.ogg
+[INFO] Destroyed<sample_instance>: songs/Itogite.ogg
 [INFO] Destroyed<sample_instance>: mainscene.ogg
 [INFO] Destroyed<sample_instance>: songs/MeikyuLyrith.ogg
 [INFO] Destroyed<sample_instance>: startscene.ogg
-[INFO] Destroyed Resource<audio>: hold.ogg
+[INFO] Destroyed Resource<audio>: songs/Itogite.ogg
 [INFO] Destroyed Resource<audio>: mainscene.ogg
 [INFO] Destroyed Resource<audio>: songs/MeikyuLyrith.ogg
 [INFO] Destroyed Resource<audio>: startscene.ogg
