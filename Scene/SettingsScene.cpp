@@ -75,9 +75,9 @@ void SettingsScene::StartOnClick(){
 }
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);
-    user.setting.BGMVolume = value;
+    AudioHelper::BGMVolume = value;
 }
 
 void SettingsScene::SFXSlideOnValueChanged(float value) {
-    user.setting.SFXVolume = value;
+    AudioHelper::SFXVolume = value;
 }
