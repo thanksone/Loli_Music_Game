@@ -68,17 +68,17 @@ void SongSelectScene::Initialize() {
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 550, h - 175, 300, 180);
-    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "ez"));
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page], "ez"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("EZ", user.font, 48, halfW - 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 150, h - 175, 300, 180);
-    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "hd"));
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page], "hd"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("HD", user.font, 48, halfW, h - 85, 125,30,32, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton(user.dirt, user.floor, halfW + 250, h - 175, 300, 180);
-    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page].filename, "in"));
+    btn->SetOnClickCallback(std::bind(&SongSelectScene::PlayOnClick, this, songlist[page], "in"));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("IN", user.font, 48, halfW + 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
@@ -108,9 +108,9 @@ void SongSelectScene::BackOnClick(int stage) {
     scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
-void SongSelectScene::PlayOnClick(std::string songname, std::string diff) {
+void SongSelectScene::PlayOnClick(song Song, std::string diff) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    scene->filename = songname, scene->diff = diff, scene->user = user;
+    scene->give = Song, scene->diff = diff, scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("play");
 }
 void SongSelectScene::ScoreboardOnClick() {

@@ -47,7 +47,8 @@ void PlayScene::Initialize() {
     curtime = 0;
     for(int i = 0; i < 12; i++) Hold[i] = 0;
     boing = 1;
-    Song = AudioHelper::PlaySample("songs/" + filename + ".ogg", 0, AudioHelper::BGMVolume);
+    Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, AudioHelper::BGMVolume);
+    last = AudioHelper::GetSampleLength(Song) + 1;
 }
 void PlayScene::Terminate() {
 	AudioHelper::StopSample(Song);
@@ -55,6 +56,12 @@ void PlayScene::Terminate() {
 	IScene::Terminate();
 }
 void PlayScene::Update(float deltaTime) {
+    if(curtime >= last){
+        WinScene* scene = dynamic_cast<WinScene*>(Engine::GameEngine::GetInstance().GetScene("win"));
+        scene->user = user, scene->give = give;
+        scene->score = score, scene->acc = acc, scene->perfect = perfect, scene->good = good, scene->bad = bad, scene->miss = miss, scene->maxcombo = maxcombo;
+        Engine::GameEngine::GetInstance().ChangeScene("win");
+    }
     if(pause >= 5) return;
     else if(pause <= 3 && pause >= 0){
         pause -= deltaTime;
@@ -62,7 +69,7 @@ void PlayScene::Update(float deltaTime) {
         return;
     }else if(pause <= 0 && !boing) {
         Left->Visible = 0;
-        Song = AudioHelper::PlaySample("songs/" + filename + ".ogg", 0, AudioHelper::BGMVolume, curtime);
+        Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, AudioHelper::BGMVolume, curtime);
         boing = 1;
     }
     curtime += deltaTime;
@@ -116,7 +123,7 @@ void PlayScene::OnKeyUp(int keyCode){
     else if(keyCode == ALLEGRO_KEY_O) Hold[11] = 0, Line[5]->Up();
 }
 void PlayScene::ReadScore() {
-    std::ifstream fin("../Resource/scores/" + filename + "_" + diff + ".loli");
+    std::ifstream fin("../Resource/scores/" + give.filename + "_" + diff + ".loli");
     float time = 0, bpm;
     int n, k, type, ghost, len;
     float at, speed;
@@ -146,6 +153,9 @@ void PlayScene::ReadScore() {
 void PlayScene::Construct() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x, h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2, halfH = h / 2;
+    for(int i = 0; i < 7; i++){
+        AddNewObject(new Engine::Image("stage-select/foo.png", x0 + ghostW * i, 957, 4, 957, 0.5, 1));
+    }
     Pause = new Engine::ImageButton("play/stop.png", "play/stop.png", 10, 10, 100, 100);
     Pause->SetOnClickCallback(std::bind(&PlayScene::PauseOnClick, this));
     AddNewControlObject(Pause);
@@ -176,9 +186,8 @@ void PlayScene::Construct() {
         Line[i] = new Turret("play/turretup.png", "play/turretdown.png", x0 + ghostW * i + ghostW / 2 - 90, deadline - 90, i);
         AddNewObject(Line[i]);
     }
-    for(int i = 0; i < 7; i++){
-        AddNewObject(new Engine::Image("stage-select/foo.png", x0 + ghostW * i, 957, 4, 957, 0.5, 1));
-    }
+    EffectGroup = new Group;
+    AddNewObject(EffectGroup);
 }
 void PlayScene::PauseOnClick(){
     AudioHelper::StopSample(Song);

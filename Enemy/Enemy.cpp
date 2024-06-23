@@ -18,13 +18,14 @@
 PlayScene* Enemy::getPlayScene() {
 	return dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetActiveScene());
 }
-Enemy::Enemy(std::string img, float x, float y, int type, int ghost, float speed) :
-	Engine::Sprite(img, x, y, 180, 180), type(type), ghost(ghost), speed(speed){
+Enemy::Enemy(std::string img, std::string bombimg, float x, float y, int type, int ghost, float speed) :
+	Engine::Sprite(img, x, y, 180, 180), bombimg(bombimg), type(type), ghost(ghost), speed(speed){
     Velocity = Engine::Point(0, speed);
     perfect = 0.08 * speed;
 }
 void Enemy::Hit(){
     getPlayScene()->Line[ghost]->Target[type] = nullptr;
+    getPlayScene()->EffectGroup->AddNewObject(new DirtyEffect(bombimg, 0.2, Position.x, Position.y));
     getPlayScene()->NoteGroup[ghost][type]->RemoveObject(objectIterator);
 }
 void Enemy::Update(float deltaTime){

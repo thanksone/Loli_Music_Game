@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <ctime>
+#include <sstream>
+#include <iomanip>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
@@ -11,64 +13,61 @@
 #include "PlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "WinScene.hpp"
+#include "MainScene.hpp"
 
-
-std::string current() {
-	time_t now = time(0);
-	char buf[80];
-	tm  ts = *localtime(&now);
-	strftime(buf, sizeof(buf), "%Y/%m/%d,%X", &ts);
-	return buf;
+std::string otstring(int x){
+    std::string S;
+    for(int i = 1e6; i; i /= 10){
+        S += x / i + 48;
+        x %= i;
+    }
+    return S;
 }
-
-Engine::Label *namae;
+std::string totostring(float x){
+    std::string S;
+    std::stringstream SS;
+    SS << std::fixed << std::setprecision(2) << x;
+    SS >> S;
+    return S;
+}
 void WinScene::Initialize() {
-	ticks = 0;
 	int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
 	int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
 	int halfW = w / 2;
 	int halfH = h / 2;
 
-	AddNewObject(new Engine::Image("stage-select/bar.png", halfW-100, halfH/4+80, 400, 0, 0.5, 1));
-	AddNewObject(new Engine::Label("You Win!", "pirulen.ttf", 48, halfW, halfH / 4 -10, 255, 255, 255, 255, 0.5, 0.5));
-	AddNewObject(new Engine::Image("win/benjamin-sad.png", halfW, halfH, 0, 0, 0.5, 0.5));
 	Engine::ImageButton* btn;
-	btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
-	btn->SetOnClickCallback(std::bind(&WinScene::BackOnClick, this, 2));
+	btn = new Engine::ImageButton(user.dirt, user.floor, w - 320, h - 120, 300, 100);
+	btn->SetOnClickCallback(std::bind(&WinScene::BackOnClick, this));
 	AddNewControlObject(btn);
-	
-	namae= new Engine::Label ("Your name?", "pirulen.ttf", 48, halfW-200, halfH / 4 +50, 200, 200, 200, 255, 0, 0.5);
-	AddNewObject(namae);
-	AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
-	name.clear();
-	bgmId = AudioHelper::PlayAudio("win.wav");
+    AddNewObject(new Engine::Label("Continue", user.font, 48, w - 170, h - 70, 0, 0, 0, 255, 0.5, 0.5));
+    Engine::Image* img;
+    img=new Engine::Image("songs/"+give.filename+".png", 600, halfH,720,720,0.5,0.5);
+    AddNewObject(img);
+    if(give.songlan=="english") {
+        AddNewObject(new Engine::Label(give.songname, user.font, 60, 1500, halfH -360 , 225,180,182, 255, 1, 0));
+    }
+    else AddNewObject(new Engine::Label(give.songname, user.wind? "07ReallyScaryMinchotai.ttf" : "hanazomefont.ttf", 60, 1500, halfH - 360, 225,180,182, 255, 1, 0));
+    AddNewObject(new Engine::Label(otstring(score), user.font, 108, 1500, halfH - 240, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(totostring(acc * 100.0) + "%", user.font, 48, 1500, halfH - 90, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(std::to_string(maxcombo), user.font, 48, 1500, halfH - 20, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(std::to_string(perfect), user.font, 48, 1500, halfH + 60, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(std::to_string(good), user.font, 48, 1500, halfH + 140, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(std::to_string(bad), user.font, 48, 1500, halfH + 220, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(std::to_string(miss), user.font, 48, 1500, halfH + 300, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label("MaxCombo : ", user.font, 48, 1100, halfH - 20, 255, 255, 255, 255, 0, 0));
+    AddNewObject(new Engine::Label("Perfect : ", user.font, 48, 1100, halfH + 60, 255, 255, 255, 255, 0, 0));
+    AddNewObject(new Engine::Label("Good : ", user.font, 48, 1100, halfH + 140, 255, 255, 255, 255, 0, 0));
+    AddNewObject(new Engine::Label("Bad : ", user.font, 48, 1100, halfH + 220, 255, 255, 255, 255, 0, 0));
+    AddNewObject(new Engine::Label("Miss : ", user.font, 48, 1100, halfH + 300, 255, 255, 255, 255, 0, 0));
+    user.UpdateRecord(give.songname, score, acc);
 }
 void WinScene::Terminate() {
 	IScene::Terminate();
 	AudioHelper::StopBGM(bgmId);
 }
-void WinScene::BackOnClick(int stage) {
-	// Change to select scene.
-	std::ofstream fout;
-	fout.open("Resource/scoreboard.txt", std::ios_base::app);
-	if(name.size()) {
-		fout<<name<<" "<<score<<" "<<current()<<"\n";
-	}
-	fout.close();
-	Engine::GameEngine::GetInstance().ChangeScene("stage-select");
-}
-void WinScene::OnKeyDown(int keyCode) {
-	IScene::OnKeyDown(keyCode);
-	if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
-		name+=('0'+keyCode-ALLEGRO_KEY_0);
-	}
-	else if(keyCode >= ALLEGRO_KEY_A && keyCode <= ALLEGRO_KEY_Z) {
-		name+=('A'+keyCode-ALLEGRO_KEY_A);
-	}
-	else if(keyCode == ALLEGRO_KEY_BACKSPACE) {
-		if(name.size()) {
-			name.pop_back();
-		}
-	}
-	namae->Text = name;
+void WinScene::BackOnClick() {
+    MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+    scene->user = user;
+	Engine::GameEngine::GetInstance().ChangeScene("main");
 }

@@ -3,20 +3,20 @@
 #include <allegro5/allegro_audio.h>
 #include "Engine/IScene.hpp"
 #include "Account/User.hpp"
+#include "SongSelectScene.hpp"
 
 class WinScene final : public Engine::IScene {
 private:
-	float ticks;
 	ALLEGRO_SAMPLE_ID bgmId;
 public:
     User user;
-	std::string name;
-	int score;
+	int score, perfect, good, bad, miss, maxcombo;
+    float acc;
+    song give;
 	explicit WinScene() = default;
 	void Initialize() override;
 	void Terminate() override;
-	void BackOnClick(int stage);
-	void OnKeyDown(int keyCode) override;
+	void BackOnClick();
 };
 
 #endif // WINSCENE_HPP

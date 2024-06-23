@@ -25,6 +25,7 @@ User::User(std::string namae): name(namae){
 void User::UpdateRecord(std::string song, int score, float acc){
     BestRecord[song].ff = std::max(score, BestRecord[song].ff);
     BestRecord[song].ss = std::max(acc, BestRecord[song].ss);
+    update();
 }
 void User::update(){
     font = wind? "Raslani-Kavaliar-Kaiser-1.ttf" : "Black-Magic-2.ttf";
