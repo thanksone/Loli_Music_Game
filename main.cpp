@@ -15,7 +15,10 @@
 #include "Scene/EditScene.hpp"
 #include "Scene/LoginScene.hpp"
 #include "Scene/RegisterScene.hpp"
+#include <random>
+#include <time.h>
 int main(int argc, char **argv) {
+    srand(time(nullptr));
 	Engine::LOG::SetConfig(true);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
 

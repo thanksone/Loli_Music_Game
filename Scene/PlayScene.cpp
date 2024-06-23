@@ -40,11 +40,8 @@ void PlayScene::Initialize() {
     x0 = 150, ghostW = 250;
     pause = 0;
     deadline = 960;
-    std::cout << "flag1\n";
 	ReadScore();
-    std::cout << "flag2\n";
 	Construct();
-    std::cout << "flag3\n";
     curtime = 0;
     for(int i = 0; i < 12; i++) Hold[i] = 0;
     boing = 1;
@@ -77,11 +74,16 @@ void PlayScene::Update(float deltaTime) {
     while(!Note.empty() && Note.front().em <= curtime){
         auto [type, ghost, at, em, speed] = Note.front();
         Note.pop();
-        if(type){
-            type = type;
+        int change = 0;
+        if(user.wind){
+            change = rand() % user.loli->fullsan;
+            change = change <= (user.loli->fullsan - user.loli->san) / 12;
+        }
+        change <<= 1;
+        type += change;
+        if(type & 1){
             NoteGroup[ghost][type]->AddNewObject(new HoldEnemy(x0 + ghost * ghostW + ghostW / 2, deadline + (curtime - at) * speed, type, ghost, speed));
         }else{
-            type = type;
             NoteGroup[ghost][type]->AddNewObject(new TapEnemy(x0 + ghost * ghostW + ghostW / 2, deadline + (curtime - at) * speed, type, ghost, speed));
         }
     }

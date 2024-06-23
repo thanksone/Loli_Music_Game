@@ -6,6 +6,8 @@
 #include <utility>
 #include <vector>
 #include <queue>
+#include <random>
+#include <chrono>
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
