@@ -32,6 +32,7 @@ void CharacterSelectScene::Initialize() {
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
+    std::string songname = user.wind? "sanbadcharacterselect.ogg" : "characterselect.ogg";
     std::string backgroundimg=user.wind?"scenes/sanbadcharacter.png":"scenes/sangoodcharacter.png";
     std::string boardimg=user.wind?"scenes/sanbadboard.png":"scenes/sangoodboard.png";
     std::string dirtimg=user.wind?"stage-select/sanbaddirt.png":"stage-select/sangooddirt.png";
@@ -78,7 +79,7 @@ void CharacterSelectScene::Initialize() {
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
-    if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);
+    if(fl==1) bgmInstance = AudioHelper::PlaySample(songname, true, AudioHelper::BGMVolume);
     fl=0;
     img=new Engine::Image(boardimg, halfW, halfH+225,400,400,0.5,0.5);
     addObject(1,img);
