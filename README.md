@@ -6,4 +6,4 @@
 
 游家齊：美術、startscene、mainscene、songselectscene、characterselectscene、主頁互動
 
-謝牧懷：譜面編輯、登入系統、音符判定
+謝牧懷：譜面編輯、登入系統、音符下落判定
