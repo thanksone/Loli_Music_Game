@@ -15,6 +15,7 @@
 #include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
 #include "CharacterSelectScene.hpp"
+#include "MainScene.hpp"
 #include "Character/Loli.hpp"
 
 bool cmpn(Loli &a, Loli &b){
@@ -109,6 +110,8 @@ void CharacterSelectScene::Terminate() {
 void CharacterSelectScene::BackOnClick(int stage) {
     f=1;
     fl=1;
+    MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
+    scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("main");
 }
 
