@@ -1,6 +1,8 @@
 #include <allegro5/allegro_audio.h>
 #include <functional>
 #include <memory>
+#include <sstream>
+#include <iomanip>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
@@ -13,6 +15,13 @@
 #include "SongSelectScene.hpp"
 #include "StartScene.h"
 
+std::string tototostring(float f){
+    std::stringstream SS;
+    std::string S;
+    SS << std::fixed << std::setprecision(1) << f;
+    SS >> S;
+    return S;
+}
 void SettingsScene::Initialize() {
 
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -45,13 +54,32 @@ void SettingsScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&SettingsScene::StartOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back To Start", user.font, 48, halfW, halfH + 290, 125, 30, 32, 255, 0.5, 0.5));
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 300, halfH - 150, 80, 80);
+    btn->SetOnClickCallback(std::bind(&SettingsScene::SpeedAddOnClick, this, -1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("-1", user.font, 36, halfW - 260, halfH - 110, 125,30,32, 255, 0.5, 0.5));
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 200, halfH - 150, 80, 80);
+    btn->SetOnClickCallback(std::bind(&SettingsScene::SpeedAddOnClick, this, -0.1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("-0.1", user.font, 36, halfW - 160, halfH - 110, 125,30,32, 255, 0.5, 0.5));
+    SPEED = new Engine::Label("Speed :" + tototostring(user.setting.fallspeed), user.font, 36, halfW - 100, halfH - 110, 125,30,32, 255, 0, 0.5);
+    AddNewObject(SPEED);
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW + 120, halfH - 150, 80, 80);
+    btn->SetOnClickCallback(std::bind(&SettingsScene::SpeedAddOnClick, this, 0.1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("+0.1", user.font, 36, halfW + 160, halfH - 110, 125,30,32, 255, 0.5, 0.5));
+    btn = new Engine::ImageButton(user.dirt, user.floor, halfW + 220, halfH - 150, 80, 80);
+    btn->SetOnClickCallback(std::bind(&SettingsScene::SpeedAddOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("+1", user.font, 36, halfW + 260, halfH - 110, 125,30,32, 255, 0.5, 0.5));
 
-    bgmInstance = AudioHelper::PlaySample("mainscene.ogg", true, AudioHelper::BGMVolume);
-    sliderBGM->SetValue(AudioHelper::BGMVolume);
-    sliderSFX->SetValue(AudioHelper::SFXVolume);
+    bgmInstance = AudioHelper::PlaySample("mainscene.ogg", true, user.setting.BGMVolume);
+    sliderBGM->SetValue(user.setting.BGMVolume);
+    sliderSFX->SetValue(user.setting.SFXVolume);
 }
 
 void SettingsScene::Terminate() {
+    user.update();
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
@@ -75,9 +103,14 @@ void SettingsScene::StartOnClick(){
 }
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);
-    AudioHelper::BGMVolume = value;
+    user.setting.BGMVolume = value;
 }
 
 void SettingsScene::SFXSlideOnValueChanged(float value) {
-    AudioHelper::SFXVolume = value;
+    user.setting.SFXVolume = value;
+}
+void SettingsScene::SpeedAddOnClick(float val){
+    if(user.setting.fallspeed + val <= 0 || user.setting.fallspeed + val > 30) return;
+    user.setting.fallspeed += val;
+    SPEED->Text = "Speed :" + tototostring(user.setting.fallspeed);
 }

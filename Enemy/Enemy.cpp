@@ -24,8 +24,8 @@ Enemy::Enemy(std::string img, std::string bombimg, float x, float y, int type, i
     perfect = 0.08 * speed;
 }
 void Enemy::Hit(bool miss){
-    if(!miss && type) getPlayScene()->tap = AudioHelper::PlaySample("hold.ogg", 0, AudioHelper::SFXVolume);
-    else if(!miss) getPlayScene()->tap = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume);
+    if(!miss && type) getPlayScene()->tap = AudioHelper::PlaySample("hold.ogg", 0, getPlayScene()->user.setting.SFXVolume);
+    else if(!miss) getPlayScene()->tap = AudioHelper::PlaySample("tap.ogg", 0, getPlayScene()->user.setting.SFXVolume);
     getPlayScene()->Line[ghost]->Target[type] = nullptr;
     if(!miss) getPlayScene()->EffectGroup->AddNewObject(new DirtyEffect(bombimg, 0.2, Position.x, Position.y));
     getPlayScene()->NoteGroup[ghost][type]->RemoveObject(objectIterator);

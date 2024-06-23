@@ -89,7 +89,7 @@ void SongSelectScene::Initialize() {
     AddNewObject(new Engine::Label("Scoreboard", user.font, 36, halfW, halfH / 2 + 300, 125,30,32, 255, 0.5, 0.5));*/
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
-	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].filename+".ogg", true, AudioHelper::BGMVolume);
+	bgmInstance = AudioHelper::PlaySample("songs/"+songlist[page].filename+".ogg", true, user.setting.BGMVolume);
     Engine::Image* img;
     img=new Engine::Image("songs/"+songlist[page].filename+".png", halfW, halfH-100,720,720,0.5,0.5);
     addObject(1,img);

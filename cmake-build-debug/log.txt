@@ -60,7 +60,6 @@
 [INFO] Loaded Resource<image>: Resource/images/play/turretdown.png
 [INFO] Loaded Resource<image>: Resource/images/play/turretup.png
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodtap.png scaled to 180x180
-[INFO] Loaded Resource<image>: Resource/images/play/sanbadtap.png scaled to 180x180
 [INFO] Loaded Resource<audio>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png scaled to 180x180
@@ -70,9 +69,13 @@
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
-[INFO] Created<sample_instance>: Resource/audios/hold.ogg
-[INFO] Loaded Resource<image>: Resource/images/play/sanbadtapbomb.png scaled to 180x180
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Loaded Resource<image>: Resource/images/play/sanbadtap.png scaled to 180x180
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
@@ -104,12 +107,6 @@
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Loaded Resource<image>: Resource/images/play/sanbadhold.png scaled to 180x180
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
@@ -120,16 +117,17 @@
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png scaled to 180x180
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
 [INFO] Created<sample_instance>: Resource/audios/hold.ogg
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodholdbomb.png scaled to 180x180
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/hold.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
@@ -139,7 +137,6 @@
 [INFO] Game end
 [INFO] Destroyed Resource<image>: play/sangoodholdbomb.png?180x180
 [INFO] Destroyed Resource<image>: play/sangoodhold.png?180x180
-[INFO] Destroyed Resource<image>: play/sanbadtapbomb.png?180x180
 [INFO] Destroyed Resource<image>: play/sanbadtap.png?180x180
 [INFO] Destroyed Resource<image>: play/sangoodtap.png?180x180
 [INFO] Destroyed Resource<image>: play/sangoodtapbomb.png?180x180
@@ -153,7 +150,6 @@
 [INFO] Destroyed Resource<image>: stage-select/sanbadsettingdirt.png?70x70
 [INFO] Destroyed Resource<image>: stage-select/redleft.png
 [INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
-[INFO] Destroyed Resource<image>: play/sanbadhold.png?180x180
 [INFO] Destroyed Resource<image>: scenes/sanbadmain.png?1800x1020
 [INFO] Destroyed Resource<image>: scenes/sanbadboard.png?1400x500
 [INFO] Destroyed Resource<image>: play/restart.png

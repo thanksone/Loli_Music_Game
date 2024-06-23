@@ -11,6 +11,7 @@
 class SettingsScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
+    Engine::Label *SPEED;
 public:
     int pre, page;
     User user;
@@ -26,7 +27,7 @@ public:
     void BGMSlideOnValueChanged(float value);
 
     void SFXSlideOnValueChanged(float value);
-
+    void SpeedAddOnClick(float value);
 };
 
 #endif // SettingsScene_HPP

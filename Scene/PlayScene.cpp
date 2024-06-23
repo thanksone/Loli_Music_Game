@@ -45,7 +45,7 @@ void PlayScene::Initialize() {
     curtime = 0;
     for(int i = 0; i < 12; i++) Hold[i] = 0;
     boing = 1;
-    Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, AudioHelper::BGMVolume);
+    Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, user.setting.BGMVolume);
     last = AudioHelper::GetSampleLength(Song) + 1;
 }
 void PlayScene::Terminate() {
@@ -67,7 +67,7 @@ void PlayScene::Update(float deltaTime) {
         return;
     }else if(pause <= 0 && !boing) {
         Left->Visible = 0;
-        Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, AudioHelper::BGMVolume, curtime);
+        Song = AudioHelper::PlaySample("songs/" + give.filename + ".ogg", 0, user.setting.BGMVolume, curtime);
         boing = 1;
     }
     curtime += deltaTime;
@@ -97,6 +97,7 @@ void PlayScene::Draw() const {
 }
 void PlayScene::OnKeyDown(int keyCode) {
 	IScene::OnKeyDown(keyCode);
+    if(pause >= 0) return;
     if(keyCode == ALLEGRO_KEY_S) Hold[0] = 1, Line[0]->Down(), Line[0]->Hit(0);
     else if(keyCode == ALLEGRO_KEY_D) Hold[1] = 1, Line[1]->Down(), Line[1]->Hit(0);
     else if(keyCode == ALLEGRO_KEY_F) Hold[2] = 1, Line[2]->Down(), Line[2]->Hit(0);
@@ -138,11 +139,11 @@ void PlayScene::ReadScore() {
             fin >> type >> ghost >> len >> at >> speed;
             if(type){
                 for (int j = 0; j < len; j++){
-                    notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - (float)deadline / (speed * user.setting.fallspeed), speed * user.setting.fallspeed});
+                    notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - std::max((float)0.3, (float)deadline / (speed * 90 * user.setting.fallspeed)), speed * 90 * user.setting.fallspeed});
                     total++;
                 }
             }else {
-                notes.push_back({type, ghost, time + at * (float) 60 / bpm,time + at * (float) 60 / bpm - (float)deadline / (speed * user.setting.fallspeed),speed * user.setting.fallspeed});
+                notes.push_back({type, ghost, time + at * (float) 60 / bpm,time + at * (float) 60 / bpm - std::max((float)0.3, (float)deadline / (speed * 90 * user.setting.fallspeed)),speed * 90 * user.setting.fallspeed});
                 total++;
             }
         }

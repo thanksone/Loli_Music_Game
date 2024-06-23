@@ -109,8 +109,8 @@ void EditScene::Update(float deltatime) {
     }
     past += deltatime, last -= deltatime;
     while(front < Boing.size() && Boing[front].at <= past){
-        if(Boing[front].type) tapsound = AudioHelper::PlaySample("hold.ogg", 0, AudioHelper::SFXVolume, 0);
-        else holdsound = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume, 0);
+        if(Boing[front].type) tapsound = AudioHelper::PlaySample("hold.ogg", 0, user.setting.SFXVolume, 0);
+        else holdsound = AudioHelper::PlaySample("tap.ogg", 0, user.setting.SFXVolume, 0);
         front++;
     }
     while(!Time.empty() && past >= Time.front()){
@@ -272,7 +272,7 @@ void EditScene::PlayOnClick(){
     }
     std::sort(Boing.begin(), Boing.end(), cmp);
     RunningLine->Visible = 1;
-    audio = AudioHelper::PlaySample("songs/" + songname + ".ogg", 0, AudioHelper::BGMVolume, time);
+    audio = AudioHelper::PlaySample("songs/" + songname + ".ogg", 0, user.setting.BGMVolume, time);
 }
 void EditScene::PlayHeadOnClick(){
     if(last > 0) StopOnClick();
@@ -298,7 +298,7 @@ void EditScene::PlayHeadOnClick(){
     pi = 0, ClearNote(), DisplayNote();
     std::sort(Boing.begin(), Boing.end(), cmp);
     RunningLine->Visible = 1;
-    audio = AudioHelper::PlaySample("songs/" + songname + ".ogg", 0, AudioHelper::BGMVolume, 0);
+    audio = AudioHelper::PlaySample("songs/" + songname + ".ogg", 0, user.setting.BGMVolume, 0);
 }
 void EditScene::StopOnClick(){
     last = 0;

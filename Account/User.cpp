@@ -20,7 +20,7 @@ User Guest(){
     return guest;
 }
 User::User(std::string namae): name(namae){
-    setting.fallspeed = 900;
+    setting = {1, 1, 10};
 }
 void User::UpdateRecord(std::string song, int score, float acc){
     BestRecord[song].ff = std::max(score, BestRecord[song].ff);
@@ -36,6 +36,7 @@ void User::update(){
     rightdirt = wind? "stage-select/darkright.png" : "stage-select/blueright.png";
     rightfloor = wind? "stage-select/redright.png" : "stage-select/pinkright.png";
     std::ofstream fout("../Resource/account-status/" + name + ".loli", std::ios::trunc);
+    fout << setting.BGMVolume << " " << setting.SFXVolume << " " << setting.fallspeed << "\n";
     fout << Character.size() << "\n";
     for(Loli ll : Character){
         fout << ll.name << " " << ll.san << " " << ll.fullsan << " " << (ll.wind? "1\n" : "0\n");

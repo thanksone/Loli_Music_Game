@@ -79,7 +79,7 @@ void CharacterSelectScene::Initialize() {
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
-    if(fl==1) bgmInstance = AudioHelper::PlaySample(songname, true, AudioHelper::BGMVolume);
+    if(fl==1) bgmInstance = AudioHelper::PlaySample(songname, true, user.setting.BGMVolume);
     fl=0;
     img=new Engine::Image(boardimg, halfW, halfH+225,400,400,0.5,0.5);
     addObject(1,img);

@@ -30,12 +30,13 @@ void StartScene::Initialize() {
     Engine::ImageButton* btn;
     std::string account, name, songname;
     int llcnt, san, fullsan, wind, score;
-    float acc;
+    float acc, bgm, sfx, speed;
     std::ifstream fout("../Resource/account-status/guest.loli");
     if(fout >> account && account != "guest"){
         user = User(account);
         fout.close();
         std::ifstream fin("../Resource/account-status/" + account + ".loli");
+        fin >> bgm >> sfx >> speed;
         fin >> llcnt;
         while(llcnt--){
             if(!(fin >> name >> san >> fullsan >> wind)) break;
@@ -47,6 +48,7 @@ void StartScene::Initialize() {
             user.UpdateRecord(songname, score, acc);
         }
         fin.close();
+        user.setting = {bgm, sfx, speed};
     }else{
         user = Guest();
         fout.close();
@@ -67,12 +69,12 @@ void StartScene::Initialize() {
     if(sancheck=="bad"){
         fontname="Raslani-Kavaliar-Kaiser-1.ttf";
         AddNewObject(new Engine::Label("Abyssal Tunes", fontname, 120, halfW, halfH / 3 + 50, 125,30,32, 255, 0.5, 0.5));
-        bgmInstance = AudioHelper::PlaySample("sanbadstartscene.ogg", true, AudioHelper::BGMVolume);
+        bgmInstance = AudioHelper::PlaySample("sanbadstartscene.ogg", true, user.setting.BGMVolume);
     }
     else{
         fontname="Black-Magic-2.ttf";
         AddNewObject(new Engine::Label("Heartbeat Rhythmo", fontname, 120, halfW, halfH / 3 + 50, 225,130,132, 255, 0.5, 0.5));
-        bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, AudioHelper::BGMVolume);
+        bgmInstance = AudioHelper::PlaySample("startscene.ogg", true, user.setting.BGMVolume);
     }
 
 
