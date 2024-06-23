@@ -5,4 +5,5 @@
 在進入遊戲前玩家可登入自己的帳號，並且記錄自己的遊玩成績。
 
 游家齊：美術、startscene、mainscene、songselectscene、characterselectscene、主頁互動
+
 謝牧懷：譜面編輯、登入系統、音符判定
