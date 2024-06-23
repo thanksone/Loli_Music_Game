@@ -27,13 +27,13 @@ void Turret::Hit(int type){
     float dis = std::abs(Target[type]->Position.y - Position.y);
     if(dis <= Target[type]->perfect){
         Target[type]->Hit(0);
-        getPlayScene()->Hit(1);
+        getPlayScene()->Hit(1, ghost);
     }else if(!(type & 1) && dis <= Target[type]->perfect * 2.0){
         Target[type]->Hit(0);
-        getPlayScene()->Hit(2);
+        getPlayScene()->Hit(2, ghost);
     }else if(!(type & 1) && dis <= Target[type]->perfect * 3.0){
         Target[type]->Hit(0);
-        getPlayScene()->Hit(3);
+        getPlayScene()->Hit(3, ghost);
     }
 }
 void Turret::Down(){

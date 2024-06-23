@@ -32,7 +32,7 @@ void Enemy::Hit(bool miss){
 }
 void Enemy::Update(float deltaTime){
     if(((type & 1) && Position.y - perfect > getPlayScene()->deadline) || Position.y - 3.0 * perfect > getPlayScene()->deadline) {
-        getPlayScene()->Hit(4);
+        getPlayScene()->Hit(4, ghost);
         Hit(1);
     }
 	Sprite::Update(deltaTime);

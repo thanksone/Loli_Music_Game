@@ -86,6 +86,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/LoginScene.cpp
         Scene/RegisterScene.hpp
         Scene/RegisterScene.cpp
+        UI/Animation/OnlineJudge.hpp
+        UI/Animation/OnlineJudge.cpp
         #        UI/Component/TextInput.cpp
 #        UI/Component/TextInput.hpp
 )

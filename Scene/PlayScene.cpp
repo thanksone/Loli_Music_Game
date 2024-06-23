@@ -20,6 +20,7 @@
 #include "Enemy/TapEnemy.hpp"
 #include "Engine/Resources.hpp"
 #include "Enemy/HoldEnemy.hpp"
+#include "UI/Animation/OnlineJudge.hpp"
 
 bool cmp(noto a, noto b){
     return a.em < b.em;
@@ -206,15 +207,19 @@ void PlayScene::ContinueOnClick(){
     Back->Visible = 0, Restart->Visible = 0, Continue->Visible = 0, Pause->Visible = 1;
     Left->Text = "3", Left->Visible = 1;
 }
-void PlayScene::Hit(int type){
+void PlayScene::Hit(int type, int g){
     if(type == 1){
         perfect++, acc += 1.0 / (float)total, combo++;
+        EffectGroup->AddNewObject(new OnlineJudge("Perfect", user.font, 0.2, x0 + g * ghostW + ghostW / 2, deadline - 80));
     }else if(type == 2){
         good++, acc += 0.65 / (float)total, combo++;
+        EffectGroup->AddNewObject(new OnlineJudge("Good", user.font, 0.2, x0 + g * ghostW + ghostW / 2, deadline - 80));
     }else if(type == 3){
         bad++, combo = 0;
+        EffectGroup->AddNewObject(new OnlineJudge("Bad", user.font, 0.2, x0 + g * ghostW + ghostW / 2, deadline - 80));
     }else{
         miss++, combo = 0;
+        EffectGroup->AddNewObject(new OnlineJudge("Miss", user.font, 0.2, x0 + g * ghostW + ghostW / 2, deadline - 80));
     }
     maxcombo = std::max(maxcombo, combo);
     score = 9e5 * acc + 1e5 * (float)maxcombo / (float)total;

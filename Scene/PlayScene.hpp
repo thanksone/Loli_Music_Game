@@ -49,6 +49,6 @@ public:
     void BackOnClick();
     void RestartOnClick();
     void ContinueOnClick();
-    void Hit(int type);
+    void Hit(int type, int g);
 };
 #endif // PLAYSCENE_HPP
