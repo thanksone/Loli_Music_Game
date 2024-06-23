@@ -33,6 +33,8 @@ void CharacterSelectScene::Initialize() {
     int halfH = h / 2;
     std::string backgroundimg=user.wind?"scenes/sanbadcharacter.png":"scenes/sangoodcharacter.png";
     std::string boardimg=user.wind?"scenes/sanbadboard.png":"scenes/sangoodboard.png";
+    std::string dirtimg=user.wind?"stage-select/sanbaddirt.png":"stage-select/sangooddirt.png";
+    std::string floorimg=user.wind?"stage-select/sanbadfloor.png":"stage-select/sangoodfloor.png";
     Engine::Image* img;
     img=new Engine::Image(backgroundimg, halfW, halfH,1800,1020,0.5,0.5);
     addObject(1,img);
@@ -70,18 +72,30 @@ void CharacterSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, 1));
     AddNewControlObject(btn);
 
-    characterlist[page].draw(this,halfW,halfH-125,608,1064,0.5,0.5);
+    characterlist[page].draw(this,halfW,halfH-225,608,1064,0.5,0.5);
 
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 50 , halfH-50, 100, 100);
     btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChangeOnClick, this, -1));
     AddNewControlObject(btn);
     if(fl==1) bgmInstance = AudioHelper::PlaySample("characterselect.ogg", true, AudioHelper::BGMVolume);
     fl=0;
-    img=new Engine::Image(boardimg, halfW, halfH+325,400,400,0.5,0.5);
+    img=new Engine::Image(boardimg, halfW, halfH+225,400,400,0.5,0.5);
     addObject(1,img);
     std::string sanality=std::to_string(characterlist[page].san)+"/"+std::to_string(characterlist[page].fullsan);
-    AddNewObject(new Engine::Label(characterlist[page].name, "Black-Magic-2.ttf", 60, halfW, halfH +300, 225,180,182, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label(sanality, "Black-Magic-2.ttf", 60, halfW, halfH +380, 225,180,182, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label(characterlist[page].name, "Black-Magic-2.ttf", 60, halfW, halfH +200, 225,180,182, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label(sanality, "Black-Magic-2.ttf", 60, halfW, halfH +280, 225,180,182, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton(dirtimg, floorimg, halfW -150, h-195 , 300, 180);
+    btn->SetOnClickCallback(std::bind(&CharacterSelectScene::ChooseOnClick, this));
+    AddNewControlObject(btn);
+    if(characterlist[page].name==user.loli->name) {
+        status = new Engine::Label("Using", "Black-Magic-2.ttf", 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5);
+        addObject(1,status);
+    }
+    else {
+        status = new Engine::Label("Choose!", "Black-Magic-2.ttf", 48, halfW, h-105, 125, 30, 32, 255, 0.5, 0.5);
+        addObject(1,status);
+    }
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 
 }
@@ -109,4 +123,13 @@ void CharacterSelectScene::ChangeOnClick(int changeway) {
     else page+=changeway;
     Engine::GameEngine::GetInstance().ChangeScene("character-select");
 }
+
+void CharacterSelectScene::ChooseOnClick() {
+    if(characterlist[page].name!=user.loli->name) {
+        user.ChangeOnField(characterlist[page].name);
+        status->Text = "Using";
+    }
+
+}
+
 

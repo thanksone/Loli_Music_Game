@@ -8,6 +8,8 @@
 #include "Engine/IScene.hpp"
 #include "Account/User.hpp"
 #include "Character/Loli.hpp"
+#include "UI/Component/Label.hpp"
+
 
 class CharacterSelectScene final : public Engine::IScene {
 private:
@@ -15,6 +17,7 @@ private:
     std::vector<Loli> characterlist;
     int page=0;
     int maxpage;
+    Engine::Label *status;
 public:
     User user;
     explicit CharacterSelectScene() = default;
@@ -22,6 +25,7 @@ public:
     void Terminate() override;
     void BackOnClick(int stage);
     void ChangeOnClick(int changeway);
+    void ChooseOnClick();
 
 };
 
