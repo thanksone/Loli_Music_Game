@@ -146,7 +146,7 @@ void PlayScene::ReadScore() {
 void PlayScene::Construct() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x, h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2, halfH = h / 2;
-    Pause = new Engine::ImageButton("play/stop.png", "play/stop.png", 50, 50, 100, 100);
+    Pause = new Engine::ImageButton("play/stop.png", "play/stop.png", 10, 10, 100, 100);
     Pause->SetOnClickCallback(std::bind(&PlayScene::PauseOnClick, this));
     AddNewControlObject(Pause);
     Back = new Engine::ImageButton("play/back.png", "play/back.png", halfW - 200, halfH, 100, 100, 0.5, 0.5);
@@ -183,6 +183,7 @@ void PlayScene::Construct() {
 void PlayScene::PauseOnClick(){
     AudioHelper::StopSample(Song);
     pause = 5;
+    boing = 0;
     Back->Visible = 1, Restart->Visible = 1, Continue->Visible = 1, Pause->Visible = 0;
 }
 void PlayScene::BackOnClick(){
