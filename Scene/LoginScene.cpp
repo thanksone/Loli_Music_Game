@@ -76,10 +76,11 @@ void LoginScene::LoginOnClick(){
     else if(mamamia[username] != hash(password)) message->Text = "User name or password incorrect";
     else{
         int n, san, fullsan, score, wind;
-        float acc;
+        float acc, bgm, sfx, speed;
         std::string file = "../Resource/account-status/" + username + ".loli", name, songname;
         std::ifstream fin(file);
         user = User(username);
+        fin >> bgm >> sfx >> speed;
         fin >> n;
         while(n--){
             if(!(fin >> name >> san >> fullsan >> wind)) break;
@@ -91,6 +92,7 @@ void LoginScene::LoginOnClick(){
             user.UpdateRecord(songname, score, acc);
         }
         fin.close();
+        user.setting = {bgm, sfx, speed};
         std::ofstream fout("../Resource/account-status/guest.loli", std::ios::trunc);
         fout << username;
         fout.close();

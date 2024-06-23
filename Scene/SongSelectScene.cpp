@@ -4,6 +4,8 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <algorithm>
 
 
@@ -23,6 +25,21 @@
 
 bool cmp1(song &a,song &b){
     return a.songname<b.songname;
+}
+std::string ototstring(int x){
+    std::string S;
+    for(int i = 1e6; i; i /= 10){
+        S += x / i + 48;
+        x %= i;
+    }
+    return S;
+}
+std::string otototstring(float x){
+    std::string S;
+    std::stringstream SS;
+    SS << std::fixed << std::setprecision(2) << x;
+    SS >> S;
+    return S;
 }
 int cmptype = 1;
 void SongSelectScene::Initialize() {
@@ -48,7 +65,6 @@ void SongSelectScene::Initialize() {
     if(cmptype==1) {
         std::sort(songlist.begin(),songlist.end(),cmp1);
     }
-
 
     btn = new Engine::ImageButton(user.leftdirt, user.leftfloor, 10, 10,75, 75);
     btn->SetOnClickCallback(std::bind(&SongSelectScene::BackOnClick, this, 1));
@@ -82,7 +98,8 @@ void SongSelectScene::Initialize() {
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("IN", user.font, 48, halfW + 400, h - 85, 125,30,32, 255, 0.5, 0.5));
 
-
+    AddNewObject(new Engine::Label(ototstring(user.BestRecord[songlist[page].songname].first), user.font, 60, w - 100, h - 400, 255, 255, 255, 255, 1, 0));
+    AddNewObject(new Engine::Label(otototstring(user.BestRecord[songlist[page].songname].second * 100.0) + "%", user.font, 30, w - 100, h - 320, 255, 255, 255, 255, 1, 0));
     /*btn = new Engine::ImageButton(user.dirt, user.floor, halfW - 200, halfH / 2 + 250, 400, 150);
     btn->SetOnClickCallback(std::bind(&StageSelectScene::ScoreboardOnClick, this));
     AddNewControlObject(btn);

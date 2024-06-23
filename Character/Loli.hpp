@@ -1,6 +1,7 @@
 #ifndef LOLI_HPP
 #define LOLI_HPP
 #include <string>
+#include <vector>
 #include "UI/Component/Image.hpp"
 #include "Engine/IScene.hpp"
 #include "UI/Component/ImageButton.hpp"

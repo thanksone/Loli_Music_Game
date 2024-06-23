@@ -89,7 +89,7 @@ void RegisterScene::RegisterOnClick(){
         user.ChangeOnField("loli");
         fout.close();
         std::ofstream fin(file, std::ios::trunc);
-        fin << 1 << "\n";
+        fin << 1 << " " << 1 << " " << 10 << "\n" << 1 << "\n";
         fin << "Mio" << " " << 90 << " " << 90 << " " << 0 << "\nMio\n";
         fin.close();
         MainScene* scene = dynamic_cast<MainScene*>(Engine::GameEngine::GetInstance().GetScene("main"));
