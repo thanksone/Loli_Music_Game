@@ -61,6 +61,8 @@ void WinScene::Initialize() {
     AddNewObject(new Engine::Label("Bad : ", user.font, 48, 1100, halfH + 220, 255, 255, 255, 255, 0, 0));
     AddNewObject(new Engine::Label("Miss : ", user.font, 48, 1100, halfH + 300, 255, 255, 255, 255, 0, 0));
     user.UpdateRecord(give.songname, score, acc);
+    int total = perfect + good + bad + miss;
+    user.ChangeSan((float)user.loli->san * (1.0 + (float)maxcombo / (float)total) * acc - (float)user.loli->san);
 }
 void WinScene::Terminate() {
 	IScene::Terminate();
