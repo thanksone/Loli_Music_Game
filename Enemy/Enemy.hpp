@@ -21,7 +21,7 @@ public:
     int type;
     float perfect;
 	Enemy(std::string img, std::string bombimg, float x, float y, int type, int ghost, float speed);
- 	void Hit();
+ 	void Hit(bool miss);
 	void Update(float deltaTime) override;
 	void Draw() const override;
 };

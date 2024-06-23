@@ -23,15 +23,17 @@ Enemy::Enemy(std::string img, std::string bombimg, float x, float y, int type, i
     Velocity = Engine::Point(0, speed);
     perfect = 0.08 * speed;
 }
-void Enemy::Hit(){
+void Enemy::Hit(bool miss){
+    if(!miss && type) getPlayScene()->tap = AudioHelper::PlaySample("hold.ogg", 0, AudioHelper::SFXVolume);
+    else if(!miss) getPlayScene()->tap = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume);
     getPlayScene()->Line[ghost]->Target[type] = nullptr;
-    getPlayScene()->EffectGroup->AddNewObject(new DirtyEffect(bombimg, 0.2, Position.x, Position.y));
+    if(!miss) getPlayScene()->EffectGroup->AddNewObject(new DirtyEffect(bombimg, 0.2, Position.x, Position.y));
     getPlayScene()->NoteGroup[ghost][type]->RemoveObject(objectIterator);
 }
 void Enemy::Update(float deltaTime){
     if(((type & 1) && Position.y - perfect > getPlayScene()->deadline) || Position.y - 3.0 * perfect > getPlayScene()->deadline) {
         getPlayScene()->Hit(4);
-        Hit();
+        Hit(1);
     }
 	Sprite::Update(deltaTime);
 }

@@ -20,7 +20,7 @@ struct noto{
 };
 class PlayScene final : public Engine::IScene {
 private:
-	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Song, tap, hold;
+	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Song;
 protected:
     int perfect, good, bad, miss, combo, total, maxcombo;
     float last, curtime, pause, score, acc;
@@ -29,6 +29,7 @@ protected:
     std::queue<noto> Note;
     bool Hold[12], boing;
 public:
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> tap, hold;
     User user;
 	std::string diff;
     song give;
