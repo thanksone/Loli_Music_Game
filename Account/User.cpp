@@ -19,7 +19,9 @@ User Guest(){
     guest.ChangeOnField("loli");
     return guest;
 }
-User::User(std::string namae): name(namae){}
+User::User(std::string namae): name(namae){
+    setting.fallspeed = 900;
+}
 void User::UpdateRecord(std::string song, int score, float acc){
     BestRecord[song].ff = std::max(score, BestRecord[song].ff);
     BestRecord[song].ss = std::max(acc, BestRecord[song].ss);
