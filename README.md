@@ -4,6 +4,5 @@
 玩家可以透過譜面編輯器自製譜面並遊玩，遊玩模式中可以將音符流速調整成玩家偏好的速度，此外，主頁面可以與少女對話，並且可於角色選取頁面更改主頁面的少女
 在進入遊戲前玩家可登入自己的帳號，並且記錄自己的遊玩成績。
 
-游家齊：美術、startscene、mainscene、songselectscene、characterselectscene、主頁互動
-
+游家齊：美術、startscene、mainscene、songselectscene、characterselectscene、主頁互動\\
 謝牧懷：譜面編輯、登入系統、音符判定
