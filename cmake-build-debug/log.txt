@@ -1,49 +1,94 @@
 [INFO] Game Initializing...
 [INFO] Loaded Resource<image>: Resource/images/icon.png
 [INFO] Loaded window icon from: icon.png
-[INFO] There are total 10 supported mouse buttons
+[INFO] There are total 1 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
-[INFO] Loaded Resource<image>: Resource/images/scenes/sanbadstart.png scaled to 1800x1020
-[INFO] Loaded Resource<image>: Resource/images/scenes/sanbadboard.png scaled to 1400x500
-[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 120
-[INFO] Loaded Resource<audio>: Resource/audios/sanbadstartscene.ogg
-[INFO] Created<sample_instance>: Resource/audios/sanbadstartscene.ogg
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png scaled to 300x180
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbaddirt.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadfloor.png
-[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/scenes/sangoodstart.png scaled to 1800x1020
+[INFO] Loaded Resource<image>: Resource/images/scenes/sangoodboard.png scaled to 1400x500
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 120
+[INFO] Loaded Resource<audio>: Resource/audios/startscene.ogg
+[INFO] Created<sample_instance>: Resource/audios/startscene.ogg
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 300x180
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodfloor.png
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 48
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<image>: Resource/images/scenes/sanbadmain.png scaled to 1800x1020
-[INFO] Loaded Resource<image>: Resource/images/characters/sanbadMio.png scaled to 684x1197
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingdirt.png scaled to 70x70
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingdirt.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sanbadsettingfloor.png
-[INFO] Loaded Resource<audio>: Resource/audios/sanbadmainscene.ogg
-[INFO] Created<sample_instance>: Resource/audios/sanbadmainscene.ogg
+[INFO] Loaded Resource<image>: Resource/images/scenes/sangoodmain.png scaled to 1800x1020
+[INFO] Loaded Resource<image>: Resource/images/characters/sangoodMio.png scaled to 684x1197
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png scaled to 70x70
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingdirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangoodsettingfloor.png
+[INFO] Loaded Resource<audio>: Resource/audios/mainscene.ogg
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
 [INFO] Changed to main scene
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<image>: Resource/images/stage-select/darkleft.png scaled to 75x75
-[INFO] Loaded Resource<image>: Resource/images/stage-select/darkleft.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/redleft.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/darkright.png scaled to 100x100
-[INFO] Loaded Resource<image>: Resource/images/stage-select/darkright.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/redright.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/darkleft.png scaled to 100x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 75x75
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkleft.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 100x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/pinkright.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 100x100
 [INFO] Loaded Resource<audio>: Resource/audios/songs/MeikyuLyrith.ogg
 [INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
 [INFO] Loaded Resource<image>: Resource/images/songs/MeikyuLyrith.png scaled to 720x720
-[INFO] Loaded Resource<font>: Resource/fonts/07ReallyScaryMinchotai.ttf with size 60
-[INFO] Changed to song-select scene
+[INFO] Loaded Resource<font>: Resource/fonts/hanazomefont.ttf with size 60
+[INFO] Changed to file-select scene
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<audio>: Resource/audios/songs/Itogite.ogg
-[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
-[INFO] Loaded Resource<image>: Resource/images/songs/Itogite.png scaled to 720x720
-[INFO] Changed to song-select scene
-[INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 30
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 450x80
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 36
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 150x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueleft.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/blueright.png scaled to 80x80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 140x80
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodtap.png scaled to 180x180
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodtap.png
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png scaled to 180x180
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png
 [INFO] Loaded Resource<image>: Resource/images/stage-select/foo.png scaled to 4x957
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodholdbomb.png
+[INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png
+[INFO] Changed to edit scene
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Loaded Resource<audio>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 28
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sangooddirt.png scaled to 360x180
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
 [INFO] Loaded Resource<image>: Resource/images/play/stop.png scaled to 100x100
 [INFO] Loaded Resource<image>: Resource/images/play/stop.png
 [INFO] Loaded Resource<image>: Resource/images/play/back.png scaled to 100x100
@@ -52,18 +97,15 @@
 [INFO] Loaded Resource<image>: Resource/images/play/restart.png
 [INFO] Loaded Resource<image>: Resource/images/play/continue.png scaled to 100x100
 [INFO] Loaded Resource<image>: Resource/images/play/continue.png
-[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 108
-[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 60
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 108
+[INFO] Loaded Resource<font>: Resource/fonts/Black-Magic-2.ttf with size 60
 [INFO] Loaded Resource<image>: Resource/images/play/turretup.png scaled to 180x180
-[INFO] Created<sample_instance>: Resource/audios/songs/Itogite.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
 [INFO] Changed to play scene
 [INFO] Loaded Resource<image>: Resource/images/play/turretdown.png
 [INFO] Loaded Resource<image>: Resource/images/play/turretup.png
-[INFO] Loaded Resource<image>: Resource/images/play/sangoodtap.png scaled to 180x180
-[INFO] Loaded Resource<audio>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodtapbomb.png scaled to 180x180
-[INFO] Loaded Resource<font>: Resource/fonts/Raslani-Kavaliar-Kaiser-1.ttf with size 30
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
@@ -74,52 +116,18 @@
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Loaded Resource<image>: Resource/images/play/sanbadtap.png scaled to 180x180
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Loaded Resource<image>: Resource/images/play/sangoodhold.png scaled to 180x180
-[INFO] Created<sample_instance>: Resource/audios/tap.ogg
-[INFO] Loaded Resource<audio>: Resource/audios/hold.ogg
 [INFO] Created<sample_instance>: Resource/audios/hold.ogg
 [INFO] Loaded Resource<image>: Resource/images/play/sangoodholdbomb.png scaled to 180x180
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
@@ -131,62 +139,2381 @@
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
 [INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Changed to edit scene
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 20
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/hold.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] Created<sample_instance>: Resource/audios/tap.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Changed to edit scene
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Changed to edit scene
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to file-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/MeikyuLyrith.ogg
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<audio>: Resource/audios/songs/OnlyMyRailgun.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/OnlyMyRailgun.ogg
+[INFO] Loaded Resource<image>: Resource/images/songs/OnlyMyRailgun.png scaled to 720x720
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<audio>: Resource/audios/songs/astronomia.ogg
+[INFO] Created<sample_instance>: Resource/audios/songs/astronomia.ogg
+[INFO] Loaded Resource<image>: Resource/images/songs/astronomia.png scaled to 720x720
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/songs/OnlyMyRailgun.ogg
+[INFO] Changed to song-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/scenes/sangoodcharacter.png scaled to 1800x1020
+[INFO] Loaded Resource<image>: Resource/images/characters/sangoodMio.png scaled to 608x1064
+[INFO] Loaded Resource<audio>: Resource/audios/characterselect.ogg
+[INFO] Created<sample_instance>: Resource/audios/characterselect.ogg
+[INFO] Loaded Resource<image>: Resource/images/scenes/sangoodboard.png scaled to 400x400
+[INFO] Changed to character-select scene
+[INFO] Loaded Resource<image>: Resource/images/characters/sangoodALice.png scaled to 608x1064
+[INFO] Changed to character-select scene
+[INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/characters/sangoodALice.png scaled to 684x1197
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/characterselect.ogg
+[INFO] Changed to character-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/characterselect.ogg
+[INFO] Changed to character-select scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/mainscene.ogg
+[INFO] Changed to main scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: characters/sangoodALice.png?608x1064
+[INFO] Destroyed Resource<image>: scenes/sangoodboard.png?400x400
+[INFO] Destroyed Resource<image>: scenes/sangoodcharacter.png?1800x1020
+[INFO] Destroyed Resource<image>: songs/astronomia.png?720x720
 [INFO] Destroyed Resource<image>: play/sangoodholdbomb.png?180x180
-[INFO] Destroyed Resource<image>: play/sangoodhold.png?180x180
-[INFO] Destroyed Resource<image>: play/sanbadtap.png?180x180
-[INFO] Destroyed Resource<image>: play/sangoodtap.png?180x180
-[INFO] Destroyed Resource<image>: play/sangoodtapbomb.png?180x180
+[INFO] Destroyed Resource<image>: play/stop.png
 [INFO] Destroyed Resource<image>: play/turretdown.png
 [INFO] Destroyed Resource<image>: play/turretup.png?180x180
-[INFO] Destroyed Resource<image>: stage-select/darkleft.png?75x75
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<image>: stage-select/darkleft.png
-[INFO] Destroyed Resource<image>: stage-select/sanbadfloor.png
-[INFO] Destroyed Resource<image>: characters/sanbadMio.png?684x1197
-[INFO] Destroyed Resource<image>: stage-select/sanbadsettingdirt.png?70x70
-[INFO] Destroyed Resource<image>: stage-select/redleft.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png
-[INFO] Destroyed Resource<image>: scenes/sanbadmain.png?1800x1020
-[INFO] Destroyed Resource<image>: scenes/sanbadboard.png?1400x500
-[INFO] Destroyed Resource<image>: play/restart.png
-[INFO] Destroyed Resource<image>: scenes/sanbadstart.png?1800x1020
-[INFO] Destroyed Resource<image>: songs/Itogite.png?720x720
-[INFO] Destroyed Resource<image>: play/back.png
-[INFO] Destroyed Resource<image>: stage-select/darkright.png?100x100
-[INFO] Destroyed Resource<image>: stage-select/darkright.png
-[INFO] Destroyed Resource<image>: play/stop.png?100x100
-[INFO] Destroyed Resource<image>: stage-select/sanbadsettingfloor.png
-[INFO] Destroyed Resource<image>: stage-select/foo.png?4x957
-[INFO] Destroyed Resource<image>: stage-select/redright.png
-[INFO] Destroyed Resource<image>: stage-select/darkleft.png?100x100
-[INFO] Destroyed Resource<image>: stage-select/sanbadsettingdirt.png
-[INFO] Destroyed Resource<image>: play/stop.png
-[INFO] Destroyed Resource<image>: stage-select/sanbaddirt.png?300x180
-[INFO] Destroyed Resource<image>: songs/MeikyuLyrith.png?720x720
-[INFO] Destroyed Resource<image>: play/back.png?100x100
-[INFO] Destroyed Resource<image>: play/continue.png?100x100
-[INFO] Destroyed Resource<image>: play/restart.png?100x100
 [INFO] Destroyed Resource<image>: play/turretup.png
+[INFO] Destroyed Resource<image>: stage-select/pinkright.png
 [INFO] Destroyed Resource<image>: play/continue.png
-[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?30
-[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?108
-[INFO] Destroyed Resource<font>: 07ReallyScaryMinchotai.ttf?60
-[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?60
-[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?48
-[INFO] Destroyed Resource<font>: Raslani-Kavaliar-Kaiser-1.ttf?120
-[INFO] Destroyed<sample_instance>: hold.ogg
+[INFO] Destroyed Resource<image>: stage-select/sangoodfloor.png
+[INFO] Destroyed Resource<image>: play/continue.png?100x100
+[INFO] Destroyed Resource<image>: play/stop.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/slider-blue.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?360x180
+[INFO] Destroyed Resource<image>: stage-select/slider.png
+[INFO] Destroyed Resource<image>: songs/OnlyMyRailgun.png?720x720
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?80x80
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?140x80
+[INFO] Destroyed Resource<image>: play/sangoodtapbomb.png
+[INFO] Destroyed Resource<image>: characters/sangoodMio.png?608x1064
+[INFO] Destroyed Resource<image>: characters/sangoodMio.png?684x1197
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingfloor.png
+[INFO] Destroyed Resource<image>: play/restart.png
+[INFO] Destroyed Resource<image>: play/sangoodtapbomb.png?180x180
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?450x80
+[INFO] Destroyed Resource<image>: play/sangoodhold.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png
+[INFO] Destroyed Resource<image>: stage-select/blueright.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png
+[INFO] Destroyed Resource<image>: stage-select/blueleft.png?75x75
+[INFO] Destroyed Resource<image>: characters/sangoodALice.png?684x1197
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?100x100
+[INFO] Destroyed Resource<image>: stage-select/end.png
+[INFO] Destroyed Resource<image>: songs/MeikyuLyrith.png?720x720
+[INFO] Destroyed Resource<image>: stage-select/bar.png?190x4
+[INFO] Destroyed Resource<image>: stage-select/foo.png?4x957
+[INFO] Destroyed Resource<image>: stage-select/blueright.png?80x80
+[INFO] Destroyed Resource<image>: stage-select/pinkleft.png
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?300x180
+[INFO] Destroyed Resource<image>: stage-select/sangoodsettingdirt.png?70x70
+[INFO] Destroyed Resource<image>: scenes/sangoodmain.png?1800x1020
+[INFO] Destroyed Resource<image>: scenes/sangoodboard.png?1400x500
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?150x80
+[INFO] Destroyed Resource<image>: play/sangoodholdbomb.png
+[INFO] Destroyed Resource<image>: play/sangoodtap.png?180x180
+[INFO] Destroyed Resource<image>: scenes/sangoodstart.png?1800x1020
+[INFO] Destroyed Resource<image>: play/back.png
+[INFO] Destroyed Resource<image>: play/sangoodhold.png?180x180
+[INFO] Destroyed Resource<image>: stage-select/sangooddirt.png?80x80
+[INFO] Destroyed Resource<image>: play/back.png?100x100
+[INFO] Destroyed Resource<image>: play/restart.png?100x100
+[INFO] Destroyed Resource<image>: play/sangoodtap.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?60
+[INFO] Destroyed Resource<font>: pirulen.ttf?20
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?108
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?28
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?120
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?36
+[INFO] Destroyed Resource<font>: Black-Magic-2.ttf?48
+[INFO] Destroyed Resource<font>: pirulen.ttf?30
+[INFO] Destroyed Resource<font>: hanazomefont.ttf?60
+[INFO] Destroyed<sample_instance>: songs/astronomia.ogg
+[INFO] Destroyed<sample_instance>: songs/OnlyMyRailgun.ogg
+[INFO] Destroyed<sample_instance>: startscene.ogg
 [INFO] Destroyed<sample_instance>: tap.ogg
+[INFO] Destroyed<sample_instance>: characterselect.ogg
 [INFO] Destroyed<sample_instance>: songs/MeikyuLyrith.ogg
-[INFO] Destroyed<sample_instance>: sanbadmainscene.ogg
-[INFO] Destroyed<sample_instance>: songs/Itogite.ogg
-[INFO] Destroyed<sample_instance>: sanbadstartscene.ogg
-[INFO] Destroyed Resource<audio>: hold.ogg
+[INFO] Destroyed<sample_instance>: hold.ogg
+[INFO] Destroyed<sample_instance>: mainscene.ogg
+[INFO] Destroyed Resource<audio>: songs/astronomia.ogg
+[INFO] Destroyed Resource<audio>: songs/OnlyMyRailgun.ogg
+[INFO] Destroyed Resource<audio>: startscene.ogg
 [INFO] Destroyed Resource<audio>: tap.ogg
+[INFO] Destroyed Resource<audio>: characterselect.ogg
 [INFO] Destroyed Resource<audio>: songs/MeikyuLyrith.ogg
-[INFO] Destroyed Resource<audio>: sanbadmainscene.ogg
-[INFO] Destroyed Resource<audio>: songs/Itogite.ogg
-[INFO] Destroyed Resource<audio>: sanbadstartscene.ogg
+[INFO] Destroyed Resource<audio>: hold.ogg
+[INFO] Destroyed Resource<audio>: mainscene.ogg

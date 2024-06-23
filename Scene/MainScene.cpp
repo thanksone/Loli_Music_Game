@@ -19,7 +19,7 @@
 #include "ScoreboardScene.h"
 
 void MainScene::Initialize() {
-
+    f=0;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -28,17 +28,18 @@ void MainScene::Initialize() {
     std::string backgroundimg=user.wind?"scenes/sanbadmain.png":"scenes/sangoodmain.png";
     Engine::Image* img;
     img=new Engine::Image(backgroundimg, halfW, halfH,1800,1020,0.5,0.5);
-    addObject(1,img);
-    /*btn = new Engine::ImageButton("stage-select/sanbaddirt.png", "stage-select/sanbadfloor.png", halfW - 150, halfH * 3 / 2 - 50, 300, 150);
-    btn->SetOnClickCallback(std::bind(&MainScene::BackOnClick, this, 1));
+    addObject(0,img);
+    //user.loli->draw(this,halfW+350,halfH-50,684,1197,0.5,0.5);
+    btn=user.loli->touch(this,halfW+150,halfH-600,684,1197);
+    btn->SetOnClickCallback(std::bind(&MainScene::TouchOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "WOODCUTTER-BCN-Style-1.ttf", 48, halfW, halfH * 3 / 2+25, 125,30,32, 255, 0.5, 0.5));*/
-    user.loli->draw(this,halfW+350,halfH-50,684,1197,0.5,0.5);
 
     if(user.wind) btn = new Engine::ImageButton("stage-select/sanbadsettingdirt.png", "stage-select/sanbadsettingfloor.png", w-80, 10, 70, 70);
     else btn = new Engine::ImageButton("stage-select/sangoodsettingdirt.png", "stage-select/sangoodsettingfloor.png", w-80, 10, 70, 70);
     btn->SetOnClickCallback(std::bind(&MainScene::SettingsOnClick, this));
     AddNewControlObject(btn);
+
+
 
     btn = new Engine::ImageButton(user.dirt, user.floor,  w- 320, h-175, 300, 180);
     btn->SetOnClickCallback(std::bind(&MainScene::EditOnClick, this));
@@ -101,6 +102,26 @@ void MainScene::CharacterSelectOnClick() {
     scene->user = user;
     Engine::GameEngine::GetInstance().ChangeScene("character-select");
 }
+
+void MainScene::TouchOnClick() {
+    Engine::Image* img;
+    int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
+    int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
+    int halfW = w / 2;
+    int halfH = h / 2;
+
+
+    if(f==0) {
+        img=new Engine::Image(user.dirt, halfW-300, halfH,1200,600,0.5,0.5);
+        addObject(1,img);
+        talk = new Engine::Label(" ", "Black-Magic-2.ttf", 48, halfW-300, halfH, 125, 30, 32, 255, 0.5, 0.5);
+        addObject(1,talk);
+        f=1;
+    }
+    talk->Text=user.loli->talk();
+
+}
+
 
 std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> MainScene::Getbgm() {
     return bgmInstance;

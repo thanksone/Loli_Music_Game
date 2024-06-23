@@ -4,12 +4,16 @@
 #include <memory>
 #include "Engine/IScene.hpp"
 #include "Account/User.hpp"
+#include "UI/Component/Label.hpp"
+
 
 class MainScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
 public:
     User user;
+    Engine::Label *talk;
+    int f=0;
     explicit MainScene() = default;
     void Initialize() override;
     void Terminate() override;
@@ -19,6 +23,7 @@ public:
     void EditOnClick();
     void SongSelectOnClick();
     void CharacterSelectOnClick();
+    void TouchOnClick();
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Getbgm();
 
 };

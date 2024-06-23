@@ -9,7 +9,6 @@
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "UI/Component/ImageButton.hpp"
-#include "UI/Component/Label.hpp"
 #include "PlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
