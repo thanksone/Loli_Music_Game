@@ -16,7 +16,7 @@
 PlayScene* Turret::getPlayScene() {
 	return dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetActiveScene());
 }
-Turret::Turret(std::string ouob, std::string douo, float x, float y, int ghost): Engine::Image(ouob, x, y), ouob(ouob), douo(douo), ghost(ghost){
+Turret::Turret(std::string ouob, std::string douo, float x, float y, int ghost): Engine::Image(ouob, x, y, 180, 180), ouob(ouob), douo(douo), ghost(ghost){
     for(int i = 0; i < 4; i++) Target[i] = nullptr;
 }
 void Turret::Hit(int type){

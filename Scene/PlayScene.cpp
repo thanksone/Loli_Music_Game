@@ -36,19 +36,18 @@ void PlayScene::Initialize() {
     std::cout << "PlayScene\n";
     perfect = good = bad = miss = 0;
     score = 0, acc = 0, combo = 0, maxcombo = 0, total = 0;
-    x0 = 150, ghostW = 300;
-    deadline = 900;
+    x0 = 150, ghostW = 250;
+    pause = 0;
+    deadline = 960;
     std::cout << "flag1\n";
 	ReadScore();
     std::cout << "flag2\n";
 	Construct();
     std::cout << "flag3\n";
-	// Preload Lose Scene
-	Song = Engine::Resources::GetInstance().GetSampleInstance(filename + ".ogg");
     curtime = 0;
     for(int i = 0; i < 12; i++) Hold[i] = 0;
     boing = 1;
-    Song = AudioHelper::PlaySample(filename + ".ogg", 0, AudioHelper::BGMVolume);
+    Song = AudioHelper::PlaySample("songs/" + filename + ".ogg", 0, AudioHelper::BGMVolume);
 }
 void PlayScene::Terminate() {
 	AudioHelper::StopSample(Song);
@@ -63,7 +62,7 @@ void PlayScene::Update(float deltaTime) {
         return;
     }else if(pause <= 0 && !boing) {
         Left->Visible = 0;
-        Song = AudioHelper::PlaySample(filename + ".ogg", 0, AudioHelper::BGMVolume, curtime);
+        Song = AudioHelper::PlaySample("songs/" + filename + ".ogg", 0, AudioHelper::BGMVolume, curtime);
         boing = 1;
     }
     curtime += deltaTime;
@@ -72,10 +71,10 @@ void PlayScene::Update(float deltaTime) {
         Note.pop();
         if(type){
             type = type;
-            NoteGroup[ghost][type]->AddNewObject(new HoldEnemy(x0 + ghost * ghostW + ghostW / 2, deadline - (curtime - at) * speed, type, ghost, speed));
+            NoteGroup[ghost][type]->AddNewObject(new HoldEnemy(x0 + ghost * ghostW + ghostW / 2, deadline + (curtime - at) * speed, type, ghost, speed));
         }else{
             type = type;
-            NoteGroup[ghost][type]->AddNewObject(new TapEnemy(x0 + ghost * ghostW + ghostW / 2, deadline - (curtime - at) * speed, type, ghost, speed));
+            NoteGroup[ghost][type]->AddNewObject(new TapEnemy(x0 + ghost * ghostW + ghostW / 2, deadline + (curtime - at) * speed, type, ghost, speed));
         }
     }
     for(int i = 0; i < 12; i++){
@@ -117,7 +116,7 @@ void PlayScene::OnKeyUp(int keyCode){
     else if(keyCode == ALLEGRO_KEY_O) Hold[11] = 0, Line[5]->Up();
 }
 void PlayScene::ReadScore() {
-    std::ifstream fin("../Resource/scores/" + filename + "/" + diff + ".loli");
+    std::ifstream fin("../Resource/scores/" + filename + "_" + diff + ".loli");
     float time = 0, bpm;
     int n, k, type, ghost, len;
     float at, speed;
@@ -129,11 +128,11 @@ void PlayScene::ReadScore() {
             fin >> type >> ghost >> len >> at >> speed;
             if(type){
                 for (int j = 0; j < len; j++){
-                    notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - (float)15 / (speed * user.setting.fallspeed), speed * user.setting.fallspeed});
+                    notes.push_back({type, ghost, time + at * (float)60 / bpm, time + at * (float)60 / bpm - (float)deadline / (speed * user.setting.fallspeed), speed * user.setting.fallspeed});
                     total++;
                 }
             }else {
-                notes.push_back({type, ghost, time + at * (float) 60 / bpm,time + at * (float) 60 / bpm - (float) 15 / (speed * user.setting.fallspeed),speed * user.setting.fallspeed});
+                notes.push_back({type, ghost, time + at * (float) 60 / bpm,time + at * (float) 60 / bpm - (float)deadline / (speed * user.setting.fallspeed),speed * user.setting.fallspeed});
                 total++;
             }
         }
@@ -174,7 +173,7 @@ void PlayScene::Construct() {
             NoteGroup[i][j] = new Group;
             AddNewObject(NoteGroup[i][j]);
         }
-        Line[i] = new Turret("play/turretup.png", "play/turretdown.png", x0 + ghostW * i + ghostW / 2, deadline, i);
+        Line[i] = new Turret("play/turretup.png", "play/turretdown.png", x0 + ghostW * i + ghostW / 2 - 90, deadline - 90, i);
         AddNewObject(Line[i]);
     }
     for(int i = 0; i < 7; i++){

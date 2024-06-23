@@ -19,9 +19,9 @@ PlayScene* Enemy::getPlayScene() {
 	return dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetActiveScene());
 }
 Enemy::Enemy(std::string img, float x, float y, int type, int ghost, float speed) :
-	Engine::Sprite(img, x, y), type(type), ghost(ghost), speed(speed){
+	Engine::Sprite(img, x, y, 180, 180), type(type), ghost(ghost), speed(speed){
     Velocity = Engine::Point(0, speed);
-    perfect = 4.8 * speed;
+    perfect = 0.08 * speed;
 }
 void Enemy::Hit(){
     getPlayScene()->Line[ghost]->Target[type] = nullptr;
