@@ -109,8 +109,8 @@ void EditScene::Update(float deltatime) {
     }
     past += deltatime, last -= deltatime;
     while(front < Boing.size() && Boing[front].at <= past){
-        if(Boing[front].type) tapsound = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume, 0);
-        else holdsound = AudioHelper::PlaySample("hold.ogg", 0, AudioHelper::SFXVolume, 0);
+        if(Boing[front].type) tapsound = AudioHelper::PlaySample("hold.ogg", 0, AudioHelper::SFXVolume, 0);
+        else holdsound = AudioHelper::PlaySample("tap.ogg", 0, AudioHelper::SFXVolume, 0);
         front++;
     }
     while(!Time.empty() && past >= Time.front()){
