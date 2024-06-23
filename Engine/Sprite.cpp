@@ -1,5 +1,6 @@
 #include <allegro5/allegro.h>
 #include <memory>
+#include <iostream>
 
 #include "UI/Component/Image.hpp"
 #include "Engine/Point.hpp"

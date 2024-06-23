@@ -12,6 +12,7 @@
 #include "Account/User.hpp"
 #include "EditScene.hpp"
 #include "Turret/Turret.hpp"
+#include "SongSelectScene.hpp"
 
 struct noto{
     int type, ghost;
@@ -22,14 +23,15 @@ private:
 	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Song, tap, hold;
 protected:
     int perfect, good, bad, miss, combo, total, maxcombo;
-    float pretime, curtime, pause, score, acc;
+    float last, curtime, pause, score, acc;
     Engine::Label *Score, *Combo, *Left;
     Engine::ImageButton *Pause, *Back, *Restart, *Continue;
     std::queue<noto> Note;
     bool Hold[12], boing;
 public:
     User user;
-	std::string filename, diff;
+	std::string diff;
+    song give;
     int deadline, x0, ghostW;
     Group *NoteGroup[6][4], *EffectGroup;
     Turret *Line[6];
