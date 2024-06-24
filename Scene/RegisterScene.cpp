@@ -85,8 +85,8 @@ void RegisterScene::RegisterOnClick(){
         std::ofstream fout("../Resource/accountlist.txt", std::ios_base::app);
         fout << username << " " << hash(password1) << "\n";
         user = User(username);
-        user.AddCharacter(Loli("loli", 90, 90, 0));
-        user.ChangeOnField("loli");
+        user.AddCharacter(Loli("Mio", 90, 90, 0));
+        user.ChangeOnField("Mio");
         fout.close();
         std::ofstream fin(file, std::ios::trunc);
         fin << 1 << " " << 1 << " " << 10 << "\n" << 1 << "\n";
